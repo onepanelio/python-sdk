@@ -1,4 +1,4 @@
-# openapi_client.SecretServiceApi
+# core.api.SecretServiceApi
 
 All URIs are relative to *http://localhost*
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **add_secret_key_value**
-> ApiAddSecretKeyValueResponse add_secret_key_value(namespace, secret_name, body)
+> AddSecretKeyValueResponse add_secret_key_value(namespace, secret_name, body)
 
 
 
@@ -24,17 +24,17 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import core.api
+from core.api.rest import ApiException
 from pprint import pprint
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient() as api_client:
+with core.api.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SecretServiceApi(api_client)
+    api_instance = core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 secret_name = 'secret_name_example' # str | 
-body = openapi_client.ApiSecret() # ApiSecret | 
+body = core.api.Secret() # Secret | 
 
     try:
         api_response = api_instance.add_secret_key_value(namespace, secret_name, body)
@@ -49,11 +49,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
  **secret_name** | **str**|  | 
- **body** | [**ApiSecret**](ApiSecret.md)|  | 
+ **body** | [**Secret**](Secret.md)|  | 
 
 ### Return type
 
-[**ApiAddSecretKeyValueResponse**](ApiAddSecretKeyValueResponse.md)
+[**AddSecretKeyValueResponse**](AddSecretKeyValueResponse.md)
 
 ### Authorization
 
@@ -82,16 +82,16 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import core.api
+from core.api.rest import ApiException
 from pprint import pprint
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient() as api_client:
+with core.api.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SecretServiceApi(api_client)
+    api_instance = core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-body = openapi_client.ApiSecret() # ApiSecret | 
+body = core.api.Secret() # Secret | 
 
     try:
         api_response = api_instance.create_secret(namespace, body)
@@ -105,7 +105,7 @@ body = openapi_client.ApiSecret() # ApiSecret |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **body** | [**ApiSecret**](ApiSecret.md)|  | 
+ **body** | [**Secret**](Secret.md)|  | 
 
 ### Return type
 
@@ -129,7 +129,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_secret**
-> ApiDeleteSecretResponse delete_secret(namespace, name)
+> DeleteSecretResponse delete_secret(namespace, name)
 
 
 
@@ -138,14 +138,14 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import core.api
+from core.api.rest import ApiException
 from pprint import pprint
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient() as api_client:
+with core.api.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SecretServiceApi(api_client)
+    api_instance = core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 name = 'name_example' # str | 
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiDeleteSecretResponse**](ApiDeleteSecretResponse.md)
+[**DeleteSecretResponse**](DeleteSecretResponse.md)
 
 ### Authorization
 
@@ -185,7 +185,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_secret_key**
-> ApiDeleteSecretKeyResponse delete_secret_key(namespace, secret_name)
+> DeleteSecretKeyResponse delete_secret_key(namespace, secret_name)
 
 
 
@@ -194,14 +194,14 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import core.api
+from core.api.rest import ApiException
 from pprint import pprint
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient() as api_client:
+with core.api.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SecretServiceApi(api_client)
+    api_instance = core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 secret_name = 'secret_name_example' # str | 
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiDeleteSecretKeyResponse**](ApiDeleteSecretKeyResponse.md)
+[**DeleteSecretKeyResponse**](DeleteSecretKeyResponse.md)
 
 ### Authorization
 
@@ -241,7 +241,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_secret**
-> ApiSecret get_secret(namespace, name)
+> Secret get_secret(namespace, name)
 
 
 
@@ -250,14 +250,14 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import core.api
+from core.api.rest import ApiException
 from pprint import pprint
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient() as api_client:
+with core.api.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SecretServiceApi(api_client)
+    api_instance = core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 name = 'name_example' # str | 
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiSecret**](ApiSecret.md)
+[**Secret**](Secret.md)
 
 ### Authorization
 
@@ -297,7 +297,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_secrets**
-> ApiListSecretsResponse list_secrets(namespace)
+> ListSecretsResponse list_secrets(namespace)
 
 
 
@@ -306,14 +306,14 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import core.api
+from core.api.rest import ApiException
 from pprint import pprint
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient() as api_client:
+with core.api.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SecretServiceApi(api_client)
+    api_instance = core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 
     try:
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiListSecretsResponse**](ApiListSecretsResponse.md)
+[**ListSecretsResponse**](ListSecretsResponse.md)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **secret_exists**
-> ApiSecretExistsResponse secret_exists(namespace, name)
+> SecretExistsResponse secret_exists(namespace, name)
 
 
 
@@ -360,14 +360,14 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import core.api
+from core.api.rest import ApiException
 from pprint import pprint
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient() as api_client:
+with core.api.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SecretServiceApi(api_client)
+    api_instance = core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 name = 'name_example' # str | 
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiSecretExistsResponse**](ApiSecretExistsResponse.md)
+[**SecretExistsResponse**](SecretExistsResponse.md)
 
 ### Authorization
 
@@ -407,7 +407,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_secret_key_value**
-> ApiUpdateSecretKeyValueResponse update_secret_key_value(namespace, secret_name)
+> UpdateSecretKeyValueResponse update_secret_key_value(namespace, secret_name)
 
 
 
@@ -416,14 +416,14 @@ No authorization required
 ```python
 from __future__ import print_function
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import core.api
+from core.api.rest import ApiException
 from pprint import pprint
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient() as api_client:
+with core.api.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SecretServiceApi(api_client)
+    api_instance = core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 secret_name = 'secret_name_example' # str | 
 
@@ -443,7 +443,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiUpdateSecretKeyValueResponse**](ApiUpdateSecretKeyValueResponse.md)
+[**UpdateSecretKeyValueResponse**](UpdateSecretKeyValueResponse.md)
 
 ### Authorization
 
