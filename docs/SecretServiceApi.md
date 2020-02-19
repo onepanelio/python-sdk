@@ -409,7 +409,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_secret_key_value**
-> UpdateSecretKeyValueResponse update_secret_key_value(namespace, secret_name)
+> UpdateSecretKeyValueResponse update_secret_key_value(namespace, secret_name, body)
 
 
 
@@ -428,9 +428,10 @@ with core.api.ApiClient() as api_client:
     api_instance = core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 secret_name = 'secret_name_example' # str | 
+body = core.api.Secret() # Secret | 
 
     try:
-        api_response = api_instance.update_secret_key_value(namespace, secret_name)
+        api_response = api_instance.update_secret_key_value(namespace, secret_name, body)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling SecretServiceApi->update_secret_key_value: %s\n" % e)
@@ -442,6 +443,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
  **secret_name** | **str**|  | 
+ **body** | [**Secret**](Secret.md)|  | 
 
 ### Return type
 
@@ -453,7 +455,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
