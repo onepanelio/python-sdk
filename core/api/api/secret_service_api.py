@@ -394,17 +394,18 @@ class SecretServiceApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_secret_key(self, namespace, secret_name, **kwargs):  # noqa: E501
+    def delete_secret_key(self, namespace, secret_name, body, **kwargs):  # noqa: E501
         """delete_secret_key  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_secret_key(namespace, secret_name, async_req=True)
+        >>> thread = api.delete_secret_key(namespace, secret_name, body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
         :param str secret_name: (required)
+        :param Secret body: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -417,19 +418,20 @@ class SecretServiceApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.delete_secret_key_with_http_info(namespace, secret_name, **kwargs)  # noqa: E501
+        return self.delete_secret_key_with_http_info(namespace, secret_name, body, **kwargs)  # noqa: E501
 
-    def delete_secret_key_with_http_info(self, namespace, secret_name, **kwargs):  # noqa: E501
+    def delete_secret_key_with_http_info(self, namespace, secret_name, body, **kwargs):  # noqa: E501
         """delete_secret_key  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_secret_key_with_http_info(namespace, secret_name, async_req=True)
+        >>> thread = api.delete_secret_key_with_http_info(namespace, secret_name, body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
         :param str secret_name: (required)
+        :param Secret body: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -446,7 +448,7 @@ class SecretServiceApi(object):
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'secret_name']  # noqa: E501
+        all_params = ['namespace', 'secret_name', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -468,6 +470,10 @@ class SecretServiceApi(object):
         if self.api_client.client_side_validation and ('secret_name' not in local_var_params or  # noqa: E501
                                                         local_var_params['secret_name'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `secret_name` when calling `delete_secret_key`")  # noqa: E501
+        # verify the required parameter 'body' is set
+        if self.api_client.client_side_validation and ('body' not in local_var_params or  # noqa: E501
+                                                        local_var_params['body'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `body` when calling `delete_secret_key`")  # noqa: E501
 
         collection_formats = {}
 
@@ -485,8 +491,14 @@ class SecretServiceApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in local_var_params:
+            body_params = local_var_params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
@@ -842,17 +854,18 @@ class SecretServiceApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_secret_key_value(self, namespace, secret_name, **kwargs):  # noqa: E501
+    def update_secret_key_value(self, namespace, secret_name, body, **kwargs):  # noqa: E501
         """update_secret_key_value  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_secret_key_value(namespace, secret_name, async_req=True)
+        >>> thread = api.update_secret_key_value(namespace, secret_name, body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
         :param str secret_name: (required)
+        :param Secret body: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -865,19 +878,20 @@ class SecretServiceApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.update_secret_key_value_with_http_info(namespace, secret_name, **kwargs)  # noqa: E501
+        return self.update_secret_key_value_with_http_info(namespace, secret_name, body, **kwargs)  # noqa: E501
 
-    def update_secret_key_value_with_http_info(self, namespace, secret_name, **kwargs):  # noqa: E501
+    def update_secret_key_value_with_http_info(self, namespace, secret_name, body, **kwargs):  # noqa: E501
         """update_secret_key_value  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_secret_key_value_with_http_info(namespace, secret_name, async_req=True)
+        >>> thread = api.update_secret_key_value_with_http_info(namespace, secret_name, body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
         :param str secret_name: (required)
+        :param Secret body: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -894,7 +908,7 @@ class SecretServiceApi(object):
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'secret_name']  # noqa: E501
+        all_params = ['namespace', 'secret_name', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -916,6 +930,10 @@ class SecretServiceApi(object):
         if self.api_client.client_side_validation and ('secret_name' not in local_var_params or  # noqa: E501
                                                         local_var_params['secret_name'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `secret_name` when calling `update_secret_key_value`")  # noqa: E501
+        # verify the required parameter 'body' is set
+        if self.api_client.client_side_validation and ('body' not in local_var_params or  # noqa: E501
+                                                        local_var_params['body'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `body` when calling `update_secret_key_value`")  # noqa: E501
 
         collection_formats = {}
 
@@ -933,8 +951,14 @@ class SecretServiceApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in local_var_params:
+            body_params = local_var_params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
