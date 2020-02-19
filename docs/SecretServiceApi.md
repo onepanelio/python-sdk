@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**add_secret_key_value**](SecretServiceApi.md#add_secret_key_value) | **POST** /apis/v1beta1/{namespace}/secrets/{secret.name} | 
 [**create_secret**](SecretServiceApi.md#create_secret) | **POST** /apis/v1beta1/{namespace}/secrets | 
 [**delete_secret**](SecretServiceApi.md#delete_secret) | **DELETE** /apis/v1beta1/{namespace}/secrets/{name} | 
-[**delete_secret_key**](SecretServiceApi.md#delete_secret_key) | **DELETE** /apis/v1beta1/{namespace}/secrets/{secret.name} | 
+[**delete_secret_key**](SecretServiceApi.md#delete_secret_key) | **DELETE** /apis/v1beta1/{namespace}/secrets/{secretName}/keys/{key} | 
 [**get_secret**](SecretServiceApi.md#get_secret) | **GET** /apis/v1beta1/{namespace}/secrets/{name} | 
 [**list_secrets**](SecretServiceApi.md#list_secrets) | **GET** /apis/v1beta1/{namespace}/secrets | 
 [**secret_exists**](SecretServiceApi.md#secret_exists) | **GET** /apis/v1beta1/{namespace}/secrets/{name}/exists | 
@@ -185,7 +185,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_secret_key**
-> DeleteSecretKeyResponse delete_secret_key(namespace, secret_name, body)
+> DeleteSecretKeyResponse delete_secret_key(namespace, secret_name, key)
 
 
 
@@ -204,10 +204,10 @@ with core.api.ApiClient() as api_client:
     api_instance = core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 secret_name = 'secret_name_example' # str | 
-body = core.api.Secret() # Secret | 
+key = 'key_example' # str | 
 
     try:
-        api_response = api_instance.delete_secret_key(namespace, secret_name, body)
+        api_response = api_instance.delete_secret_key(namespace, secret_name, key)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling SecretServiceApi->delete_secret_key: %s\n" % e)
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
  **secret_name** | **str**|  | 
- **body** | [**Secret**](Secret.md)|  | 
+ **key** | **str**|  | 
 
 ### Return type
 
@@ -231,7 +231,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -409,7 +409,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_secret_key_value**
-> UpdateSecretKeyValueResponse update_secret_key_value(namespace, secret_name, body)
+> UpdateSecretKeyValueResponse update_secret_key_value(namespace, secret_name)
 
 
 
@@ -428,10 +428,9 @@ with core.api.ApiClient() as api_client:
     api_instance = core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 secret_name = 'secret_name_example' # str | 
-body = core.api.Secret() # Secret | 
 
     try:
-        api_response = api_instance.update_secret_key_value(namespace, secret_name, body)
+        api_response = api_instance.update_secret_key_value(namespace, secret_name)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling SecretServiceApi->update_secret_key_value: %s\n" % e)
@@ -443,7 +442,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
  **secret_name** | **str**|  | 
- **body** | [**Secret**](Secret.md)|  | 
 
 ### Return type
 
@@ -455,7 +453,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

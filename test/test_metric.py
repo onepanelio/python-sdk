@@ -16,11 +16,11 @@ import unittest
 import datetime
 
 import core.api
-from core.api.models.delete_secret_response import DeleteSecretResponse  # noqa: E501
+from core.api.models.metric import Metric  # noqa: E501
 from core.api.rest import ApiException
 
-class TestDeleteSecretResponse(unittest.TestCase):
-    """DeleteSecretResponse unit test stubs"""
+class TestMetric(unittest.TestCase):
+    """Metric unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,21 +29,23 @@ class TestDeleteSecretResponse(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test DeleteSecretResponse
+        """Test Metric
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = core.api.models.delete_secret_response.DeleteSecretResponse()  # noqa: E501
+        # model = core.api.models.metric.Metric()  # noqa: E501
         if include_optional :
-            return DeleteSecretResponse(
-                deleted = True
+            return Metric(
+                name = '0', 
+                value = 1.337, 
+                format = '0'
             )
         else :
-            return DeleteSecretResponse(
+            return Metric(
         )
 
-    def testDeleteSecretResponse(self):
-        """Test DeleteSecretResponse"""
+    def testMetric(self):
+        """Test Metric"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

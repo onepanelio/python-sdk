@@ -649,7 +649,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_workflows**
-> ListWorkflowsResponse list_workflows(namespace, workflow_template_uid=workflow_template_uid, workflow_template_version=workflow_template_version)
+> ListWorkflowsResponse list_workflows(namespace, workflow_template_uid=workflow_template_uid, workflow_template_version=workflow_template_version, page_size=page_size, page=page)
 
 
 
@@ -669,9 +669,11 @@ with core.api.ApiClient() as api_client:
     namespace = 'namespace_example' # str | 
 workflow_template_uid = 'workflow_template_uid_example' # str |  (optional)
 workflow_template_version = 'workflow_template_version_example' # str |  (optional)
+page_size = 56 # int |  (optional)
+page = 56 # int |  (optional)
 
     try:
-        api_response = api_instance.list_workflows(namespace, workflow_template_uid=workflow_template_uid, workflow_template_version=workflow_template_version)
+        api_response = api_instance.list_workflows(namespace, workflow_template_uid=workflow_template_uid, workflow_template_version=workflow_template_version, page_size=page_size, page=page)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->list_workflows: %s\n" % e)
@@ -684,6 +686,8 @@ Name | Type | Description  | Notes
  **namespace** | **str**|  | 
  **workflow_template_uid** | **str**|  | [optional] 
  **workflow_template_version** | **str**|  | [optional] 
+ **page_size** | **int**|  | [optional] 
+ **page** | **int**|  | [optional] 
 
 ### Return type
 

@@ -77,7 +77,7 @@ Class | Method | HTTP request | Description
 *SecretServiceApi* | [**add_secret_key_value**](docs/SecretServiceApi.md#add_secret_key_value) | **POST** /apis/v1beta1/{namespace}/secrets/{secret.name} | 
 *SecretServiceApi* | [**create_secret**](docs/SecretServiceApi.md#create_secret) | **POST** /apis/v1beta1/{namespace}/secrets | 
 *SecretServiceApi* | [**delete_secret**](docs/SecretServiceApi.md#delete_secret) | **DELETE** /apis/v1beta1/{namespace}/secrets/{name} | 
-*SecretServiceApi* | [**delete_secret_key**](docs/SecretServiceApi.md#delete_secret_key) | **DELETE** /apis/v1beta1/{namespace}/secrets/{secret.name} | 
+*SecretServiceApi* | [**delete_secret_key**](docs/SecretServiceApi.md#delete_secret_key) | **DELETE** /apis/v1beta1/{namespace}/secrets/{secretName}/keys/{key} | 
 *SecretServiceApi* | [**get_secret**](docs/SecretServiceApi.md#get_secret) | **GET** /apis/v1beta1/{namespace}/secrets/{name} | 
 *SecretServiceApi* | [**list_secrets**](docs/SecretServiceApi.md#list_secrets) | **GET** /apis/v1beta1/{namespace}/secrets | 
 *SecretServiceApi* | [**secret_exists**](docs/SecretServiceApi.md#secret_exists) | **GET** /apis/v1beta1/{namespace}/secrets/{name}/exists | 
@@ -116,6 +116,7 @@ Class | Method | HTTP request | Description
  - [ListWorkflowTemplatesResponse](docs/ListWorkflowTemplatesResponse.md)
  - [ListWorkflowsResponse](docs/ListWorkflowsResponse.md)
  - [LogEntry](docs/LogEntry.md)
+ - [Metric](docs/Metric.md)
  - [Namespace](docs/Namespace.md)
  - [Secret](docs/Secret.md)
  - [SecretExistsResponse](docs/SecretExistsResponse.md)
