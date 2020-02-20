@@ -110,10 +110,24 @@ with core.api.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = core.api.WorkflowServiceApi(api_client)
     namespace = 'aleksandr'  # str |
+
+    archive_template_uid = ""
+    try:
+        print("WorkflowServiceApi->create_workflow_template")
+        archive_body = core.api.WorkflowTemplate()
+        archive_body.name = name_template_to_archive
+        archive_body.manifest = get_example_manifest()
+        api_response = api_instance.create_workflow_template(namespace, archive_body)
+        archive_template_uid = api_response.uid
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WorkflowServiceApi->create_workflow_template: %s\n" % e)
+
     body = core.api.WorkflowTemplate()  # WorkflowTemplate |
     body.name = name_create_and_use_template
     body.manifest = get_example_manifest()
     try:
+        print("WorkflowServiceApi->create_workflow_template")
         api_response = api_instance.create_workflow_template(namespace, body)
         pprint(api_response)
     except ApiException as e:
@@ -122,6 +136,7 @@ with core.api.ApiClient() as api_client:
     workflow_template_uid = ""
     workflow_template_version = 0
     try:
+        print("WorkflowServiceApi->list_workflow_templates")
         api_response = api_instance.list_workflow_templates(namespace)
         if api_response.count > 0:
             last_elem = api_response.count - 1
@@ -133,6 +148,7 @@ with core.api.ApiClient() as api_client:
         print("Exception when calling WorkflowServiceApi->list_workflow_templates: %s\n" % e)
 
     try:
+        print("WorkflowServiceApi->create_workflow_template_version")
         api_response = api_instance.create_workflow_template_version(namespace, workflow_template_uid, body)
         pprint(api_response)
     except ApiException as e:
@@ -141,8 +157,9 @@ with core.api.ApiClient() as api_client:
     # Need some workflows for the next piece
 
     try:
+        print("WorkflowServiceApi->create_workflow")
         workflow_body = core.api.Workflow()  # Workflow |
-        workflow_body.parameters = [{"name":"PARAM1", "value":"VALUE1"}, {"name":"PARAM2", "value":"VALUE2"}]
+        workflow_body.parameters = [{"name":"SLACK_WEBHOOK", "value":"https://hooks.slack.com/services/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"}, {"name":"PARAM2", "value":"VALUE2"}]
         workflow_template = core.api.WorkflowTemplate()
         workflow_template.uid = workflow_template_uid
         workflow_template.name = body.name
@@ -158,22 +175,43 @@ with core.api.ApiClient() as api_client:
     page_size = 15
     page = 1
     try:
+        print("WorkflowServiceApi->list_workflows")
         workflows = api_response = api_instance.list_workflows(namespace, workflow_template_uid=workflow_template_uid, workflow_template_version=workflow_template_version, page_size=page_size, page=page)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->list_workflows: %s\n" % e)
 
-
+    specific_workflow_to_use = None
     try:
+        print("WorkflowServiceApi->get_workflow")
         if workflows.count is not None and workflows.count > 0:
             specific_workflow_name = workflows.workflows[0].name
-            api_response = api_instance.get_workflow(namespace, specific_workflow_name)
+            specific_workflow_to_use = api_response = api_instance.get_workflow(namespace, specific_workflow_name)
             pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->get_workflow: %s\n" % e)
+
+
     # try:
-    #     api_response = api_instance.archive_workflow_template(namespace, uid)
+    #     api_response = api_instance.watch_workflow(namespace, specific_workflow_to_use.name)
     #     pprint(api_response)
     # except ApiException as e:
-    #     print("Exception when calling WorkflowServiceApi->archive_workflow_template: %s\n" % e)
+    #     print("Exception when calling WorkflowServiceApi->watch_workflow: %s\n" % e)
+
+    try:
+        if specific_workflow_to_use is not None:
+            print("WorkflowServiceApi->get_workflow_logs")
+            name = 'name_example'  # str |
+            pod_name = 'pod_name_example'  # str |
+            container_name = 'container_name_example'  # str |
+            api_response = api_instance.get_workflow_logs(namespace, specific_workflow_to_use.name, pod_name, container_name)
+            pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WorkflowServiceApi->get_workflow_logs: %s\n" % e)
+
+    try:
+        api_response = api_instance.archive_workflow_template(namespace, archive_template_uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WorkflowServiceApi->archive_workflow_template: %s\n" % e)
 
