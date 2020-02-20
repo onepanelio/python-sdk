@@ -181,6 +181,31 @@ with core.api.ApiClient() as api_client:
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->list_workflows: %s\n" % e)
 
+    try:
+        print("WorkflowServiceApi->get_workflow_template")
+        api_response = api_instance.get_workflow_template(namespace, workflow_template_uid, version=workflow_template_version)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WorkflowServiceApi->get_workflow_template: %s\n" % e)
+
+    try:
+        print("WorkflowServiceApi->list_workflow_template_versions")
+        api_response = api_instance.list_workflow_template_versions(namespace, workflow_template_uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WorkflowServiceApi->list_workflow_template_versions: %s\n" % e)
+
+    update_workflow_template_vr_body = workflow_template # WorkflowTemplate |
+
+    try:
+        workflow_template_version_inc = workflow_template_version + 1
+        print("WorkflowServiceApi->update_workflow_template_version")
+        api_response = api_instance.update_workflow_template_version(namespace, workflow_template_uid,
+                                                                     workflow_template_version_inc, update_workflow_template_vr_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WorkflowServiceApi->update_workflow_template_version: %s\n" % e)
+
     specific_workflow_to_use = None
     try:
         print("WorkflowServiceApi->get_workflow")
@@ -216,6 +241,8 @@ with core.api.ApiClient() as api_client:
             pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->get_workflow_logs: %s\n" % e)
+
+
 
     try:
         print("WorkflowServiceApi->archive_workflow_template")
