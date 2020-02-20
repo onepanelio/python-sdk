@@ -1,5 +1,5 @@
 from __future__ import print_function
-import uuid
+import uuid, json
 import core.api
 from core.api.rest import ApiException
 from pprint import pprint
@@ -162,7 +162,7 @@ with core.api.ApiClient() as api_client:
         workflow_body.parameters = [{"name":"SLACK_WEBHOOK", "value":"https://hooks.slack.com/services/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"}, {"name":"PARAM2", "value":"VALUE2"}]
         workflow_template = core.api.WorkflowTemplate()
         workflow_template.uid = workflow_template_uid
-        workflow_template.name = body.name
+        workflow_template.name = name_create_and_use_template
         workflow_template.manifest = workflow_template_manifest
         workflow_template.version = workflow_template_version
         workflow_body.workflow_template = workflow_template
@@ -185,6 +185,7 @@ with core.api.ApiClient() as api_client:
     try:
         print("WorkflowServiceApi->get_workflow")
         if workflows.count is not None and workflows.count > 0:
+            # Consider adding a sleep command here for some logs to be generated
             specific_workflow_name = workflows.workflows[0].name
             specific_workflow_to_use = api_response = api_instance.get_workflow(namespace, specific_workflow_name)
             pprint(api_response)
@@ -198,18 +199,26 @@ with core.api.ApiClient() as api_client:
     # except ApiException as e:
     #     print("Exception when calling WorkflowServiceApi->watch_workflow: %s\n" % e)
 
+    # Try using a completed workflow with logs present. Otherwise, this method may execute too soon for the pods
+    # to even get started.
     try:
         if specific_workflow_to_use is not None:
             print("WorkflowServiceApi->get_workflow_logs")
-            name = 'name_example'  # str |
-            pod_name = 'pod_name_example'  # str |
-            container_name = 'container_name_example'  # str |
+            workflow_json = json.loads(specific_workflow_to_use.manifest)
+            nodes = workflow_json['status']['nodes']
+            for key in nodes:
+                node_to_use = nodes[key]
+                break
+            pod_name = node_to_use['name']  # str |
+            # todo - Need to return this information from CORE API for multiple container instances
+            container_name = 'main'  # str |
             api_response = api_instance.get_workflow_logs(namespace, specific_workflow_to_use.name, pod_name, container_name)
             pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->get_workflow_logs: %s\n" % e)
 
     try:
+        print("WorkflowServiceApi->archive_workflow_template")
         api_response = api_instance.archive_workflow_template(namespace, archive_template_uid)
         pprint(api_response)
     except ApiException as e:
