@@ -97,7 +97,7 @@ class Configuration(object):
       )
     """
 
-    def __init__(self, host="http://localhost",
+    def __init__(self, host="http://localhost:8887",
                  api_key=None, api_key_prefix=None,
                  username=None, password=None,
                  signing_info=None):
