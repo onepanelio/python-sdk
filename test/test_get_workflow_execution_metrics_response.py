@@ -16,11 +16,11 @@ import unittest
 import datetime
 
 import core.api
-from core.api.models.workflow_parameter import WorkflowParameter  # noqa: E501
+from core.api.models.get_workflow_execution_metrics_response import GetWorkflowExecutionMetricsResponse  # noqa: E501
 from core.api.rest import ApiException
 
-class TestWorkflowParameter(unittest.TestCase):
-    """WorkflowParameter unit test stubs"""
+class TestGetWorkflowExecutionMetricsResponse(unittest.TestCase):
+    """GetWorkflowExecutionMetricsResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,22 +29,26 @@ class TestWorkflowParameter(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test WorkflowParameter
+        """Test GetWorkflowExecutionMetricsResponse
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = core.api.models.workflow_parameter.WorkflowParameter()  # noqa: E501
+        # model = core.api.models.get_workflow_execution_metrics_response.GetWorkflowExecutionMetricsResponse()  # noqa: E501
         if include_optional :
-            return WorkflowParameter(
-                name = '0', 
-                value = '0'
+            return GetWorkflowExecutionMetricsResponse(
+                metrics = [
+                    core.api.models.metric.Metric(
+                        name = '0', 
+                        value = 1.337, 
+                        format = '0', )
+                    ]
             )
         else :
-            return WorkflowParameter(
+            return GetWorkflowExecutionMetricsResponse(
         )
 
-    def testWorkflowParameter(self):
-        """Test WorkflowParameter"""
+    def testGetWorkflowExecutionMetricsResponse(self):
+        """Test GetWorkflowExecutionMetricsResponse"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

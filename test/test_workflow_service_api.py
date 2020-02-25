@@ -34,8 +34,8 @@ class TestWorkflowServiceApi(unittest.TestCase):
         """
         pass
 
-    def test_create_workflow(self):
-        """Test case for create_workflow
+    def test_create_workflow_execution(self):
+        """Test case for create_workflow_execution
 
         """
         pass
@@ -52,20 +52,20 @@ class TestWorkflowServiceApi(unittest.TestCase):
         """
         pass
 
-    def test_get_workflow(self):
-        """Test case for get_workflow
+    def test_get_workflow_execution(self):
+        """Test case for get_workflow_execution
 
         """
         pass
 
-    def test_get_workflow_logs(self):
-        """Test case for get_workflow_logs
+    def test_get_workflow_execution_logs(self):
+        """Test case for get_workflow_execution_logs
 
         """
         pass
 
-    def test_get_workflow_metrics(self):
-        """Test case for get_workflow_metrics
+    def test_get_workflow_execution_metrics(self):
+        """Test case for get_workflow_execution_metrics
 
         """
         pass
@@ -82,6 +82,12 @@ class TestWorkflowServiceApi(unittest.TestCase):
         """
         pass
 
+    def test_list_workflow_executions(self):
+        """Test case for list_workflow_executions
+
+        """
+        pass
+
     def test_list_workflow_template_versions(self):
         """Test case for list_workflow_template_versions
 
@@ -94,20 +100,14 @@ class TestWorkflowServiceApi(unittest.TestCase):
         """
         pass
 
-    def test_list_workflows(self):
-        """Test case for list_workflows
+    def test_resubmit_workflow_execution(self):
+        """Test case for resubmit_workflow_execution
 
         """
         pass
 
-    def test_resubmit_workflow(self):
-        """Test case for resubmit_workflow
-
-        """
-        pass
-
-    def test_terminate_workflow(self):
-        """Test case for terminate_workflow
+    def test_terminate_workflow_execution(self):
+        """Test case for terminate_workflow_execution
 
         """
         pass
@@ -118,8 +118,8 @@ class TestWorkflowServiceApi(unittest.TestCase):
         """
         pass
 
-    def test_watch_workflow(self):
-        """Test case for watch_workflow
+    def test_watch_workflow_execution(self):
+        """Test case for watch_workflow_execution
 
         """
         pass

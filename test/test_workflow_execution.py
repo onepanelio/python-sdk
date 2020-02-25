@@ -16,11 +16,11 @@ import unittest
 import datetime
 
 import core.api
-from core.api.models.workflow import Workflow  # noqa: E501
+from core.api.models.workflow_execution import WorkflowExecution  # noqa: E501
 from core.api.rest import ApiException
 
-class TestWorkflow(unittest.TestCase):
-    """Workflow unit test stubs"""
+class TestWorkflowExecution(unittest.TestCase):
+    """WorkflowExecution unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,13 +29,13 @@ class TestWorkflow(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test Workflow
+        """Test WorkflowExecution
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = core.api.models.workflow.Workflow()  # noqa: E501
+        # model = core.api.models.workflow_execution.WorkflowExecution()  # noqa: E501
         if include_optional :
-            return Workflow(
+            return WorkflowExecution(
                 created_at = '0', 
                 uid = '0', 
                 name = '0', 
@@ -44,7 +44,7 @@ class TestWorkflow(unittest.TestCase):
                 finished_at = '0', 
                 manifest = '0', 
                 parameters = [
-                    core.api.models.workflow_parameter.WorkflowParameter(
+                    core.api.models.workflow_execution_parameter.WorkflowExecutionParameter(
                         name = '0', 
                         value = '0', )
                     ], 
@@ -58,11 +58,11 @@ class TestWorkflow(unittest.TestCase):
                     is_archived = True, )
             )
         else :
-            return Workflow(
+            return WorkflowExecution(
         )
 
-    def testWorkflow(self):
-        """Test Workflow"""
+    def testWorkflowExecution(self):
+        """Test WorkflowExecution"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

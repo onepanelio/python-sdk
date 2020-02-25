@@ -16,11 +16,11 @@ import unittest
 import datetime
 
 import core.api
-from core.api.models.list_workflows_response import ListWorkflowsResponse  # noqa: E501
+from core.api.models.list_workflow_executions_response import ListWorkflowExecutionsResponse  # noqa: E501
 from core.api.rest import ApiException
 
-class TestListWorkflowsResponse(unittest.TestCase):
-    """ListWorkflowsResponse unit test stubs"""
+class TestListWorkflowExecutionsResponse(unittest.TestCase):
+    """ListWorkflowExecutionsResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,16 +29,16 @@ class TestListWorkflowsResponse(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test ListWorkflowsResponse
+        """Test ListWorkflowExecutionsResponse
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = core.api.models.list_workflows_response.ListWorkflowsResponse()  # noqa: E501
+        # model = core.api.models.list_workflow_executions_response.ListWorkflowExecutionsResponse()  # noqa: E501
         if include_optional :
-            return ListWorkflowsResponse(
+            return ListWorkflowExecutionsResponse(
                 count = 56, 
-                workflows = [
-                    core.api.models.workflow.Workflow(
+                workflow_executions = [
+                    core.api.models.workflow_execution.WorkflowExecution(
                         created_at = '0', 
                         uid = '0', 
                         name = '0', 
@@ -47,7 +47,7 @@ class TestListWorkflowsResponse(unittest.TestCase):
                         finished_at = '0', 
                         manifest = '0', 
                         parameters = [
-                            core.api.models.workflow_parameter.WorkflowParameter(
+                            core.api.models.workflow_execution_parameter.WorkflowExecutionParameter(
                                 name = '0', 
                                 value = '0', )
                             ], 
@@ -65,11 +65,11 @@ class TestListWorkflowsResponse(unittest.TestCase):
                 total_count = 56
             )
         else :
-            return ListWorkflowsResponse(
+            return ListWorkflowExecutionsResponse(
         )
 
-    def testListWorkflowsResponse(self):
-        """Test ListWorkflowsResponse"""
+    def testListWorkflowExecutionsResponse(self):
+        """Test ListWorkflowExecutionsResponse"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

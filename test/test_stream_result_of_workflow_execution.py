@@ -16,11 +16,11 @@ import unittest
 import datetime
 
 import core.api
-from core.api.models.stream_result_of_workflow import StreamResultOfWorkflow  # noqa: E501
+from core.api.models.stream_result_of_workflow_execution import StreamResultOfWorkflowExecution  # noqa: E501
 from core.api.rest import ApiException
 
-class TestStreamResultOfWorkflow(unittest.TestCase):
-    """StreamResultOfWorkflow unit test stubs"""
+class TestStreamResultOfWorkflowExecution(unittest.TestCase):
+    """StreamResultOfWorkflowExecution unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,14 +29,14 @@ class TestStreamResultOfWorkflow(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test StreamResultOfWorkflow
+        """Test StreamResultOfWorkflowExecution
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = core.api.models.stream_result_of_workflow.StreamResultOfWorkflow()  # noqa: E501
+        # model = core.api.models.stream_result_of_workflow_execution.StreamResultOfWorkflowExecution()  # noqa: E501
         if include_optional :
-            return StreamResultOfWorkflow(
-                result = core.api.models.workflow.Workflow(
+            return StreamResultOfWorkflowExecution(
+                result = core.api.models.workflow_execution.WorkflowExecution(
                     created_at = '0', 
                     uid = '0', 
                     name = '0', 
@@ -45,7 +45,7 @@ class TestStreamResultOfWorkflow(unittest.TestCase):
                     finished_at = '0', 
                     manifest = '0', 
                     parameters = [
-                        core.api.models.workflow_parameter.WorkflowParameter(
+                        core.api.models.workflow_execution_parameter.WorkflowExecutionParameter(
                             name = '0', 
                             value = '0', )
                         ], 
@@ -69,11 +69,11 @@ class TestStreamResultOfWorkflow(unittest.TestCase):
                         ], )
             )
         else :
-            return StreamResultOfWorkflow(
+            return StreamResultOfWorkflowExecution(
         )
 
-    def testStreamResultOfWorkflow(self):
-        """Test StreamResultOfWorkflow"""
+    def testStreamResultOfWorkflowExecution(self):
+        """Test StreamResultOfWorkflowExecution"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

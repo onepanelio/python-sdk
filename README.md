@@ -51,6 +51,11 @@ import core.api
 from core.api.rest import ApiException
 from pprint import pprint
 
+configuration = core.api.Configuration()
+# Configure API key authorization: bearer
+configuration.api_key['authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Defining host is optional and default to http://localhost
 configuration.host = "http://localhost"
@@ -83,21 +88,21 @@ Class | Method | HTTP request | Description
 *SecretServiceApi* | [**secret_exists**](docs/SecretServiceApi.md#secret_exists) | **GET** /apis/v1beta1/{namespace}/secrets/{name}/exists | 
 *SecretServiceApi* | [**update_secret_key_value**](docs/SecretServiceApi.md#update_secret_key_value) | **PATCH** /apis/v1beta1/{namespace}/secrets/{secret.name} | 
 *WorkflowServiceApi* | [**archive_workflow_template**](docs/WorkflowServiceApi.md#archive_workflow_template) | **PUT** /apis/v1beta1/{namespace}/workflow_templates/{uid}/archive | 
-*WorkflowServiceApi* | [**create_workflow**](docs/WorkflowServiceApi.md#create_workflow) | **POST** /apis/v1beta1/{namespace}/workflows | 
+*WorkflowServiceApi* | [**create_workflow_execution**](docs/WorkflowServiceApi.md#create_workflow_execution) | **POST** /apis/v1beta1/{namespace}/workflow_executions | 
 *WorkflowServiceApi* | [**create_workflow_template**](docs/WorkflowServiceApi.md#create_workflow_template) | **POST** /apis/v1beta1/{namespace}/workflow_templates | 
 *WorkflowServiceApi* | [**create_workflow_template_version**](docs/WorkflowServiceApi.md#create_workflow_template_version) | **POST** /apis/v1beta1/{namespace}/workflow_templates/{workflowTemplate.uid}/versions | 
-*WorkflowServiceApi* | [**get_workflow**](docs/WorkflowServiceApi.md#get_workflow) | **GET** /apis/v1beta1/{namespace}/workflows/{name} | 
-*WorkflowServiceApi* | [**get_workflow_logs**](docs/WorkflowServiceApi.md#get_workflow_logs) | **GET** /apis/v1beta1/{namespace}/workflows/{name}/pods/{podName}/containers/{containerName}/logs | 
-*WorkflowServiceApi* | [**get_workflow_metrics**](docs/WorkflowServiceApi.md#get_workflow_metrics) | **GET** /apis/v1beta1/{namespace}/workflows/{name}/pods/{podName}/metrics | 
+*WorkflowServiceApi* | [**get_workflow_execution**](docs/WorkflowServiceApi.md#get_workflow_execution) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name} | 
+*WorkflowServiceApi* | [**get_workflow_execution_logs**](docs/WorkflowServiceApi.md#get_workflow_execution_logs) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/pods/{podName}/containers/{containerName}/logs | 
+*WorkflowServiceApi* | [**get_workflow_execution_metrics**](docs/WorkflowServiceApi.md#get_workflow_execution_metrics) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/pods/{podName}/metrics | 
 *WorkflowServiceApi* | [**get_workflow_template**](docs/WorkflowServiceApi.md#get_workflow_template) | **GET** /apis/v1beta1/{namespace}/workflow_templates/{uid} | 
 *WorkflowServiceApi* | [**get_workflow_template2**](docs/WorkflowServiceApi.md#get_workflow_template2) | **GET** /apis/v1beta1/{namespace}/workflow_templates/{uid}/versions/{version} | 
+*WorkflowServiceApi* | [**list_workflow_executions**](docs/WorkflowServiceApi.md#list_workflow_executions) | **GET** /apis/v1beta1/{namespace}/workflow_executions | 
 *WorkflowServiceApi* | [**list_workflow_template_versions**](docs/WorkflowServiceApi.md#list_workflow_template_versions) | **GET** /apis/v1beta1/{namespace}/workflow_templates/{uid}/versions | 
 *WorkflowServiceApi* | [**list_workflow_templates**](docs/WorkflowServiceApi.md#list_workflow_templates) | **GET** /apis/v1beta1/{namespace}/workflow_templates | 
-*WorkflowServiceApi* | [**list_workflows**](docs/WorkflowServiceApi.md#list_workflows) | **GET** /apis/v1beta1/{namespace}/workflows | 
-*WorkflowServiceApi* | [**resubmit_workflow**](docs/WorkflowServiceApi.md#resubmit_workflow) | **PUT** /apis/v1beta1/{namespace}/workflows/{name}/resubmit | 
-*WorkflowServiceApi* | [**terminate_workflow**](docs/WorkflowServiceApi.md#terminate_workflow) | **PUT** /apis/v1beta1/{namespace}/workflows/{name}/terminate | 
+*WorkflowServiceApi* | [**resubmit_workflow_execution**](docs/WorkflowServiceApi.md#resubmit_workflow_execution) | **PUT** /apis/v1beta1/{namespace}/workflow_executions/{name}/resubmit | 
+*WorkflowServiceApi* | [**terminate_workflow_execution**](docs/WorkflowServiceApi.md#terminate_workflow_execution) | **PUT** /apis/v1beta1/{namespace}/workflow_executions/{name}/terminate | 
 *WorkflowServiceApi* | [**update_workflow_template_version**](docs/WorkflowServiceApi.md#update_workflow_template_version) | **PUT** /apis/v1beta1/{namespace}/workflow_templates/{workflowTemplate.uid}/versions/{workflowTemplate.version} | 
-*WorkflowServiceApi* | [**watch_workflow**](docs/WorkflowServiceApi.md#watch_workflow) | **GET** /apis/v1beta1/{namespace}/workflows/{name}/watch | 
+*WorkflowServiceApi* | [**watch_workflow_execution**](docs/WorkflowServiceApi.md#watch_workflow_execution) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/watch | 
 
 
 ## Documentation For Models
@@ -106,31 +111,37 @@ Class | Method | HTTP request | Description
  - [ArchiveWorkflowTemplateResponse](docs/ArchiveWorkflowTemplateResponse.md)
  - [DeleteSecretKeyResponse](docs/DeleteSecretKeyResponse.md)
  - [DeleteSecretResponse](docs/DeleteSecretResponse.md)
- - [GetWorkflowMetricsResponse](docs/GetWorkflowMetricsResponse.md)
+ - [GetWorkflowExecutionMetricsResponse](docs/GetWorkflowExecutionMetricsResponse.md)
  - [GoogleProtobufAny](docs/GoogleProtobufAny.md)
  - [GrpcGatewayRuntimeError](docs/GrpcGatewayRuntimeError.md)
  - [GrpcGatewayRuntimeStreamError](docs/GrpcGatewayRuntimeStreamError.md)
  - [ListNamespacesResponse](docs/ListNamespacesResponse.md)
  - [ListSecretsResponse](docs/ListSecretsResponse.md)
+ - [ListWorkflowExecutionsResponse](docs/ListWorkflowExecutionsResponse.md)
  - [ListWorkflowTemplateVersionsResponse](docs/ListWorkflowTemplateVersionsResponse.md)
  - [ListWorkflowTemplatesResponse](docs/ListWorkflowTemplatesResponse.md)
- - [ListWorkflowsResponse](docs/ListWorkflowsResponse.md)
  - [LogEntry](docs/LogEntry.md)
  - [Metric](docs/Metric.md)
  - [Namespace](docs/Namespace.md)
  - [Secret](docs/Secret.md)
  - [SecretExistsResponse](docs/SecretExistsResponse.md)
  - [StreamResultOfLogEntry](docs/StreamResultOfLogEntry.md)
- - [StreamResultOfWorkflow](docs/StreamResultOfWorkflow.md)
+ - [StreamResultOfWorkflowExecution](docs/StreamResultOfWorkflowExecution.md)
  - [UpdateSecretKeyValueResponse](docs/UpdateSecretKeyValueResponse.md)
- - [Workflow](docs/Workflow.md)
- - [WorkflowParameter](docs/WorkflowParameter.md)
+ - [WorkflowExecution](docs/WorkflowExecution.md)
+ - [WorkflowExecutionParameter](docs/WorkflowExecutionParameter.md)
  - [WorkflowTemplate](docs/WorkflowTemplate.md)
 
 
 ## Documentation For Authorization
 
- All endpoints do not require authorization.
+
+## bearer
+
+- **Type**: API key
+- **API key parameter name**: authorization
+- **Location**: HTTP header
+
 
 ## Author
 

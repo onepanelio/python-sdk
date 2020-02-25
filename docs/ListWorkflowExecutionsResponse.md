@@ -1,10 +1,10 @@
-# ListWorkflowsResponse
+# ListWorkflowExecutionsResponse
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **int** |  | [optional] 
-**workflows** | [**list[Workflow]**](Workflow.md) |  | [optional] 
+**workflow_executions** | [**list[WorkflowExecution]**](WorkflowExecution.md) |  | [optional] 
 **page** | **int** |  | [optional] 
 **pages** | **int** |  | [optional] 
 **total_count** | **int** |  | [optional] 
