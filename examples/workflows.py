@@ -158,7 +158,7 @@ with core.api.ApiClient() as api_client:
 
     try:
         print("WorkflowServiceApi->create_workflow")
-        workflow_body = core.api.Workflow()  # Workflow |
+        workflow_body = core.api.WorkflowExecution()  # Workflow |
         workflow_body.parameters = [{"name":"SLACK_WEBHOOK", "value":"https://hooks.slack.com/services/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"}, {"name":"PARAM2", "value":"VALUE2"}]
         workflow_template = core.api.WorkflowTemplate()
         workflow_template.uid = workflow_template_uid
@@ -166,7 +166,7 @@ with core.api.ApiClient() as api_client:
         workflow_template.manifest = workflow_template_manifest
         workflow_template.version = workflow_template_version
         workflow_body.workflow_template = workflow_template
-        api_response = api_instance.create_workflow(namespace, workflow_body)
+        api_response = api_instance.create_workflow_execution(namespace, workflow_body)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->create_workflow: %s\n" % e)
@@ -176,7 +176,7 @@ with core.api.ApiClient() as api_client:
     page = 1
     try:
         print("WorkflowServiceApi->list_workflows")
-        workflows = api_response = api_instance.list_workflows(namespace, workflow_template_uid=workflow_template_uid, workflow_template_version=workflow_template_version, page_size=page_size, page=page)
+        workflows = api_response = api_instance.list_workflow_executions(namespace, workflow_template_uid=workflow_template_uid, workflow_template_version=workflow_template_version, page_size=page_size, page=page)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->list_workflows: %s\n" % e)
@@ -212,7 +212,7 @@ with core.api.ApiClient() as api_client:
         if workflows.count is not None and workflows.count > 0:
             # Consider adding a sleep command here for some logs to be generated
             specific_workflow_name = workflows.workflows[0].name
-            specific_workflow_to_use = api_response = api_instance.get_workflow(namespace, specific_workflow_name)
+            specific_workflow_to_use = api_response = api_instance.get_workflow_execution(namespace, specific_workflow_name)
             pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->get_workflow: %s\n" % e)
@@ -237,7 +237,7 @@ with core.api.ApiClient() as api_client:
             pod_name = node_to_use['name']  # str |
             # todo - Need to return this information from CORE API for multiple container instances
             container_name = 'main'  # str |
-            api_response = api_instance.get_workflow_logs(namespace, specific_workflow_to_use.name, pod_name, container_name)
+            api_response = api_instance.get_workflow_execution_logs(namespace, specific_workflow_to_use.name, pod_name, container_name)
             pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->get_workflow_logs: %s\n" % e)
