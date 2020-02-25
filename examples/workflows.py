@@ -100,8 +100,12 @@ spec:
       args: ['SLACK_USERNAME=Worker SLACK_TITLE="{{workflow.name}} {{workflow.status}}" SLACK_ICON=https://www.gravatar.com/avatar/5c4478592fe00878f62f0027be59c1bd SLACK_MESSAGE="Worfklow failed" ./slack-notify']        
     """
 
+
+configuration = core.api.Configuration()
+configuration.api_key['authorization'] = ''
+configuration.api_key_prefix['authorization'] = 'Bearer'  # Enter a context with an instance of the API client
 # Enter a context with an instance of the API client
-with core.api.ApiClient() as api_client:
+with core.api.ApiClient(configuration) as api_client:
     api_client.configuration.host = "http://localhost:8888"
 
     name_create_and_use_template = uuid.uuid4().hex.upper()[0:6]
