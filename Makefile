@@ -1,0 +1,16 @@
+init:
+ifndef path
+	err = $(error path is undefined)
+	$(err)
+endif
+	mkdir -p .build
+	cp $(path) .build/
+
+sdk: init
+	# generate sdk
+	docker run --rm -v ${PWD}/.build:/build openapitools/openapi-generator-cli \
+		generate -p packageName=onepanel.core.api,projectName=onepanel.core.api -i /build/api.swagger.json -g python -o /build/
+	rm .build/api.swagger.json
+	
+	# Update repository files with generated files
+	cp -r .build/* .

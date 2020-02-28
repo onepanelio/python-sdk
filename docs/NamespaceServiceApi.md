@@ -1,4 +1,4 @@
-# core.api.NamespaceServiceApi
+# onepanel.core.api.NamespaceServiceApi
 
 All URIs are relative to *http://localhost*
 
@@ -18,21 +18,22 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import core.api
-from core.api.rest import ApiException
+import onepanel.core.api
+from onepanel.core.api.rest import ApiException
 from pprint import pprint
-configuration = core.api.Configuration()
+configuration = onepanel.core.api.Configuration()
 # Configure API key authorization: bearer
 configuration.api_key['authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Defining host is optional and default to http://localhost
-configuration.host = "http://localhost:8887"
+configuration.host = "http://localhost"
+
 # Enter a context with an instance of the API client
-with core.api.ApiClient(configuration) as api_client:
+with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = core.api.NamespaceServiceApi(api_client)
+    api_instance = onepanel.core.api.NamespaceServiceApi(api_client)
     
     try:
         api_response = api_instance.list_namespaces()

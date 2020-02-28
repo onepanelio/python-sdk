@@ -1,4 +1,4 @@
-# core.api.SecretServiceApi
+# onepanel.core.api.SecretServiceApi
 
 All URIs are relative to *http://localhost*
 
@@ -25,24 +25,25 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import core.api
-from core.api.rest import ApiException
+import onepanel.core.api
+from onepanel.core.api.rest import ApiException
 from pprint import pprint
-configuration = core.api.Configuration()
+configuration = onepanel.core.api.Configuration()
 # Configure API key authorization: bearer
 configuration.api_key['authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Defining host is optional and default to http://localhost
-configuration.host = "http://localhost:8887"
+configuration.host = "http://localhost"
+
 # Enter a context with an instance of the API client
-with core.api.ApiClient(configuration) as api_client:
+with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = core.api.SecretServiceApi(api_client)
+    api_instance = onepanel.core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 secret_name = 'secret_name_example' # str | 
-body = core.api.Secret() # Secret | 
+body = onepanel.core.api.Secret() # Secret | 
 
     try:
         api_response = api_instance.add_secret_key_value(namespace, secret_name, body)
@@ -91,23 +92,24 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import core.api
-from core.api.rest import ApiException
+import onepanel.core.api
+from onepanel.core.api.rest import ApiException
 from pprint import pprint
-configuration = core.api.Configuration()
+configuration = onepanel.core.api.Configuration()
 # Configure API key authorization: bearer
 configuration.api_key['authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Defining host is optional and default to http://localhost
-configuration.host = "http://localhost:8887"
+configuration.host = "http://localhost"
+
 # Enter a context with an instance of the API client
-with core.api.ApiClient(configuration) as api_client:
+with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = core.api.SecretServiceApi(api_client)
+    api_instance = onepanel.core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-body = core.api.Secret() # Secret | 
+body = onepanel.core.api.Secret() # Secret | 
 
     try:
         api_response = api_instance.create_secret(namespace, body)
@@ -155,21 +157,22 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import core.api
-from core.api.rest import ApiException
+import onepanel.core.api
+from onepanel.core.api.rest import ApiException
 from pprint import pprint
-configuration = core.api.Configuration()
+configuration = onepanel.core.api.Configuration()
 # Configure API key authorization: bearer
 configuration.api_key['authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Defining host is optional and default to http://localhost
-configuration.host = "http://localhost:8887"
+configuration.host = "http://localhost"
+
 # Enter a context with an instance of the API client
-with core.api.ApiClient(configuration) as api_client:
+with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = core.api.SecretServiceApi(api_client)
+    api_instance = onepanel.core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 name = 'name_example' # str | 
 
@@ -219,21 +222,22 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import core.api
-from core.api.rest import ApiException
+import onepanel.core.api
+from onepanel.core.api.rest import ApiException
 from pprint import pprint
-configuration = core.api.Configuration()
+configuration = onepanel.core.api.Configuration()
 # Configure API key authorization: bearer
 configuration.api_key['authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Defining host is optional and default to http://localhost
-configuration.host = "http://localhost:8887"
+configuration.host = "http://localhost"
+
 # Enter a context with an instance of the API client
-with core.api.ApiClient(configuration) as api_client:
+with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = core.api.SecretServiceApi(api_client)
+    api_instance = onepanel.core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 secret_name = 'secret_name_example' # str | 
 key = 'key_example' # str | 
@@ -285,21 +289,22 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import core.api
-from core.api.rest import ApiException
+import onepanel.core.api
+from onepanel.core.api.rest import ApiException
 from pprint import pprint
-configuration = core.api.Configuration()
+configuration = onepanel.core.api.Configuration()
 # Configure API key authorization: bearer
 configuration.api_key['authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Defining host is optional and default to http://localhost
-configuration.host = "http://localhost:8887"
+configuration.host = "http://localhost"
+
 # Enter a context with an instance of the API client
-with core.api.ApiClient(configuration) as api_client:
+with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = core.api.SecretServiceApi(api_client)
+    api_instance = onepanel.core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 name = 'name_example' # str | 
 
@@ -349,21 +354,22 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import core.api
-from core.api.rest import ApiException
+import onepanel.core.api
+from onepanel.core.api.rest import ApiException
 from pprint import pprint
-configuration = core.api.Configuration()
+configuration = onepanel.core.api.Configuration()
 # Configure API key authorization: bearer
 configuration.api_key['authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Defining host is optional and default to http://localhost
-configuration.host = "http://localhost:8887"
+configuration.host = "http://localhost"
+
 # Enter a context with an instance of the API client
-with core.api.ApiClient(configuration) as api_client:
+with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = core.api.SecretServiceApi(api_client)
+    api_instance = onepanel.core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 
     try:
@@ -411,21 +417,22 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import core.api
-from core.api.rest import ApiException
+import onepanel.core.api
+from onepanel.core.api.rest import ApiException
 from pprint import pprint
-configuration = core.api.Configuration()
+configuration = onepanel.core.api.Configuration()
 # Configure API key authorization: bearer
 configuration.api_key['authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Defining host is optional and default to http://localhost
-configuration.host = "http://localhost:8887"
+configuration.host = "http://localhost"
+
 # Enter a context with an instance of the API client
-with core.api.ApiClient(configuration) as api_client:
+with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = core.api.SecretServiceApi(api_client)
+    api_instance = onepanel.core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 name = 'name_example' # str | 
 
@@ -475,24 +482,25 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import core.api
-from core.api.rest import ApiException
+import onepanel.core.api
+from onepanel.core.api.rest import ApiException
 from pprint import pprint
-configuration = core.api.Configuration()
+configuration = onepanel.core.api.Configuration()
 # Configure API key authorization: bearer
 configuration.api_key['authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Defining host is optional and default to http://localhost
-configuration.host = "http://localhost:8887"
+configuration.host = "http://localhost"
+
 # Enter a context with an instance of the API client
-with core.api.ApiClient(configuration) as api_client:
+with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = core.api.SecretServiceApi(api_client)
+    api_instance = onepanel.core.api.SecretServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 secret_name = 'secret_name_example' # str | 
-body = core.api.Secret() # Secret | 
+body = onepanel.core.api.Secret() # Secret | 
 
     try:
         api_response = api_instance.update_secret_key_value(namespace, secret_name, body)
