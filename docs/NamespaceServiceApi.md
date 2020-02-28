@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ### Example
 
-* Api Key Authentication (bearer):
+* Api Key Authentication (Bearer):
 ```python
 from __future__ import print_function
 import time
@@ -22,7 +22,7 @@ import onepanel.core.api
 from onepanel.core.api.rest import ApiException
 from pprint import pprint
 configuration = onepanel.core.api.Configuration()
-# Configure API key authorization: bearer
+# Configure API key authorization: Bearer
 configuration.api_key['authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['authorization'] = 'Bearer'
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[bearer](../README.md#bearer)
+[Bearer](../README.md#Bearer)
 
 ### HTTP request headers
 

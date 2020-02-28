@@ -1,4 +1,8 @@
 init:
+ifndef version
+	err = $(error version is undefined)
+	$(err)
+endif
 ifndef path
 	err = $(error path is undefined)
 	$(err)
@@ -9,7 +13,7 @@ endif
 sdk: init
 	# generate sdk
 	docker run --rm -v ${PWD}/.build:/build openapitools/openapi-generator-cli \
-		generate -p packageName=onepanel.core.api,projectName=onepanel.core.api -i /build/api.swagger.json -g python -o /build/
+		generate -p packageName=onepanel.core.api,projectName=onepanel.core.api,packageVersion=$(version) -i /build/api.swagger.json -g python -o /build/
 	rm .build/api.swagger.json
 	
 	# Update repository files with generated files
