@@ -1,3 +1,5 @@
+.DEFAULT_GOAL := sdk
+
 init:
 ifndef version
 	err = $(error version is undefined)
