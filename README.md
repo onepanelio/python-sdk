@@ -18,9 +18,9 @@ Python 2.7 and 3.4+
 If the python package is hosted on a repository, you can install directly using:
 
 ```sh
-pip install onepanel-core-sdk
+pip install onepanel-core
 ```
-(you may need to run `pip` with root permission: `sudo pip install onepanel-core-sdk`)
+(you may need to run `pip` with root permission: `sudo pip install onepanel-core`)
 
 Then import the package:
 ```python

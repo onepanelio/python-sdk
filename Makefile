@@ -22,4 +22,4 @@ sdk: init
 	cp -r .build/* .
 
 	# Update generated files
-	sed -i '' 's/git\+https:\/\/github.com\/GIT_USER_ID\/GIT_REPO_ID.git/onepanel-core-sdk/g' README.md
+	sed -i '' 's/git\+https:\/\/github.com\/GIT_USER_ID\/GIT_REPO_ID.git/onepanel-core/g' README.md
