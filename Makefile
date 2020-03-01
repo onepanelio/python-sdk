@@ -20,3 +20,6 @@ sdk: init
 	
 	# Update repository files with generated files
 	cp -r .build/* .
+
+	# Update generated files
+	sed -i '' 's/git\+https:\/\/github.com\/GIT_USER_ID\/GIT_REPO_ID.git/onepanel-core-sdk/g' README.md
