@@ -16,12 +16,15 @@ from __future__ import absolute_import
 # import models into model package
 from onepanel.core.api.models.add_secret_key_value_response import AddSecretKeyValueResponse
 from onepanel.core.api.models.archive_workflow_template_response import ArchiveWorkflowTemplateResponse
+from onepanel.core.api.models.artifact_response import ArtifactResponse
 from onepanel.core.api.models.delete_secret_key_response import DeleteSecretKeyResponse
 from onepanel.core.api.models.delete_secret_response import DeleteSecretResponse
+from onepanel.core.api.models.file import File
 from onepanel.core.api.models.get_workflow_execution_metrics_response import GetWorkflowExecutionMetricsResponse
 from onepanel.core.api.models.google_protobuf_any import GoogleProtobufAny
 from onepanel.core.api.models.grpc_gateway_runtime_error import GrpcGatewayRuntimeError
 from onepanel.core.api.models.grpc_gateway_runtime_stream_error import GrpcGatewayRuntimeStreamError
+from onepanel.core.api.models.list_files_response import ListFilesResponse
 from onepanel.core.api.models.list_namespaces_response import ListNamespacesResponse
 from onepanel.core.api.models.list_secrets_response import ListSecretsResponse
 from onepanel.core.api.models.list_workflow_executions_response import ListWorkflowExecutionsResponse

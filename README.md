@@ -18,9 +18,9 @@ Python 2.7 and 3.4+
 If the python package is hosted on a repository, you can install directly using:
 
 ```sh
-pip install onepanel-core
+pip install onepanel-core-sdk
 ```
-(you may need to run `pip` with root permission: `sudo pip install onepanel-core`)
+(you may need to run `pip` with root permission: `sudo pip install onepanel-core-sdk`)
 
 Then import the package:
 ```python
@@ -95,11 +95,13 @@ Class | Method | HTTP request | Description
 *WorkflowServiceApi* | [**create_workflow_execution**](docs/WorkflowServiceApi.md#create_workflow_execution) | **POST** /apis/v1beta1/{namespace}/workflow_executions | 
 *WorkflowServiceApi* | [**create_workflow_template**](docs/WorkflowServiceApi.md#create_workflow_template) | **POST** /apis/v1beta1/{namespace}/workflow_templates | 
 *WorkflowServiceApi* | [**create_workflow_template_version**](docs/WorkflowServiceApi.md#create_workflow_template_version) | **POST** /apis/v1beta1/{namespace}/workflow_templates/{workflowTemplate.uid}/versions | 
+*WorkflowServiceApi* | [**get_artifact**](docs/WorkflowServiceApi.md#get_artifact) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/artifacts/{key} | 
 *WorkflowServiceApi* | [**get_workflow_execution**](docs/WorkflowServiceApi.md#get_workflow_execution) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name} | 
 *WorkflowServiceApi* | [**get_workflow_execution_logs**](docs/WorkflowServiceApi.md#get_workflow_execution_logs) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/pods/{podName}/containers/{containerName}/logs | 
 *WorkflowServiceApi* | [**get_workflow_execution_metrics**](docs/WorkflowServiceApi.md#get_workflow_execution_metrics) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/pods/{podName}/metrics | 
 *WorkflowServiceApi* | [**get_workflow_template**](docs/WorkflowServiceApi.md#get_workflow_template) | **GET** /apis/v1beta1/{namespace}/workflow_templates/{uid} | 
 *WorkflowServiceApi* | [**get_workflow_template2**](docs/WorkflowServiceApi.md#get_workflow_template2) | **GET** /apis/v1beta1/{namespace}/workflow_templates/{uid}/versions/{version} | 
+*WorkflowServiceApi* | [**list_files**](docs/WorkflowServiceApi.md#list_files) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/files/{path} | 
 *WorkflowServiceApi* | [**list_workflow_executions**](docs/WorkflowServiceApi.md#list_workflow_executions) | **GET** /apis/v1beta1/{namespace}/workflow_executions | 
 *WorkflowServiceApi* | [**list_workflow_template_versions**](docs/WorkflowServiceApi.md#list_workflow_template_versions) | **GET** /apis/v1beta1/{namespace}/workflow_templates/{uid}/versions | 
 *WorkflowServiceApi* | [**list_workflow_templates**](docs/WorkflowServiceApi.md#list_workflow_templates) | **GET** /apis/v1beta1/{namespace}/workflow_templates | 
@@ -113,12 +115,15 @@ Class | Method | HTTP request | Description
 
  - [AddSecretKeyValueResponse](docs/AddSecretKeyValueResponse.md)
  - [ArchiveWorkflowTemplateResponse](docs/ArchiveWorkflowTemplateResponse.md)
+ - [ArtifactResponse](docs/ArtifactResponse.md)
  - [DeleteSecretKeyResponse](docs/DeleteSecretKeyResponse.md)
  - [DeleteSecretResponse](docs/DeleteSecretResponse.md)
+ - [File](docs/File.md)
  - [GetWorkflowExecutionMetricsResponse](docs/GetWorkflowExecutionMetricsResponse.md)
  - [GoogleProtobufAny](docs/GoogleProtobufAny.md)
  - [GrpcGatewayRuntimeError](docs/GrpcGatewayRuntimeError.md)
  - [GrpcGatewayRuntimeStreamError](docs/GrpcGatewayRuntimeStreamError.md)
+ - [ListFilesResponse](docs/ListFilesResponse.md)
  - [ListNamespacesResponse](docs/ListNamespacesResponse.md)
  - [ListSecretsResponse](docs/ListSecretsResponse.md)
  - [ListWorkflowExecutionsResponse](docs/ListWorkflowExecutionsResponse.md)

@@ -8,11 +8,13 @@ Method | HTTP request | Description
 [**create_workflow_execution**](WorkflowServiceApi.md#create_workflow_execution) | **POST** /apis/v1beta1/{namespace}/workflow_executions | 
 [**create_workflow_template**](WorkflowServiceApi.md#create_workflow_template) | **POST** /apis/v1beta1/{namespace}/workflow_templates | 
 [**create_workflow_template_version**](WorkflowServiceApi.md#create_workflow_template_version) | **POST** /apis/v1beta1/{namespace}/workflow_templates/{workflowTemplate.uid}/versions | 
+[**get_artifact**](WorkflowServiceApi.md#get_artifact) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/artifacts/{key} | 
 [**get_workflow_execution**](WorkflowServiceApi.md#get_workflow_execution) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name} | 
 [**get_workflow_execution_logs**](WorkflowServiceApi.md#get_workflow_execution_logs) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/pods/{podName}/containers/{containerName}/logs | 
 [**get_workflow_execution_metrics**](WorkflowServiceApi.md#get_workflow_execution_metrics) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/pods/{podName}/metrics | 
 [**get_workflow_template**](WorkflowServiceApi.md#get_workflow_template) | **GET** /apis/v1beta1/{namespace}/workflow_templates/{uid} | 
 [**get_workflow_template2**](WorkflowServiceApi.md#get_workflow_template2) | **GET** /apis/v1beta1/{namespace}/workflow_templates/{uid}/versions/{version} | 
+[**list_files**](WorkflowServiceApi.md#list_files) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/files/{path} | 
 [**list_workflow_executions**](WorkflowServiceApi.md#list_workflow_executions) | **GET** /apis/v1beta1/{namespace}/workflow_executions | 
 [**list_workflow_template_versions**](WorkflowServiceApi.md#list_workflow_template_versions) | **GET** /apis/v1beta1/{namespace}/workflow_templates/{uid}/versions | 
 [**list_workflow_templates**](WorkflowServiceApi.md#list_workflow_templates) | **GET** /apis/v1beta1/{namespace}/workflow_templates | 
@@ -274,6 +276,73 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_artifact**
+> ArtifactResponse get_artifact(namespace, name, key)
+
+
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import onepanel.core.api
+from onepanel.core.api.rest import ApiException
+from pprint import pprint
+configuration = onepanel.core.api.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost:8888
+configuration.host = "http://localhost:8888"
+
+# Enter a context with an instance of the API client
+with onepanel.core.api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
+    namespace = 'namespace_example' # str | 
+name = 'name_example' # str | 
+key = 'key_example' # str | 
+
+    try:
+        api_response = api_instance.get_artifact(namespace, name, key)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WorkflowServiceApi->get_artifact: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **namespace** | **str**|  | 
+ **name** | **str**|  | 
+ **key** | **str**|  | 
+
+### Return type
+
+[**ArtifactResponse**](ArtifactResponse.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -601,6 +670,73 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WorkflowTemplate**](WorkflowTemplate.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_files**
+> ListFilesResponse list_files(namespace, name, path)
+
+
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import onepanel.core.api
+from onepanel.core.api.rest import ApiException
+from pprint import pprint
+configuration = onepanel.core.api.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost:8888
+configuration.host = "http://localhost:8888"
+
+# Enter a context with an instance of the API client
+with onepanel.core.api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
+    namespace = 'namespace_example' # str | 
+name = 'name_example' # str | 
+path = 'path_example' # str | 
+
+    try:
+        api_response = api_instance.list_files(namespace, name, path)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WorkflowServiceApi->list_files: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **namespace** | **str**|  | 
+ **name** | **str**|  | 
+ **path** | **str**|  | 
+
+### Return type
+
+[**ListFilesResponse**](ListFilesResponse.md)
 
 ### Authorization
 
