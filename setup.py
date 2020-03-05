@@ -26,14 +26,18 @@ REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
 setup(
     name=NAME,
     version=VERSION,
-    description="Onepanel Core",
-    author="Onepanel Core project",
-    author_email="team@openapitools.org",
+    description="Onepanel Core - Python SDK",
+    author="Onepanel Team",
+    author_email="info@onepanel.io",
     url="",
-    keywords=["OpenAPI", "OpenAPI-Generator", "Onepanel Core"],
+    keywords=["OpenAPI", "OpenAPI-Generator", "Onepanel Core","Python SDK"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "Operating System :: OS Independent",
+    ],
     long_description="""\
     Onepanel Core project API  # noqa: E501
     """
