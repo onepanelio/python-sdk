@@ -40,8 +40,9 @@ class WorkflowExecution(object):
         'started_at': 'str',
         'finished_at': 'str',
         'manifest': 'str',
-        'parameters': 'list[WorkflowExecutionParameter]',
-        'workflow_template': 'WorkflowTemplate'
+        'parameters': 'list[Parameter]',
+        'workflow_template': 'WorkflowTemplate',
+        'labels': 'list[KeyValue]'
     }
 
     attribute_map = {
@@ -53,10 +54,11 @@ class WorkflowExecution(object):
         'finished_at': 'finishedAt',
         'manifest': 'manifest',
         'parameters': 'parameters',
-        'workflow_template': 'workflowTemplate'
+        'workflow_template': 'workflowTemplate',
+        'labels': 'labels'
     }
 
-    def __init__(self, created_at=None, uid=None, name=None, phase=None, started_at=None, finished_at=None, manifest=None, parameters=None, workflow_template=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, created_at=None, uid=None, name=None, phase=None, started_at=None, finished_at=None, manifest=None, parameters=None, workflow_template=None, labels=None, local_vars_configuration=None):  # noqa: E501
         """WorkflowExecution - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +73,7 @@ class WorkflowExecution(object):
         self._manifest = None
         self._parameters = None
         self._workflow_template = None
+        self._labels = None
         self.discriminator = None
 
         if created_at is not None:
@@ -91,6 +94,8 @@ class WorkflowExecution(object):
             self.parameters = parameters
         if workflow_template is not None:
             self.workflow_template = workflow_template
+        if labels is not None:
+            self.labels = labels
 
     @property
     def created_at(self):
@@ -245,7 +250,7 @@ class WorkflowExecution(object):
 
 
         :return: The parameters of this WorkflowExecution.  # noqa: E501
-        :rtype: list[WorkflowExecutionParameter]
+        :rtype: list[Parameter]
         """
         return self._parameters
 
@@ -255,7 +260,7 @@ class WorkflowExecution(object):
 
 
         :param parameters: The parameters of this WorkflowExecution.  # noqa: E501
-        :type: list[WorkflowExecutionParameter]
+        :type: list[Parameter]
         """
 
         self._parameters = parameters
@@ -280,6 +285,27 @@ class WorkflowExecution(object):
         """
 
         self._workflow_template = workflow_template
+
+    @property
+    def labels(self):
+        """Gets the labels of this WorkflowExecution.  # noqa: E501
+
+
+        :return: The labels of this WorkflowExecution.  # noqa: E501
+        :rtype: list[KeyValue]
+        """
+        return self._labels
+
+    @labels.setter
+    def labels(self, labels):
+        """Sets the labels of this WorkflowExecution.
+
+
+        :param labels: The labels of this WorkflowExecution.  # noqa: E501
+        :type: list[KeyValue]
+        """
+
+        self._labels = labels
 
     def to_dict(self):
         """Returns the model properties as a dict"""
