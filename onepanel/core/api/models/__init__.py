@@ -18,7 +18,6 @@ from onepanel.core.api.models.add_secret_key_value_response import AddSecretKeyV
 from onepanel.core.api.models.archive_workflow_template_response import ArchiveWorkflowTemplateResponse
 from onepanel.core.api.models.artifact_response import ArtifactResponse
 from onepanel.core.api.models.create_workflow_execution_request import CreateWorkflowExecutionRequest
-from onepanel.core.api.models.create_workspace_request import CreateWorkspaceRequest
 from onepanel.core.api.models.cron_workflow import CronWorkflow
 from onepanel.core.api.models.cron_workflow_statistics_report import CronWorkflowStatisticsReport
 from onepanel.core.api.models.delete_secret_key_response import DeleteSecretKeyResponse

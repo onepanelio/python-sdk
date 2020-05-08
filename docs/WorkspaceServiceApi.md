@@ -39,7 +39,7 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkspaceServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-body = onepanel.core.api.CreateWorkspaceRequest() # CreateWorkspaceRequest | 
+body = onepanel.core.api.Workspace() # Workspace | 
 
     try:
         api_response = api_instance.create_workspace(namespace, body)
@@ -53,7 +53,7 @@ body = onepanel.core.api.CreateWorkspaceRequest() # CreateWorkspaceRequest |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **body** | [**CreateWorkspaceRequest**](CreateWorkspaceRequest.md)|  | 
+ **body** | [**Workspace**](Workspace.md)|  | 
 
 ### Return type
 

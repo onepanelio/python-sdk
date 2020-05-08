@@ -146,7 +146,6 @@ Class | Method | HTTP request | Description
  - [ArchiveWorkflowTemplateResponse](docs/ArchiveWorkflowTemplateResponse.md)
  - [ArtifactResponse](docs/ArtifactResponse.md)
  - [CreateWorkflowExecutionRequest](docs/CreateWorkflowExecutionRequest.md)
- - [CreateWorkspaceRequest](docs/CreateWorkspaceRequest.md)
  - [CronWorkflow](docs/CronWorkflow.md)
  - [CronWorkflowStatisticsReport](docs/CronWorkflowStatisticsReport.md)
  - [DeleteSecretKeyResponse](docs/DeleteSecretKeyResponse.md)
