@@ -179,7 +179,7 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-body = onepanel.core.api.CreateWorkflowExecutionRequest() # CreateWorkflowExecutionRequest | 
+body = onepanel.core.api.CreateWorkflowExecutionBody() # CreateWorkflowExecutionBody | 
 
     try:
         api_response = api_instance.create_workflow_execution(namespace, body)
@@ -193,7 +193,7 @@ body = onepanel.core.api.CreateWorkflowExecutionRequest() # CreateWorkflowExecut
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **body** | [**CreateWorkflowExecutionRequest**](CreateWorkflowExecutionRequest.md)|  | 
+ **body** | [**CreateWorkflowExecutionBody**](CreateWorkflowExecutionBody.md)|  | 
 
 ### Return type
 
