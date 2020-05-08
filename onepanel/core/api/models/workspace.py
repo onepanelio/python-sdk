@@ -39,7 +39,8 @@ class Workspace(object):
         'created_at': 'str',
         'parameters': 'list[Parameter]',
         'workspace_template': 'WorkspaceTemplate',
-        'status': 'WorkspaceStatus'
+        'status': 'WorkspaceStatus',
+        'labels': 'list[KeyValue]'
     }
 
     attribute_map = {
@@ -49,10 +50,11 @@ class Workspace(object):
         'created_at': 'createdAt',
         'parameters': 'parameters',
         'workspace_template': 'workspaceTemplate',
-        'status': 'status'
+        'status': 'status',
+        'labels': 'labels'
     }
 
-    def __init__(self, uid=None, name=None, version=None, created_at=None, parameters=None, workspace_template=None, status=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, uid=None, name=None, version=None, created_at=None, parameters=None, workspace_template=None, status=None, labels=None, local_vars_configuration=None):  # noqa: E501
         """Workspace - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class Workspace(object):
         self._parameters = None
         self._workspace_template = None
         self._status = None
+        self._labels = None
         self.discriminator = None
 
         if uid is not None:
@@ -81,6 +84,8 @@ class Workspace(object):
             self.workspace_template = workspace_template
         if status is not None:
             self.status = status
+        if labels is not None:
+            self.labels = labels
 
     @property
     def uid(self):
@@ -228,6 +233,27 @@ class Workspace(object):
         """
 
         self._status = status
+
+    @property
+    def labels(self):
+        """Gets the labels of this Workspace.  # noqa: E501
+
+
+        :return: The labels of this Workspace.  # noqa: E501
+        :rtype: list[KeyValue]
+        """
+        return self._labels
+
+    @labels.setter
+    def labels(self, labels):
+        """Sets the labels of this Workspace.
+
+
+        :param labels: The labels of this Workspace.  # noqa: E501
+        :type: list[KeyValue]
+        """
+
+        self._labels = labels
 
     def to_dict(self):
         """Returns the model properties as a dict"""

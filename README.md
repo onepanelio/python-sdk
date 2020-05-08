@@ -128,6 +128,9 @@ Class | Method | HTTP request | Description
 *WorkflowTemplateServiceApi* | [**list_workflow_templates**](docs/WorkflowTemplateServiceApi.md#list_workflow_templates) | **GET** /apis/v1beta1/{namespace}/workflow_templates | 
 *WorkflowTemplateServiceApi* | [**update_workflow_template_version**](docs/WorkflowTemplateServiceApi.md#update_workflow_template_version) | **PUT** /apis/v1beta1/{namespace}/workflow_templates/{workflowTemplate.uid}/versions/{workflowTemplate.version} | 
 *WorkspaceServiceApi* | [**create_workspace**](docs/WorkspaceServiceApi.md#create_workspace) | **POST** /apis/v1beta1/{namespace}/workspaces | 
+*WorkspaceServiceApi* | [**delete_workspace**](docs/WorkspaceServiceApi.md#delete_workspace) | **DELETE** /apis/v1beta1/{namespace}/workspaces/{uid} | 
+*WorkspaceServiceApi* | [**list_workspaces**](docs/WorkspaceServiceApi.md#list_workspaces) | **GET** /apis/v1beta1/{namespace}/workspaces | 
+*WorkspaceServiceApi* | [**pause_workspace**](docs/WorkspaceServiceApi.md#pause_workspace) | **PUT** /apis/v1beta1/{namespace}/workspaces/{uid}/pause | 
 *WorkspaceServiceApi* | [**update_workspace_status**](docs/WorkspaceServiceApi.md#update_workspace_status) | **PUT** /apis/v1beta1/{namespace}/workspaces/{uid}/status | 
 *WorkspaceTemplateServiceApi* | [**create_workspace_template**](docs/WorkspaceTemplateServiceApi.md#create_workspace_template) | **POST** /apis/v1beta1/{namespace}/workspace_templates | 
 *WorkspaceTemplateServiceApi* | [**generate_workspace_template_workflow_template**](docs/WorkspaceTemplateServiceApi.md#generate_workspace_template_workflow_template) | **POST** /apis/v1beta1/{namespace}/workspace_templates/{uid}/workflow_template | 
@@ -142,6 +145,8 @@ Class | Method | HTTP request | Description
  - [AddSecretKeyValueResponse](docs/AddSecretKeyValueResponse.md)
  - [ArchiveWorkflowTemplateResponse](docs/ArchiveWorkflowTemplateResponse.md)
  - [ArtifactResponse](docs/ArtifactResponse.md)
+ - [CreateWorkflowExecutionRequest](docs/CreateWorkflowExecutionRequest.md)
+ - [CreateWorkspaceRequest](docs/CreateWorkspaceRequest.md)
  - [CronWorkflow](docs/CronWorkflow.md)
  - [CronWorkflowStatisticsReport](docs/CronWorkflowStatisticsReport.md)
  - [DeleteSecretKeyResponse](docs/DeleteSecretKeyResponse.md)
@@ -162,6 +167,7 @@ Class | Method | HTTP request | Description
  - [ListWorkflowExecutionsResponse](docs/ListWorkflowExecutionsResponse.md)
  - [ListWorkflowTemplateVersionsResponse](docs/ListWorkflowTemplateVersionsResponse.md)
  - [ListWorkflowTemplatesResponse](docs/ListWorkflowTemplatesResponse.md)
+ - [ListWorkspaceResponse](docs/ListWorkspaceResponse.md)
  - [ListWorkspaceTemplateVersionsResponse](docs/ListWorkspaceTemplateVersionsResponse.md)
  - [ListWorkspaceTemplatesResponse](docs/ListWorkspaceTemplatesResponse.md)
  - [LogEntry](docs/LogEntry.md)

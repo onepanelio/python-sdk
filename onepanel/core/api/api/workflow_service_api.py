@@ -286,7 +286,7 @@ class WorkflowServiceApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param WorkflowExecution body: (required)
+        :param CreateWorkflowExecutionRequest body: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -311,7 +311,7 @@ class WorkflowServiceApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param WorkflowExecution body: (required)
+        :param CreateWorkflowExecutionRequest body: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
