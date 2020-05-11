@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**get_workspace_template**](WorkspaceTemplateServiceApi.md#get_workspace_template) | **GET** /apis/v1beta1/{namespace}/workspace_templates/{uid} | 
 [**list_workspace_template_versions**](WorkspaceTemplateServiceApi.md#list_workspace_template_versions) | **GET** /apis/v1beta1/{namespace}/workspace_templates/{uid}/versions | 
 [**list_workspace_templates**](WorkspaceTemplateServiceApi.md#list_workspace_templates) | **GET** /apis/v1beta1/{namespace}/workspace_templates | 
-[**update_workspace_template**](WorkspaceTemplateServiceApi.md#update_workspace_template) | **PUT** /apis/v1beta1/{namespace}/workspace_templates/{name} | 
+[**update_workspace_template**](WorkspaceTemplateServiceApi.md#update_workspace_template) | **PUT** /apis/v1beta1/{namespace}/workspace_templates/{uid} | 
 
 
 # **create_workspace_template**
@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_workspace_template**
-> WorkspaceTemplate update_workspace_template(namespace, name, body)
+> WorkspaceTemplate update_workspace_template(namespace, uid, body)
 
 
 
@@ -371,11 +371,11 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkspaceTemplateServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 body = onepanel.core.api.WorkspaceTemplate() # WorkspaceTemplate | 
 
     try:
-        api_response = api_instance.update_workspace_template(namespace, name, body)
+        api_response = api_instance.update_workspace_template(namespace, uid, body)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkspaceTemplateServiceApi->update_workspace_template: %s\n" % e)
@@ -386,7 +386,7 @@ body = onepanel.core.api.WorkspaceTemplate() # WorkspaceTemplate |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
  **body** | [**WorkspaceTemplate**](WorkspaceTemplate.md)|  | 
 
 ### Return type

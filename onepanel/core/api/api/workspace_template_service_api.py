@@ -626,17 +626,17 @@ class WorkspaceTemplateServiceApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_workspace_template(self, namespace, name, body, **kwargs):  # noqa: E501
+    def update_workspace_template(self, namespace, uid, body, **kwargs):  # noqa: E501
         """update_workspace_template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_workspace_template(namespace, name, body, async_req=True)
+        >>> thread = api.update_workspace_template(namespace, uid, body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param WorkspaceTemplate body: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -650,19 +650,19 @@ class WorkspaceTemplateServiceApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.update_workspace_template_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
+        return self.update_workspace_template_with_http_info(namespace, uid, body, **kwargs)  # noqa: E501
 
-    def update_workspace_template_with_http_info(self, namespace, name, body, **kwargs):  # noqa: E501
+    def update_workspace_template_with_http_info(self, namespace, uid, body, **kwargs):  # noqa: E501
         """update_workspace_template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_workspace_template_with_http_info(namespace, name, body, async_req=True)
+        >>> thread = api.update_workspace_template_with_http_info(namespace, uid, body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param WorkspaceTemplate body: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -680,7 +680,7 @@ class WorkspaceTemplateServiceApi(object):
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'name', 'body']  # noqa: E501
+        all_params = ['namespace', 'uid', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -698,10 +698,10 @@ class WorkspaceTemplateServiceApi(object):
         if self.api_client.client_side_validation and ('namespace' not in local_var_params or  # noqa: E501
                                                         local_var_params['namespace'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `namespace` when calling `update_workspace_template`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in local_var_params or  # noqa: E501
-                                                        local_var_params['name'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `name` when calling `update_workspace_template`")  # noqa: E501
+        # verify the required parameter 'uid' is set
+        if self.api_client.client_side_validation and ('uid' not in local_var_params or  # noqa: E501
+                                                        local_var_params['uid'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `uid` when calling `update_workspace_template`")  # noqa: E501
         # verify the required parameter 'body' is set
         if self.api_client.client_side_validation and ('body' not in local_var_params or  # noqa: E501
                                                         local_var_params['body'] is None):  # noqa: E501
@@ -712,8 +712,8 @@ class WorkspaceTemplateServiceApi(object):
         path_params = {}
         if 'namespace' in local_var_params:
             path_params['namespace'] = local_var_params['namespace']  # noqa: E501
-        if 'name' in local_var_params:
-            path_params['name'] = local_var_params['name']  # noqa: E501
+        if 'uid' in local_var_params:
+            path_params['uid'] = local_var_params['uid']  # noqa: E501
 
         query_params = []
 
@@ -737,7 +737,7 @@ class WorkspaceTemplateServiceApi(object):
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/v1beta1/{namespace}/workspace_templates/{name}', 'PUT',
+            '/apis/v1beta1/{namespace}/workspace_templates/{uid}', 'PUT',
             path_params,
             query_params,
             header_params,

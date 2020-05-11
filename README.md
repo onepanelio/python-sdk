@@ -129,15 +129,17 @@ Class | Method | HTTP request | Description
 *WorkflowTemplateServiceApi* | [**update_workflow_template_version**](docs/WorkflowTemplateServiceApi.md#update_workflow_template_version) | **PUT** /apis/v1beta1/{namespace}/workflow_templates/{workflowTemplate.uid}/versions/{workflowTemplate.version} | 
 *WorkspaceServiceApi* | [**create_workspace**](docs/WorkspaceServiceApi.md#create_workspace) | **POST** /apis/v1beta1/{namespace}/workspaces | 
 *WorkspaceServiceApi* | [**delete_workspace**](docs/WorkspaceServiceApi.md#delete_workspace) | **DELETE** /apis/v1beta1/{namespace}/workspaces/{uid} | 
+*WorkspaceServiceApi* | [**get_workspace**](docs/WorkspaceServiceApi.md#get_workspace) | **GET** /apis/v1beta1/{namespace}/workspaces/{uid} | 
 *WorkspaceServiceApi* | [**list_workspaces**](docs/WorkspaceServiceApi.md#list_workspaces) | **GET** /apis/v1beta1/{namespace}/workspaces | 
 *WorkspaceServiceApi* | [**pause_workspace**](docs/WorkspaceServiceApi.md#pause_workspace) | **PUT** /apis/v1beta1/{namespace}/workspaces/{uid}/pause | 
+*WorkspaceServiceApi* | [**resume_workspace**](docs/WorkspaceServiceApi.md#resume_workspace) | **PUT** /apis/v1beta1/{namespace}/workspaces/{uid}/resume | 
 *WorkspaceServiceApi* | [**update_workspace_status**](docs/WorkspaceServiceApi.md#update_workspace_status) | **PUT** /apis/v1beta1/{namespace}/workspaces/{uid}/status | 
 *WorkspaceTemplateServiceApi* | [**create_workspace_template**](docs/WorkspaceTemplateServiceApi.md#create_workspace_template) | **POST** /apis/v1beta1/{namespace}/workspace_templates | 
 *WorkspaceTemplateServiceApi* | [**generate_workspace_template_workflow_template**](docs/WorkspaceTemplateServiceApi.md#generate_workspace_template_workflow_template) | **POST** /apis/v1beta1/{namespace}/workspace_templates/{uid}/workflow_template | 
 *WorkspaceTemplateServiceApi* | [**get_workspace_template**](docs/WorkspaceTemplateServiceApi.md#get_workspace_template) | **GET** /apis/v1beta1/{namespace}/workspace_templates/{uid} | 
 *WorkspaceTemplateServiceApi* | [**list_workspace_template_versions**](docs/WorkspaceTemplateServiceApi.md#list_workspace_template_versions) | **GET** /apis/v1beta1/{namespace}/workspace_templates/{uid}/versions | 
 *WorkspaceTemplateServiceApi* | [**list_workspace_templates**](docs/WorkspaceTemplateServiceApi.md#list_workspace_templates) | **GET** /apis/v1beta1/{namespace}/workspace_templates | 
-*WorkspaceTemplateServiceApi* | [**update_workspace_template**](docs/WorkspaceTemplateServiceApi.md#update_workspace_template) | **PUT** /apis/v1beta1/{namespace}/workspace_templates/{name} | 
+*WorkspaceTemplateServiceApi* | [**update_workspace_template**](docs/WorkspaceTemplateServiceApi.md#update_workspace_template) | **PUT** /apis/v1beta1/{namespace}/workspace_templates/{uid} | 
 
 
 ## Documentation For Models
@@ -146,6 +148,7 @@ Class | Method | HTTP request | Description
  - [ArchiveWorkflowTemplateResponse](docs/ArchiveWorkflowTemplateResponse.md)
  - [ArtifactResponse](docs/ArtifactResponse.md)
  - [CreateWorkflowExecutionBody](docs/CreateWorkflowExecutionBody.md)
+ - [CreateWorkspaceBody](docs/CreateWorkspaceBody.md)
  - [CronWorkflow](docs/CronWorkflow.md)
  - [CronWorkflowStatisticsReport](docs/CronWorkflowStatisticsReport.md)
  - [DeleteSecretKeyResponse](docs/DeleteSecretKeyResponse.md)
