@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **workspace_template** | [**WorkspaceTemplate**](WorkspaceTemplate.md) |  | [optional] 
 **status** | [**WorkspaceStatus**](WorkspaceStatus.md) |  | [optional] 
 **labels** | [**list[KeyValue]**](KeyValue.md) |  | [optional] 
+**url** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
