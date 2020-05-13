@@ -133,6 +133,7 @@ Class | Method | HTTP request | Description
 *WorkspaceServiceApi* | [**list_workspaces**](docs/WorkspaceServiceApi.md#list_workspaces) | **GET** /apis/v1beta1/{namespace}/workspaces | 
 *WorkspaceServiceApi* | [**pause_workspace**](docs/WorkspaceServiceApi.md#pause_workspace) | **PUT** /apis/v1beta1/{namespace}/workspaces/{uid}/pause | 
 *WorkspaceServiceApi* | [**resume_workspace**](docs/WorkspaceServiceApi.md#resume_workspace) | **PUT** /apis/v1beta1/{namespace}/workspaces/{uid}/resume | 
+*WorkspaceServiceApi* | [**update_workspace**](docs/WorkspaceServiceApi.md#update_workspace) | **PUT** /apis/v1beta1/{namespace}/workspaces/{uid} | 
 *WorkspaceServiceApi* | [**update_workspace_status**](docs/WorkspaceServiceApi.md#update_workspace_status) | **PUT** /apis/v1beta1/{namespace}/workspaces/{uid}/status | 
 *WorkspaceTemplateServiceApi* | [**create_workspace_template**](docs/WorkspaceTemplateServiceApi.md#create_workspace_template) | **POST** /apis/v1beta1/{namespace}/workspace_templates | 
 *WorkspaceTemplateServiceApi* | [**generate_workspace_template_workflow_template**](docs/WorkspaceTemplateServiceApi.md#generate_workspace_template_workflow_template) | **POST** /apis/v1beta1/{namespace}/workspace_templates/{uid}/workflow_template | 
@@ -184,6 +185,7 @@ Class | Method | HTTP request | Description
  - [StreamResultOfWorkflowExecution](docs/StreamResultOfWorkflowExecution.md)
  - [TokenWrapper](docs/TokenWrapper.md)
  - [UpdateSecretKeyValueResponse](docs/UpdateSecretKeyValueResponse.md)
+ - [UpdateWorkspaceBody](docs/UpdateWorkspaceBody.md)
  - [WorkflowExecution](docs/WorkflowExecution.md)
  - [WorkflowExecutionStatisticReport](docs/WorkflowExecutionStatisticReport.md)
  - [WorkflowTemplate](docs/WorkflowTemplate.md)

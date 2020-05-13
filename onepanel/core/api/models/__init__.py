@@ -54,6 +54,7 @@ from onepanel.core.api.models.stream_result_of_log_entry import StreamResultOfLo
 from onepanel.core.api.models.stream_result_of_workflow_execution import StreamResultOfWorkflowExecution
 from onepanel.core.api.models.token_wrapper import TokenWrapper
 from onepanel.core.api.models.update_secret_key_value_response import UpdateSecretKeyValueResponse
+from onepanel.core.api.models.update_workspace_body import UpdateWorkspaceBody
 from onepanel.core.api.models.workflow_execution import WorkflowExecution
 from onepanel.core.api.models.workflow_execution_statistic_report import WorkflowExecutionStatisticReport
 from onepanel.core.api.models.workflow_template import WorkflowTemplate
