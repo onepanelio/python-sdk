@@ -36,10 +36,14 @@ class WorkflowTemplate(object):
         'created_at': 'str',
         'uid': 'str',
         'name': 'str',
-        'version': 'int',
+        'version': 'str',
+        'versions': 'str',
         'manifest': 'str',
         'is_latest': 'bool',
-        'is_archived': 'bool'
+        'is_archived': 'bool',
+        'labels': 'list[KeyValue]',
+        'stats': 'WorkflowExecutionStatisticReport',
+        'cron_stats': 'CronWorkflowStatisticsReport'
     }
 
     attribute_map = {
@@ -47,12 +51,16 @@ class WorkflowTemplate(object):
         'uid': 'uid',
         'name': 'name',
         'version': 'version',
+        'versions': 'versions',
         'manifest': 'manifest',
         'is_latest': 'isLatest',
-        'is_archived': 'isArchived'
+        'is_archived': 'isArchived',
+        'labels': 'labels',
+        'stats': 'stats',
+        'cron_stats': 'cronStats'
     }
 
-    def __init__(self, created_at=None, uid=None, name=None, version=None, manifest=None, is_latest=None, is_archived=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, created_at=None, uid=None, name=None, version=None, versions=None, manifest=None, is_latest=None, is_archived=None, labels=None, stats=None, cron_stats=None, local_vars_configuration=None):  # noqa: E501
         """WorkflowTemplate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,9 +70,13 @@ class WorkflowTemplate(object):
         self._uid = None
         self._name = None
         self._version = None
+        self._versions = None
         self._manifest = None
         self._is_latest = None
         self._is_archived = None
+        self._labels = None
+        self._stats = None
+        self._cron_stats = None
         self.discriminator = None
 
         if created_at is not None:
@@ -75,12 +87,20 @@ class WorkflowTemplate(object):
             self.name = name
         if version is not None:
             self.version = version
+        if versions is not None:
+            self.versions = versions
         if manifest is not None:
             self.manifest = manifest
         if is_latest is not None:
             self.is_latest = is_latest
         if is_archived is not None:
             self.is_archived = is_archived
+        if labels is not None:
+            self.labels = labels
+        if stats is not None:
+            self.stats = stats
+        if cron_stats is not None:
+            self.cron_stats = cron_stats
 
     @property
     def created_at(self):
@@ -151,7 +171,7 @@ class WorkflowTemplate(object):
 
 
         :return: The version of this WorkflowTemplate.  # noqa: E501
-        :rtype: int
+        :rtype: str
         """
         return self._version
 
@@ -161,10 +181,31 @@ class WorkflowTemplate(object):
 
 
         :param version: The version of this WorkflowTemplate.  # noqa: E501
-        :type: int
+        :type: str
         """
 
         self._version = version
+
+    @property
+    def versions(self):
+        """Gets the versions of this WorkflowTemplate.  # noqa: E501
+
+
+        :return: The versions of this WorkflowTemplate.  # noqa: E501
+        :rtype: str
+        """
+        return self._versions
+
+    @versions.setter
+    def versions(self, versions):
+        """Sets the versions of this WorkflowTemplate.
+
+
+        :param versions: The versions of this WorkflowTemplate.  # noqa: E501
+        :type: str
+        """
+
+        self._versions = versions
 
     @property
     def manifest(self):
@@ -228,6 +269,69 @@ class WorkflowTemplate(object):
         """
 
         self._is_archived = is_archived
+
+    @property
+    def labels(self):
+        """Gets the labels of this WorkflowTemplate.  # noqa: E501
+
+
+        :return: The labels of this WorkflowTemplate.  # noqa: E501
+        :rtype: list[KeyValue]
+        """
+        return self._labels
+
+    @labels.setter
+    def labels(self, labels):
+        """Sets the labels of this WorkflowTemplate.
+
+
+        :param labels: The labels of this WorkflowTemplate.  # noqa: E501
+        :type: list[KeyValue]
+        """
+
+        self._labels = labels
+
+    @property
+    def stats(self):
+        """Gets the stats of this WorkflowTemplate.  # noqa: E501
+
+
+        :return: The stats of this WorkflowTemplate.  # noqa: E501
+        :rtype: WorkflowExecutionStatisticReport
+        """
+        return self._stats
+
+    @stats.setter
+    def stats(self, stats):
+        """Sets the stats of this WorkflowTemplate.
+
+
+        :param stats: The stats of this WorkflowTemplate.  # noqa: E501
+        :type: WorkflowExecutionStatisticReport
+        """
+
+        self._stats = stats
+
+    @property
+    def cron_stats(self):
+        """Gets the cron_stats of this WorkflowTemplate.  # noqa: E501
+
+
+        :return: The cron_stats of this WorkflowTemplate.  # noqa: E501
+        :rtype: CronWorkflowStatisticsReport
+        """
+        return self._cron_stats
+
+    @cron_stats.setter
+    def cron_stats(self, cron_stats):
+        """Sets the cron_stats of this WorkflowTemplate.
+
+
+        :param cron_stats: The cron_stats of this WorkflowTemplate.  # noqa: E501
+        :type: CronWorkflowStatisticsReport
+        """
+
+        self._cron_stats = cron_stats
 
     def to_dict(self):
         """Returns the model properties as a dict"""

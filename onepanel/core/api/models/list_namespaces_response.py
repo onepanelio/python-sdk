@@ -34,15 +34,21 @@ class ListNamespacesResponse(object):
     """
     openapi_types = {
         'count': 'int',
-        'namespaces': 'list[Namespace]'
+        'namespaces': 'list[Namespace]',
+        'page': 'int',
+        'pages': 'int',
+        'total_count': 'int'
     }
 
     attribute_map = {
         'count': 'count',
-        'namespaces': 'namespaces'
+        'namespaces': 'namespaces',
+        'page': 'page',
+        'pages': 'pages',
+        'total_count': 'totalCount'
     }
 
-    def __init__(self, count=None, namespaces=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, count=None, namespaces=None, page=None, pages=None, total_count=None, local_vars_configuration=None):  # noqa: E501
         """ListNamespacesResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -50,12 +56,21 @@ class ListNamespacesResponse(object):
 
         self._count = None
         self._namespaces = None
+        self._page = None
+        self._pages = None
+        self._total_count = None
         self.discriminator = None
 
         if count is not None:
             self.count = count
         if namespaces is not None:
             self.namespaces = namespaces
+        if page is not None:
+            self.page = page
+        if pages is not None:
+            self.pages = pages
+        if total_count is not None:
+            self.total_count = total_count
 
     @property
     def count(self):
@@ -98,6 +113,69 @@ class ListNamespacesResponse(object):
         """
 
         self._namespaces = namespaces
+
+    @property
+    def page(self):
+        """Gets the page of this ListNamespacesResponse.  # noqa: E501
+
+
+        :return: The page of this ListNamespacesResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._page
+
+    @page.setter
+    def page(self, page):
+        """Sets the page of this ListNamespacesResponse.
+
+
+        :param page: The page of this ListNamespacesResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._page = page
+
+    @property
+    def pages(self):
+        """Gets the pages of this ListNamespacesResponse.  # noqa: E501
+
+
+        :return: The pages of this ListNamespacesResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._pages
+
+    @pages.setter
+    def pages(self, pages):
+        """Sets the pages of this ListNamespacesResponse.
+
+
+        :param pages: The pages of this ListNamespacesResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._pages = pages
+
+    @property
+    def total_count(self):
+        """Gets the total_count of this ListNamespacesResponse.  # noqa: E501
+
+
+        :return: The total_count of this ListNamespacesResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._total_count
+
+    @total_count.setter
+    def total_count(self, total_count):
+        """Sets the total_count of this ListNamespacesResponse.
+
+
+        :param total_count: The total_count of this ListNamespacesResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._total_count = total_count
 
     def to_dict(self):
         """Returns the model properties as a dict"""

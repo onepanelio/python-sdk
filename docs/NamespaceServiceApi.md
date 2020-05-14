@@ -4,11 +4,12 @@ All URIs are relative to *http://localhost:8888*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_namespace**](NamespaceServiceApi.md#create_namespace) | **POST** /apis/v1beta1/namespaces | 
 [**list_namespaces**](NamespaceServiceApi.md#list_namespaces) | **GET** /apis/v1beta1/namespaces | 
 
 
-# **list_namespaces**
-> ListNamespacesResponse list_namespaces()
+# **create_namespace**
+> Namespace create_namespace(body)
 
 
 
@@ -34,16 +35,87 @@ configuration.host = "http://localhost:8888"
 with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.NamespaceServiceApi(api_client)
-    
+    body = onepanel.core.api.Namespace() # Namespace | 
+
     try:
-        api_response = api_instance.list_namespaces()
+        api_response = api_instance.create_namespace(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NamespaceServiceApi->create_namespace: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Namespace**](Namespace.md)|  | 
+
+### Return type
+
+[**Namespace**](Namespace.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_namespaces**
+> ListNamespacesResponse list_namespaces(page_size=page_size, page=page, query=query)
+
+
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import onepanel.core.api
+from onepanel.core.api.rest import ApiException
+from pprint import pprint
+configuration = onepanel.core.api.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost:8888
+configuration.host = "http://localhost:8888"
+
+# Enter a context with an instance of the API client
+with onepanel.core.api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = onepanel.core.api.NamespaceServiceApi(api_client)
+    page_size = 56 # int |  (optional)
+page = 56 # int |  (optional)
+query = 'query_example' # str |  (optional)
+
+    try:
+        api_response = api_instance.list_namespaces(page_size=page_size, page=page, query=query)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling NamespaceServiceApi->list_namespaces: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page_size** | **int**|  | [optional] 
+ **page** | **int**|  | [optional] 
+ **query** | **str**|  | [optional] 
 
 ### Return type
 
