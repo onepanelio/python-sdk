@@ -4,23 +4,23 @@ All URIs are relative to *http://localhost:8888*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_workflow_execution_statistics**](WorkflowServiceApi.md#add_workflow_execution_statistics) | **POST** /apis/v1beta1/{namespace}/workflow_executions/{name}/statistics | 
-[**clone_workflow_execution**](WorkflowServiceApi.md#clone_workflow_execution) | **POST** /apis/v1beta1/{namespace}/workflow_executions/{name} | 
+[**add_workflow_execution_statistics**](WorkflowServiceApi.md#add_workflow_execution_statistics) | **POST** /apis/v1beta1/{namespace}/workflow_executions/{uid}/statistics | 
+[**clone_workflow_execution**](WorkflowServiceApi.md#clone_workflow_execution) | **POST** /apis/v1beta1/{namespace}/workflow_executions/{uid} | 
 [**create_workflow_execution**](WorkflowServiceApi.md#create_workflow_execution) | **POST** /apis/v1beta1/{namespace}/workflow_executions | 
-[**cron_start_workflow_execution_statistic**](WorkflowServiceApi.md#cron_start_workflow_execution_statistic) | **POST** /apis/v1beta1/{namespace}/workflow_executions/{name}/cron_start_statistics | 
-[**get_artifact**](WorkflowServiceApi.md#get_artifact) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/artifacts/{key} | 
-[**get_workflow_execution**](WorkflowServiceApi.md#get_workflow_execution) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name} | 
-[**get_workflow_execution_logs**](WorkflowServiceApi.md#get_workflow_execution_logs) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/pods/{podName}/containers/{containerName}/logs | 
-[**get_workflow_execution_metrics**](WorkflowServiceApi.md#get_workflow_execution_metrics) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/pods/{podName}/metrics | 
-[**list_files**](WorkflowServiceApi.md#list_files) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/files/{path} | 
+[**cron_start_workflow_execution_statistic**](WorkflowServiceApi.md#cron_start_workflow_execution_statistic) | **POST** /apis/v1beta1/{namespace}/workflow_executions/{uid}/cron_start_statistics | 
+[**get_artifact**](WorkflowServiceApi.md#get_artifact) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/artifacts/{key} | 
+[**get_workflow_execution**](WorkflowServiceApi.md#get_workflow_execution) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid} | 
+[**get_workflow_execution_logs**](WorkflowServiceApi.md#get_workflow_execution_logs) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/pods/{podName}/containers/{containerName}/logs | 
+[**get_workflow_execution_metrics**](WorkflowServiceApi.md#get_workflow_execution_metrics) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/pods/{podName}/metrics | 
+[**list_files**](WorkflowServiceApi.md#list_files) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/files/{path} | 
 [**list_workflow_executions**](WorkflowServiceApi.md#list_workflow_executions) | **GET** /apis/v1beta1/{namespace}/workflow_executions | 
-[**resubmit_workflow_execution**](WorkflowServiceApi.md#resubmit_workflow_execution) | **PUT** /apis/v1beta1/{namespace}/workflow_executions/{name}/resubmit | 
-[**terminate_workflow_execution**](WorkflowServiceApi.md#terminate_workflow_execution) | **PUT** /apis/v1beta1/{namespace}/workflow_executions/{name}/terminate | 
-[**watch_workflow_execution**](WorkflowServiceApi.md#watch_workflow_execution) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/watch | 
+[**resubmit_workflow_execution**](WorkflowServiceApi.md#resubmit_workflow_execution) | **PUT** /apis/v1beta1/{namespace}/workflow_executions/{uid}/resubmit | 
+[**terminate_workflow_execution**](WorkflowServiceApi.md#terminate_workflow_execution) | **PUT** /apis/v1beta1/{namespace}/workflow_executions/{uid}/terminate | 
+[**watch_workflow_execution**](WorkflowServiceApi.md#watch_workflow_execution) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/watch | 
 
 
 # **add_workflow_execution_statistics**
-> object add_workflow_execution_statistics(namespace, name, body)
+> object add_workflow_execution_statistics(namespace, uid, body)
 
 
 
@@ -47,11 +47,11 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 body = onepanel.core.api.Statistics() # Statistics | 
 
     try:
-        api_response = api_instance.add_workflow_execution_statistics(namespace, name, body)
+        api_response = api_instance.add_workflow_execution_statistics(namespace, uid, body)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->add_workflow_execution_statistics: %s\n" % e)
@@ -62,7 +62,7 @@ body = onepanel.core.api.Statistics() # Statistics |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
  **body** | [**Statistics**](Statistics.md)|  | 
 
 ### Return type
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **clone_workflow_execution**
-> WorkflowExecution clone_workflow_execution(namespace, name)
+> WorkflowExecution clone_workflow_execution(namespace, uid)
 
 
 
@@ -114,10 +114,10 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 
     try:
-        api_response = api_instance.clone_workflow_execution(namespace, name)
+        api_response = api_instance.clone_workflow_execution(namespace, uid)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->clone_workflow_execution: %s\n" % e)
@@ -128,7 +128,7 @@ name = 'name_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
 
 ### Return type
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cron_start_workflow_execution_statistic**
-> object cron_start_workflow_execution_statistic(namespace, name, body)
+> object cron_start_workflow_execution_statistic(namespace, uid, body)
 
 
 
@@ -244,11 +244,11 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 body = onepanel.core.api.Statistics() # Statistics | 
 
     try:
-        api_response = api_instance.cron_start_workflow_execution_statistic(namespace, name, body)
+        api_response = api_instance.cron_start_workflow_execution_statistic(namespace, uid, body)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->cron_start_workflow_execution_statistic: %s\n" % e)
@@ -259,7 +259,7 @@ body = onepanel.core.api.Statistics() # Statistics |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
  **body** | [**Statistics**](Statistics.md)|  | 
 
 ### Return type
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_artifact**
-> ArtifactResponse get_artifact(namespace, name, key)
+> ArtifactResponse get_artifact(namespace, uid, key)
 
 
 
@@ -311,11 +311,11 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 key = 'key_example' # str | 
 
     try:
-        api_response = api_instance.get_artifact(namespace, name, key)
+        api_response = api_instance.get_artifact(namespace, uid, key)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->get_artifact: %s\n" % e)
@@ -326,7 +326,7 @@ key = 'key_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
  **key** | **str**|  | 
 
 ### Return type
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_workflow_execution**
-> WorkflowExecution get_workflow_execution(namespace, name)
+> WorkflowExecution get_workflow_execution(namespace, uid)
 
 
 
@@ -378,10 +378,10 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 
     try:
-        api_response = api_instance.get_workflow_execution(namespace, name)
+        api_response = api_instance.get_workflow_execution(namespace, uid)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->get_workflow_execution: %s\n" % e)
@@ -392,7 +392,7 @@ name = 'name_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
 
 ### Return type
 
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_workflow_execution_logs**
-> StreamResultOfLogEntry get_workflow_execution_logs(namespace, name, pod_name, container_name)
+> StreamResultOfLogEntry get_workflow_execution_logs(namespace, uid, pod_name, container_name)
 
 
 
@@ -443,12 +443,12 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 pod_name = 'pod_name_example' # str | 
 container_name = 'container_name_example' # str | 
 
     try:
-        api_response = api_instance.get_workflow_execution_logs(namespace, name, pod_name, container_name)
+        api_response = api_instance.get_workflow_execution_logs(namespace, uid, pod_name, container_name)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->get_workflow_execution_logs: %s\n" % e)
@@ -459,7 +459,7 @@ container_name = 'container_name_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
  **pod_name** | **str**|  | 
  **container_name** | **str**|  | 
 
@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_workflow_execution_metrics**
-> GetWorkflowExecutionMetricsResponse get_workflow_execution_metrics(namespace, name, pod_name)
+> GetWorkflowExecutionMetricsResponse get_workflow_execution_metrics(namespace, uid, pod_name)
 
 
 
@@ -512,11 +512,11 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 pod_name = 'pod_name_example' # str | 
 
     try:
-        api_response = api_instance.get_workflow_execution_metrics(namespace, name, pod_name)
+        api_response = api_instance.get_workflow_execution_metrics(namespace, uid, pod_name)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->get_workflow_execution_metrics: %s\n" % e)
@@ -527,7 +527,7 @@ pod_name = 'pod_name_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
  **pod_name** | **str**|  | 
 
 ### Return type
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_files**
-> ListFilesResponse list_files(namespace, name, path)
+> ListFilesResponse list_files(namespace, uid, path)
 
 
 
@@ -579,11 +579,11 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 path = 'path_example' # str | 
 
     try:
-        api_response = api_instance.list_files(namespace, name, path)
+        api_response = api_instance.list_files(namespace, uid, path)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->list_files: %s\n" % e)
@@ -594,7 +594,7 @@ path = 'path_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
  **path** | **str**|  | 
 
 ### Return type
@@ -690,7 +690,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **resubmit_workflow_execution**
-> WorkflowExecution resubmit_workflow_execution(namespace, name)
+> WorkflowExecution resubmit_workflow_execution(namespace, uid)
 
 
 
@@ -717,10 +717,10 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 
     try:
-        api_response = api_instance.resubmit_workflow_execution(namespace, name)
+        api_response = api_instance.resubmit_workflow_execution(namespace, uid)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->resubmit_workflow_execution: %s\n" % e)
@@ -731,7 +731,7 @@ name = 'name_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
 
 ### Return type
 
@@ -755,7 +755,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **terminate_workflow_execution**
-> object terminate_workflow_execution(namespace, name)
+> object terminate_workflow_execution(namespace, uid)
 
 
 
@@ -782,10 +782,10 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 
     try:
-        api_response = api_instance.terminate_workflow_execution(namespace, name)
+        api_response = api_instance.terminate_workflow_execution(namespace, uid)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->terminate_workflow_execution: %s\n" % e)
@@ -796,7 +796,7 @@ name = 'name_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
 
 ### Return type
 
@@ -820,7 +820,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **watch_workflow_execution**
-> StreamResultOfWorkflowExecution watch_workflow_execution(namespace, name)
+> StreamResultOfWorkflowExecution watch_workflow_execution(namespace, uid)
 
 
 
@@ -847,10 +847,10 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 
     try:
-        api_response = api_instance.watch_workflow_execution(namespace, name)
+        api_response = api_instance.watch_workflow_execution(namespace, uid)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->watch_workflow_execution: %s\n" % e)
@@ -861,7 +861,7 @@ name = 'name_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
 
 ### Return type
 

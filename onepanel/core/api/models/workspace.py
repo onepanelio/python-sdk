@@ -41,7 +41,8 @@ class Workspace(object):
         'workspace_template': 'WorkspaceTemplate',
         'status': 'WorkspaceStatus',
         'labels': 'list[KeyValue]',
-        'url': 'str'
+        'url': 'str',
+        'template_parameters': 'list[Parameter]'
     }
 
     attribute_map = {
@@ -53,10 +54,11 @@ class Workspace(object):
         'workspace_template': 'workspaceTemplate',
         'status': 'status',
         'labels': 'labels',
-        'url': 'url'
+        'url': 'url',
+        'template_parameters': 'templateParameters'
     }
 
-    def __init__(self, uid=None, name=None, version=None, created_at=None, parameters=None, workspace_template=None, status=None, labels=None, url=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, uid=None, name=None, version=None, created_at=None, parameters=None, workspace_template=None, status=None, labels=None, url=None, template_parameters=None, local_vars_configuration=None):  # noqa: E501
         """Workspace - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +73,7 @@ class Workspace(object):
         self._status = None
         self._labels = None
         self._url = None
+        self._template_parameters = None
         self.discriminator = None
 
         if uid is not None:
@@ -91,6 +94,8 @@ class Workspace(object):
             self.labels = labels
         if url is not None:
             self.url = url
+        if template_parameters is not None:
+            self.template_parameters = template_parameters
 
     @property
     def uid(self):
@@ -280,6 +285,27 @@ class Workspace(object):
         """
 
         self._url = url
+
+    @property
+    def template_parameters(self):
+        """Gets the template_parameters of this Workspace.  # noqa: E501
+
+
+        :return: The template_parameters of this Workspace.  # noqa: E501
+        :rtype: list[Parameter]
+        """
+        return self._template_parameters
+
+    @template_parameters.setter
+    def template_parameters(self, template_parameters):
+        """Sets the template_parameters of this Workspace.
+
+
+        :param template_parameters: The template_parameters of this Workspace.  # noqa: E501
+        :type: list[Parameter]
+        """
+
+        self._template_parameters = template_parameters
 
     def to_dict(self):
         """Returns the model properties as a dict"""

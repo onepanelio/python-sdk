@@ -36,17 +36,17 @@ class WorkflowServiceApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_workflow_execution_statistics(self, namespace, name, body, **kwargs):  # noqa: E501
+    def add_workflow_execution_statistics(self, namespace, uid, body, **kwargs):  # noqa: E501
         """add_workflow_execution_statistics  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_workflow_execution_statistics(namespace, name, body, async_req=True)
+        >>> thread = api.add_workflow_execution_statistics(namespace, uid, body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param Statistics body: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -60,19 +60,19 @@ class WorkflowServiceApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.add_workflow_execution_statistics_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
+        return self.add_workflow_execution_statistics_with_http_info(namespace, uid, body, **kwargs)  # noqa: E501
 
-    def add_workflow_execution_statistics_with_http_info(self, namespace, name, body, **kwargs):  # noqa: E501
+    def add_workflow_execution_statistics_with_http_info(self, namespace, uid, body, **kwargs):  # noqa: E501
         """add_workflow_execution_statistics  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_workflow_execution_statistics_with_http_info(namespace, name, body, async_req=True)
+        >>> thread = api.add_workflow_execution_statistics_with_http_info(namespace, uid, body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param Statistics body: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -90,7 +90,7 @@ class WorkflowServiceApi(object):
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'name', 'body']  # noqa: E501
+        all_params = ['namespace', 'uid', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -108,10 +108,10 @@ class WorkflowServiceApi(object):
         if self.api_client.client_side_validation and ('namespace' not in local_var_params or  # noqa: E501
                                                         local_var_params['namespace'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `namespace` when calling `add_workflow_execution_statistics`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in local_var_params or  # noqa: E501
-                                                        local_var_params['name'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `name` when calling `add_workflow_execution_statistics`")  # noqa: E501
+        # verify the required parameter 'uid' is set
+        if self.api_client.client_side_validation and ('uid' not in local_var_params or  # noqa: E501
+                                                        local_var_params['uid'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `uid` when calling `add_workflow_execution_statistics`")  # noqa: E501
         # verify the required parameter 'body' is set
         if self.api_client.client_side_validation and ('body' not in local_var_params or  # noqa: E501
                                                         local_var_params['body'] is None):  # noqa: E501
@@ -122,8 +122,8 @@ class WorkflowServiceApi(object):
         path_params = {}
         if 'namespace' in local_var_params:
             path_params['namespace'] = local_var_params['namespace']  # noqa: E501
-        if 'name' in local_var_params:
-            path_params['name'] = local_var_params['name']  # noqa: E501
+        if 'uid' in local_var_params:
+            path_params['uid'] = local_var_params['uid']  # noqa: E501
 
         query_params = []
 
@@ -147,7 +147,7 @@ class WorkflowServiceApi(object):
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/v1beta1/{namespace}/workflow_executions/{name}/statistics', 'POST',
+            '/apis/v1beta1/{namespace}/workflow_executions/{uid}/statistics', 'POST',
             path_params,
             query_params,
             header_params,
@@ -162,17 +162,17 @@ class WorkflowServiceApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def clone_workflow_execution(self, namespace, name, **kwargs):  # noqa: E501
+    def clone_workflow_execution(self, namespace, uid, **kwargs):  # noqa: E501
         """clone_workflow_execution  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.clone_workflow_execution(namespace, name, async_req=True)
+        >>> thread = api.clone_workflow_execution(namespace, uid, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -185,19 +185,19 @@ class WorkflowServiceApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.clone_workflow_execution_with_http_info(namespace, name, **kwargs)  # noqa: E501
+        return self.clone_workflow_execution_with_http_info(namespace, uid, **kwargs)  # noqa: E501
 
-    def clone_workflow_execution_with_http_info(self, namespace, name, **kwargs):  # noqa: E501
+    def clone_workflow_execution_with_http_info(self, namespace, uid, **kwargs):  # noqa: E501
         """clone_workflow_execution  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.clone_workflow_execution_with_http_info(namespace, name, async_req=True)
+        >>> thread = api.clone_workflow_execution_with_http_info(namespace, uid, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -214,7 +214,7 @@ class WorkflowServiceApi(object):
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'name']  # noqa: E501
+        all_params = ['namespace', 'uid']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -232,18 +232,18 @@ class WorkflowServiceApi(object):
         if self.api_client.client_side_validation and ('namespace' not in local_var_params or  # noqa: E501
                                                         local_var_params['namespace'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `namespace` when calling `clone_workflow_execution`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in local_var_params or  # noqa: E501
-                                                        local_var_params['name'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `name` when calling `clone_workflow_execution`")  # noqa: E501
+        # verify the required parameter 'uid' is set
+        if self.api_client.client_side_validation and ('uid' not in local_var_params or  # noqa: E501
+                                                        local_var_params['uid'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `uid` when calling `clone_workflow_execution`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'namespace' in local_var_params:
             path_params['namespace'] = local_var_params['namespace']  # noqa: E501
-        if 'name' in local_var_params:
-            path_params['name'] = local_var_params['name']  # noqa: E501
+        if 'uid' in local_var_params:
+            path_params['uid'] = local_var_params['uid']  # noqa: E501
 
         query_params = []
 
@@ -261,7 +261,7 @@ class WorkflowServiceApi(object):
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/v1beta1/{namespace}/workflow_executions/{name}', 'POST',
+            '/apis/v1beta1/{namespace}/workflow_executions/{uid}', 'POST',
             path_params,
             query_params,
             header_params,
@@ -394,17 +394,17 @@ class WorkflowServiceApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def cron_start_workflow_execution_statistic(self, namespace, name, body, **kwargs):  # noqa: E501
+    def cron_start_workflow_execution_statistic(self, namespace, uid, body, **kwargs):  # noqa: E501
         """cron_start_workflow_execution_statistic  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cron_start_workflow_execution_statistic(namespace, name, body, async_req=True)
+        >>> thread = api.cron_start_workflow_execution_statistic(namespace, uid, body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param Statistics body: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -418,19 +418,19 @@ class WorkflowServiceApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.cron_start_workflow_execution_statistic_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
+        return self.cron_start_workflow_execution_statistic_with_http_info(namespace, uid, body, **kwargs)  # noqa: E501
 
-    def cron_start_workflow_execution_statistic_with_http_info(self, namespace, name, body, **kwargs):  # noqa: E501
+    def cron_start_workflow_execution_statistic_with_http_info(self, namespace, uid, body, **kwargs):  # noqa: E501
         """cron_start_workflow_execution_statistic  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cron_start_workflow_execution_statistic_with_http_info(namespace, name, body, async_req=True)
+        >>> thread = api.cron_start_workflow_execution_statistic_with_http_info(namespace, uid, body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param Statistics body: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -448,7 +448,7 @@ class WorkflowServiceApi(object):
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'name', 'body']  # noqa: E501
+        all_params = ['namespace', 'uid', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -466,10 +466,10 @@ class WorkflowServiceApi(object):
         if self.api_client.client_side_validation and ('namespace' not in local_var_params or  # noqa: E501
                                                         local_var_params['namespace'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `namespace` when calling `cron_start_workflow_execution_statistic`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in local_var_params or  # noqa: E501
-                                                        local_var_params['name'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `name` when calling `cron_start_workflow_execution_statistic`")  # noqa: E501
+        # verify the required parameter 'uid' is set
+        if self.api_client.client_side_validation and ('uid' not in local_var_params or  # noqa: E501
+                                                        local_var_params['uid'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `uid` when calling `cron_start_workflow_execution_statistic`")  # noqa: E501
         # verify the required parameter 'body' is set
         if self.api_client.client_side_validation and ('body' not in local_var_params or  # noqa: E501
                                                         local_var_params['body'] is None):  # noqa: E501
@@ -480,8 +480,8 @@ class WorkflowServiceApi(object):
         path_params = {}
         if 'namespace' in local_var_params:
             path_params['namespace'] = local_var_params['namespace']  # noqa: E501
-        if 'name' in local_var_params:
-            path_params['name'] = local_var_params['name']  # noqa: E501
+        if 'uid' in local_var_params:
+            path_params['uid'] = local_var_params['uid']  # noqa: E501
 
         query_params = []
 
@@ -505,7 +505,7 @@ class WorkflowServiceApi(object):
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/v1beta1/{namespace}/workflow_executions/{name}/cron_start_statistics', 'POST',
+            '/apis/v1beta1/{namespace}/workflow_executions/{uid}/cron_start_statistics', 'POST',
             path_params,
             query_params,
             header_params,
@@ -520,17 +520,17 @@ class WorkflowServiceApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_artifact(self, namespace, name, key, **kwargs):  # noqa: E501
+    def get_artifact(self, namespace, uid, key, **kwargs):  # noqa: E501
         """get_artifact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_artifact(namespace, name, key, async_req=True)
+        >>> thread = api.get_artifact(namespace, uid, key, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param str key: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -544,19 +544,19 @@ class WorkflowServiceApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.get_artifact_with_http_info(namespace, name, key, **kwargs)  # noqa: E501
+        return self.get_artifact_with_http_info(namespace, uid, key, **kwargs)  # noqa: E501
 
-    def get_artifact_with_http_info(self, namespace, name, key, **kwargs):  # noqa: E501
+    def get_artifact_with_http_info(self, namespace, uid, key, **kwargs):  # noqa: E501
         """get_artifact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_artifact_with_http_info(namespace, name, key, async_req=True)
+        >>> thread = api.get_artifact_with_http_info(namespace, uid, key, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param str key: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -574,7 +574,7 @@ class WorkflowServiceApi(object):
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'name', 'key']  # noqa: E501
+        all_params = ['namespace', 'uid', 'key']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -592,10 +592,10 @@ class WorkflowServiceApi(object):
         if self.api_client.client_side_validation and ('namespace' not in local_var_params or  # noqa: E501
                                                         local_var_params['namespace'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `namespace` when calling `get_artifact`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in local_var_params or  # noqa: E501
-                                                        local_var_params['name'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `name` when calling `get_artifact`")  # noqa: E501
+        # verify the required parameter 'uid' is set
+        if self.api_client.client_side_validation and ('uid' not in local_var_params or  # noqa: E501
+                                                        local_var_params['uid'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `uid` when calling `get_artifact`")  # noqa: E501
         # verify the required parameter 'key' is set
         if self.api_client.client_side_validation and ('key' not in local_var_params or  # noqa: E501
                                                         local_var_params['key'] is None):  # noqa: E501
@@ -606,8 +606,8 @@ class WorkflowServiceApi(object):
         path_params = {}
         if 'namespace' in local_var_params:
             path_params['namespace'] = local_var_params['namespace']  # noqa: E501
-        if 'name' in local_var_params:
-            path_params['name'] = local_var_params['name']  # noqa: E501
+        if 'uid' in local_var_params:
+            path_params['uid'] = local_var_params['uid']  # noqa: E501
         if 'key' in local_var_params:
             path_params['key'] = local_var_params['key']  # noqa: E501
 
@@ -627,7 +627,7 @@ class WorkflowServiceApi(object):
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/v1beta1/{namespace}/workflow_executions/{name}/artifacts/{key}', 'GET',
+            '/apis/v1beta1/{namespace}/workflow_executions/{uid}/artifacts/{key}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -642,17 +642,17 @@ class WorkflowServiceApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_workflow_execution(self, namespace, name, **kwargs):  # noqa: E501
+    def get_workflow_execution(self, namespace, uid, **kwargs):  # noqa: E501
         """get_workflow_execution  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_workflow_execution(namespace, name, async_req=True)
+        >>> thread = api.get_workflow_execution(namespace, uid, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -665,19 +665,19 @@ class WorkflowServiceApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.get_workflow_execution_with_http_info(namespace, name, **kwargs)  # noqa: E501
+        return self.get_workflow_execution_with_http_info(namespace, uid, **kwargs)  # noqa: E501
 
-    def get_workflow_execution_with_http_info(self, namespace, name, **kwargs):  # noqa: E501
+    def get_workflow_execution_with_http_info(self, namespace, uid, **kwargs):  # noqa: E501
         """get_workflow_execution  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_workflow_execution_with_http_info(namespace, name, async_req=True)
+        >>> thread = api.get_workflow_execution_with_http_info(namespace, uid, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -694,7 +694,7 @@ class WorkflowServiceApi(object):
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'name']  # noqa: E501
+        all_params = ['namespace', 'uid']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -712,18 +712,18 @@ class WorkflowServiceApi(object):
         if self.api_client.client_side_validation and ('namespace' not in local_var_params or  # noqa: E501
                                                         local_var_params['namespace'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `namespace` when calling `get_workflow_execution`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in local_var_params or  # noqa: E501
-                                                        local_var_params['name'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `name` when calling `get_workflow_execution`")  # noqa: E501
+        # verify the required parameter 'uid' is set
+        if self.api_client.client_side_validation and ('uid' not in local_var_params or  # noqa: E501
+                                                        local_var_params['uid'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `uid` when calling `get_workflow_execution`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'namespace' in local_var_params:
             path_params['namespace'] = local_var_params['namespace']  # noqa: E501
-        if 'name' in local_var_params:
-            path_params['name'] = local_var_params['name']  # noqa: E501
+        if 'uid' in local_var_params:
+            path_params['uid'] = local_var_params['uid']  # noqa: E501
 
         query_params = []
 
@@ -741,7 +741,7 @@ class WorkflowServiceApi(object):
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/v1beta1/{namespace}/workflow_executions/{name}', 'GET',
+            '/apis/v1beta1/{namespace}/workflow_executions/{uid}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -756,17 +756,17 @@ class WorkflowServiceApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_workflow_execution_logs(self, namespace, name, pod_name, container_name, **kwargs):  # noqa: E501
+    def get_workflow_execution_logs(self, namespace, uid, pod_name, container_name, **kwargs):  # noqa: E501
         """get_workflow_execution_logs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_workflow_execution_logs(namespace, name, pod_name, container_name, async_req=True)
+        >>> thread = api.get_workflow_execution_logs(namespace, uid, pod_name, container_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param str pod_name: (required)
         :param str container_name: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -781,19 +781,19 @@ class WorkflowServiceApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.get_workflow_execution_logs_with_http_info(namespace, name, pod_name, container_name, **kwargs)  # noqa: E501
+        return self.get_workflow_execution_logs_with_http_info(namespace, uid, pod_name, container_name, **kwargs)  # noqa: E501
 
-    def get_workflow_execution_logs_with_http_info(self, namespace, name, pod_name, container_name, **kwargs):  # noqa: E501
+    def get_workflow_execution_logs_with_http_info(self, namespace, uid, pod_name, container_name, **kwargs):  # noqa: E501
         """get_workflow_execution_logs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_workflow_execution_logs_with_http_info(namespace, name, pod_name, container_name, async_req=True)
+        >>> thread = api.get_workflow_execution_logs_with_http_info(namespace, uid, pod_name, container_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param str pod_name: (required)
         :param str container_name: (required)
         :param _return_http_data_only: response data without head status code
@@ -812,7 +812,7 @@ class WorkflowServiceApi(object):
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'name', 'pod_name', 'container_name']  # noqa: E501
+        all_params = ['namespace', 'uid', 'pod_name', 'container_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -830,10 +830,10 @@ class WorkflowServiceApi(object):
         if self.api_client.client_side_validation and ('namespace' not in local_var_params or  # noqa: E501
                                                         local_var_params['namespace'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `namespace` when calling `get_workflow_execution_logs`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in local_var_params or  # noqa: E501
-                                                        local_var_params['name'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `name` when calling `get_workflow_execution_logs`")  # noqa: E501
+        # verify the required parameter 'uid' is set
+        if self.api_client.client_side_validation and ('uid' not in local_var_params or  # noqa: E501
+                                                        local_var_params['uid'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `uid` when calling `get_workflow_execution_logs`")  # noqa: E501
         # verify the required parameter 'pod_name' is set
         if self.api_client.client_side_validation and ('pod_name' not in local_var_params or  # noqa: E501
                                                         local_var_params['pod_name'] is None):  # noqa: E501
@@ -848,8 +848,8 @@ class WorkflowServiceApi(object):
         path_params = {}
         if 'namespace' in local_var_params:
             path_params['namespace'] = local_var_params['namespace']  # noqa: E501
-        if 'name' in local_var_params:
-            path_params['name'] = local_var_params['name']  # noqa: E501
+        if 'uid' in local_var_params:
+            path_params['uid'] = local_var_params['uid']  # noqa: E501
         if 'pod_name' in local_var_params:
             path_params['podName'] = local_var_params['pod_name']  # noqa: E501
         if 'container_name' in local_var_params:
@@ -871,7 +871,7 @@ class WorkflowServiceApi(object):
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/v1beta1/{namespace}/workflow_executions/{name}/pods/{podName}/containers/{containerName}/logs', 'GET',
+            '/apis/v1beta1/{namespace}/workflow_executions/{uid}/pods/{podName}/containers/{containerName}/logs', 'GET',
             path_params,
             query_params,
             header_params,
@@ -886,17 +886,17 @@ class WorkflowServiceApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_workflow_execution_metrics(self, namespace, name, pod_name, **kwargs):  # noqa: E501
+    def get_workflow_execution_metrics(self, namespace, uid, pod_name, **kwargs):  # noqa: E501
         """get_workflow_execution_metrics  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_workflow_execution_metrics(namespace, name, pod_name, async_req=True)
+        >>> thread = api.get_workflow_execution_metrics(namespace, uid, pod_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param str pod_name: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -910,19 +910,19 @@ class WorkflowServiceApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.get_workflow_execution_metrics_with_http_info(namespace, name, pod_name, **kwargs)  # noqa: E501
+        return self.get_workflow_execution_metrics_with_http_info(namespace, uid, pod_name, **kwargs)  # noqa: E501
 
-    def get_workflow_execution_metrics_with_http_info(self, namespace, name, pod_name, **kwargs):  # noqa: E501
+    def get_workflow_execution_metrics_with_http_info(self, namespace, uid, pod_name, **kwargs):  # noqa: E501
         """get_workflow_execution_metrics  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_workflow_execution_metrics_with_http_info(namespace, name, pod_name, async_req=True)
+        >>> thread = api.get_workflow_execution_metrics_with_http_info(namespace, uid, pod_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param str pod_name: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -940,7 +940,7 @@ class WorkflowServiceApi(object):
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'name', 'pod_name']  # noqa: E501
+        all_params = ['namespace', 'uid', 'pod_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -958,10 +958,10 @@ class WorkflowServiceApi(object):
         if self.api_client.client_side_validation and ('namespace' not in local_var_params or  # noqa: E501
                                                         local_var_params['namespace'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `namespace` when calling `get_workflow_execution_metrics`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in local_var_params or  # noqa: E501
-                                                        local_var_params['name'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `name` when calling `get_workflow_execution_metrics`")  # noqa: E501
+        # verify the required parameter 'uid' is set
+        if self.api_client.client_side_validation and ('uid' not in local_var_params or  # noqa: E501
+                                                        local_var_params['uid'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `uid` when calling `get_workflow_execution_metrics`")  # noqa: E501
         # verify the required parameter 'pod_name' is set
         if self.api_client.client_side_validation and ('pod_name' not in local_var_params or  # noqa: E501
                                                         local_var_params['pod_name'] is None):  # noqa: E501
@@ -972,8 +972,8 @@ class WorkflowServiceApi(object):
         path_params = {}
         if 'namespace' in local_var_params:
             path_params['namespace'] = local_var_params['namespace']  # noqa: E501
-        if 'name' in local_var_params:
-            path_params['name'] = local_var_params['name']  # noqa: E501
+        if 'uid' in local_var_params:
+            path_params['uid'] = local_var_params['uid']  # noqa: E501
         if 'pod_name' in local_var_params:
             path_params['podName'] = local_var_params['pod_name']  # noqa: E501
 
@@ -993,7 +993,7 @@ class WorkflowServiceApi(object):
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/v1beta1/{namespace}/workflow_executions/{name}/pods/{podName}/metrics', 'GET',
+            '/apis/v1beta1/{namespace}/workflow_executions/{uid}/pods/{podName}/metrics', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1008,17 +1008,17 @@ class WorkflowServiceApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_files(self, namespace, name, path, **kwargs):  # noqa: E501
+    def list_files(self, namespace, uid, path, **kwargs):  # noqa: E501
         """list_files  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_files(namespace, name, path, async_req=True)
+        >>> thread = api.list_files(namespace, uid, path, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param str path: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -1032,19 +1032,19 @@ class WorkflowServiceApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.list_files_with_http_info(namespace, name, path, **kwargs)  # noqa: E501
+        return self.list_files_with_http_info(namespace, uid, path, **kwargs)  # noqa: E501
 
-    def list_files_with_http_info(self, namespace, name, path, **kwargs):  # noqa: E501
+    def list_files_with_http_info(self, namespace, uid, path, **kwargs):  # noqa: E501
         """list_files  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_files_with_http_info(namespace, name, path, async_req=True)
+        >>> thread = api.list_files_with_http_info(namespace, uid, path, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param str path: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -1062,7 +1062,7 @@ class WorkflowServiceApi(object):
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'name', 'path']  # noqa: E501
+        all_params = ['namespace', 'uid', 'path']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1080,10 +1080,10 @@ class WorkflowServiceApi(object):
         if self.api_client.client_side_validation and ('namespace' not in local_var_params or  # noqa: E501
                                                         local_var_params['namespace'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `namespace` when calling `list_files`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in local_var_params or  # noqa: E501
-                                                        local_var_params['name'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `name` when calling `list_files`")  # noqa: E501
+        # verify the required parameter 'uid' is set
+        if self.api_client.client_side_validation and ('uid' not in local_var_params or  # noqa: E501
+                                                        local_var_params['uid'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `uid` when calling `list_files`")  # noqa: E501
         # verify the required parameter 'path' is set
         if self.api_client.client_side_validation and ('path' not in local_var_params or  # noqa: E501
                                                         local_var_params['path'] is None):  # noqa: E501
@@ -1094,8 +1094,8 @@ class WorkflowServiceApi(object):
         path_params = {}
         if 'namespace' in local_var_params:
             path_params['namespace'] = local_var_params['namespace']  # noqa: E501
-        if 'name' in local_var_params:
-            path_params['name'] = local_var_params['name']  # noqa: E501
+        if 'uid' in local_var_params:
+            path_params['uid'] = local_var_params['uid']  # noqa: E501
         if 'path' in local_var_params:
             path_params['path'] = local_var_params['path']  # noqa: E501
 
@@ -1115,7 +1115,7 @@ class WorkflowServiceApi(object):
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/v1beta1/{namespace}/workflow_executions/{name}/files/{path}', 'GET',
+            '/apis/v1beta1/{namespace}/workflow_executions/{uid}/files/{path}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1252,17 +1252,17 @@ class WorkflowServiceApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def resubmit_workflow_execution(self, namespace, name, **kwargs):  # noqa: E501
+    def resubmit_workflow_execution(self, namespace, uid, **kwargs):  # noqa: E501
         """resubmit_workflow_execution  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.resubmit_workflow_execution(namespace, name, async_req=True)
+        >>> thread = api.resubmit_workflow_execution(namespace, uid, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1275,19 +1275,19 @@ class WorkflowServiceApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.resubmit_workflow_execution_with_http_info(namespace, name, **kwargs)  # noqa: E501
+        return self.resubmit_workflow_execution_with_http_info(namespace, uid, **kwargs)  # noqa: E501
 
-    def resubmit_workflow_execution_with_http_info(self, namespace, name, **kwargs):  # noqa: E501
+    def resubmit_workflow_execution_with_http_info(self, namespace, uid, **kwargs):  # noqa: E501
         """resubmit_workflow_execution  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.resubmit_workflow_execution_with_http_info(namespace, name, async_req=True)
+        >>> thread = api.resubmit_workflow_execution_with_http_info(namespace, uid, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1304,7 +1304,7 @@ class WorkflowServiceApi(object):
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'name']  # noqa: E501
+        all_params = ['namespace', 'uid']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1322,18 +1322,18 @@ class WorkflowServiceApi(object):
         if self.api_client.client_side_validation and ('namespace' not in local_var_params or  # noqa: E501
                                                         local_var_params['namespace'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `namespace` when calling `resubmit_workflow_execution`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in local_var_params or  # noqa: E501
-                                                        local_var_params['name'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `name` when calling `resubmit_workflow_execution`")  # noqa: E501
+        # verify the required parameter 'uid' is set
+        if self.api_client.client_side_validation and ('uid' not in local_var_params or  # noqa: E501
+                                                        local_var_params['uid'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `uid` when calling `resubmit_workflow_execution`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'namespace' in local_var_params:
             path_params['namespace'] = local_var_params['namespace']  # noqa: E501
-        if 'name' in local_var_params:
-            path_params['name'] = local_var_params['name']  # noqa: E501
+        if 'uid' in local_var_params:
+            path_params['uid'] = local_var_params['uid']  # noqa: E501
 
         query_params = []
 
@@ -1351,7 +1351,7 @@ class WorkflowServiceApi(object):
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/v1beta1/{namespace}/workflow_executions/{name}/resubmit', 'PUT',
+            '/apis/v1beta1/{namespace}/workflow_executions/{uid}/resubmit', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -1366,17 +1366,17 @@ class WorkflowServiceApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def terminate_workflow_execution(self, namespace, name, **kwargs):  # noqa: E501
+    def terminate_workflow_execution(self, namespace, uid, **kwargs):  # noqa: E501
         """terminate_workflow_execution  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.terminate_workflow_execution(namespace, name, async_req=True)
+        >>> thread = api.terminate_workflow_execution(namespace, uid, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1389,19 +1389,19 @@ class WorkflowServiceApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.terminate_workflow_execution_with_http_info(namespace, name, **kwargs)  # noqa: E501
+        return self.terminate_workflow_execution_with_http_info(namespace, uid, **kwargs)  # noqa: E501
 
-    def terminate_workflow_execution_with_http_info(self, namespace, name, **kwargs):  # noqa: E501
+    def terminate_workflow_execution_with_http_info(self, namespace, uid, **kwargs):  # noqa: E501
         """terminate_workflow_execution  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.terminate_workflow_execution_with_http_info(namespace, name, async_req=True)
+        >>> thread = api.terminate_workflow_execution_with_http_info(namespace, uid, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1418,7 +1418,7 @@ class WorkflowServiceApi(object):
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'name']  # noqa: E501
+        all_params = ['namespace', 'uid']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1436,18 +1436,18 @@ class WorkflowServiceApi(object):
         if self.api_client.client_side_validation and ('namespace' not in local_var_params or  # noqa: E501
                                                         local_var_params['namespace'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `namespace` when calling `terminate_workflow_execution`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in local_var_params or  # noqa: E501
-                                                        local_var_params['name'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `name` when calling `terminate_workflow_execution`")  # noqa: E501
+        # verify the required parameter 'uid' is set
+        if self.api_client.client_side_validation and ('uid' not in local_var_params or  # noqa: E501
+                                                        local_var_params['uid'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `uid` when calling `terminate_workflow_execution`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'namespace' in local_var_params:
             path_params['namespace'] = local_var_params['namespace']  # noqa: E501
-        if 'name' in local_var_params:
-            path_params['name'] = local_var_params['name']  # noqa: E501
+        if 'uid' in local_var_params:
+            path_params['uid'] = local_var_params['uid']  # noqa: E501
 
         query_params = []
 
@@ -1465,7 +1465,7 @@ class WorkflowServiceApi(object):
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/v1beta1/{namespace}/workflow_executions/{name}/terminate', 'PUT',
+            '/apis/v1beta1/{namespace}/workflow_executions/{uid}/terminate', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -1480,17 +1480,17 @@ class WorkflowServiceApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def watch_workflow_execution(self, namespace, name, **kwargs):  # noqa: E501
+    def watch_workflow_execution(self, namespace, uid, **kwargs):  # noqa: E501
         """watch_workflow_execution  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.watch_workflow_execution(namespace, name, async_req=True)
+        >>> thread = api.watch_workflow_execution(namespace, uid, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1503,19 +1503,19 @@ class WorkflowServiceApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.watch_workflow_execution_with_http_info(namespace, name, **kwargs)  # noqa: E501
+        return self.watch_workflow_execution_with_http_info(namespace, uid, **kwargs)  # noqa: E501
 
-    def watch_workflow_execution_with_http_info(self, namespace, name, **kwargs):  # noqa: E501
+    def watch_workflow_execution_with_http_info(self, namespace, uid, **kwargs):  # noqa: E501
         """watch_workflow_execution  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.watch_workflow_execution_with_http_info(namespace, name, async_req=True)
+        >>> thread = api.watch_workflow_execution_with_http_info(namespace, uid, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
-        :param str name: (required)
+        :param str uid: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1532,7 +1532,7 @@ class WorkflowServiceApi(object):
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'name']  # noqa: E501
+        all_params = ['namespace', 'uid']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1550,18 +1550,18 @@ class WorkflowServiceApi(object):
         if self.api_client.client_side_validation and ('namespace' not in local_var_params or  # noqa: E501
                                                         local_var_params['namespace'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `namespace` when calling `watch_workflow_execution`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if self.api_client.client_side_validation and ('name' not in local_var_params or  # noqa: E501
-                                                        local_var_params['name'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `name` when calling `watch_workflow_execution`")  # noqa: E501
+        # verify the required parameter 'uid' is set
+        if self.api_client.client_side_validation and ('uid' not in local_var_params or  # noqa: E501
+                                                        local_var_params['uid'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `uid` when calling `watch_workflow_execution`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'namespace' in local_var_params:
             path_params['namespace'] = local_var_params['namespace']  # noqa: E501
-        if 'name' in local_var_params:
-            path_params['name'] = local_var_params['name']  # noqa: E501
+        if 'uid' in local_var_params:
+            path_params['uid'] = local_var_params['uid']  # noqa: E501
 
         query_params = []
 
@@ -1579,7 +1579,7 @@ class WorkflowServiceApi(object):
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/v1beta1/{namespace}/workflow_executions/{name}/watch', 'GET',
+            '/apis/v1beta1/{namespace}/workflow_executions/{uid}/watch', 'GET',
             path_params,
             query_params,
             header_params,

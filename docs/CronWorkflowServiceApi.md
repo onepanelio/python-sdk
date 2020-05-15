@@ -5,11 +5,11 @@ All URIs are relative to *http://localhost:8888*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_cron_workflow**](CronWorkflowServiceApi.md#create_cron_workflow) | **POST** /apis/v1beta1/{namespace}/cron_workflow | 
-[**get_cron_workflow**](CronWorkflowServiceApi.md#get_cron_workflow) | **GET** /apis/v1beta1/{namespace}/cron_workflow/{name} | 
+[**get_cron_workflow**](CronWorkflowServiceApi.md#get_cron_workflow) | **GET** /apis/v1beta1/{namespace}/cron_workflow/{uid} | 
 [**list_cron_workflows**](CronWorkflowServiceApi.md#list_cron_workflows) | **GET** /apis/v1beta1/{namespace}/cron_workflows | 
 [**list_cron_workflows2**](CronWorkflowServiceApi.md#list_cron_workflows2) | **GET** /apis/v1beta1/{namespace}/cron_workflows/{workflow_template_name} | 
-[**terminate_cron_workflow**](CronWorkflowServiceApi.md#terminate_cron_workflow) | **DELETE** /apis/v1beta1/{namespace}/cron_workflows/{name}/terminate | 
-[**update_cron_workflow**](CronWorkflowServiceApi.md#update_cron_workflow) | **PUT** /apis/v1beta1/{namespace}/cron_workflow/{name} | 
+[**terminate_cron_workflow**](CronWorkflowServiceApi.md#terminate_cron_workflow) | **DELETE** /apis/v1beta1/{namespace}/cron_workflows/{uid}/terminate | 
+[**update_cron_workflow**](CronWorkflowServiceApi.md#update_cron_workflow) | **PUT** /apis/v1beta1/{namespace}/cron_workflow/{uid} | 
 
 
 # **create_cron_workflow**
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_cron_workflow**
-> CronWorkflow get_cron_workflow(namespace, name)
+> CronWorkflow get_cron_workflow(namespace, uid)
 
 
 
@@ -105,10 +105,10 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.CronWorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 
     try:
-        api_response = api_instance.get_cron_workflow(namespace, name)
+        api_response = api_instance.get_cron_workflow(namespace, uid)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling CronWorkflowServiceApi->get_cron_workflow: %s\n" % e)
@@ -119,7 +119,7 @@ name = 'name_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
 
 ### Return type
 
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **terminate_cron_workflow**
-> object terminate_cron_workflow(namespace, name)
+> object terminate_cron_workflow(namespace, uid)
 
 
 
@@ -308,10 +308,10 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.CronWorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 
     try:
-        api_response = api_instance.terminate_cron_workflow(namespace, name)
+        api_response = api_instance.terminate_cron_workflow(namespace, uid)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling CronWorkflowServiceApi->terminate_cron_workflow: %s\n" % e)
@@ -322,7 +322,7 @@ name = 'name_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
 
 ### Return type
 
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_cron_workflow**
-> CronWorkflow update_cron_workflow(namespace, name, body)
+> CronWorkflow update_cron_workflow(namespace, uid, body)
 
 
 
@@ -373,11 +373,11 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.CronWorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 body = onepanel.core.api.CronWorkflow() # CronWorkflow | 
 
     try:
-        api_response = api_instance.update_cron_workflow(namespace, name, body)
+        api_response = api_instance.update_cron_workflow(namespace, uid, body)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling CronWorkflowServiceApi->update_cron_workflow: %s\n" % e)
@@ -388,7 +388,7 @@ body = onepanel.core.api.CronWorkflow() # CronWorkflow |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
  **body** | [**CronWorkflow**](CronWorkflow.md)|  | 
 
 ### Return type

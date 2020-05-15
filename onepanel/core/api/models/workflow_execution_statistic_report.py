@@ -37,7 +37,8 @@ class WorkflowExecutionStatisticReport(object):
         'last_executed': 'str',
         'running': 'int',
         'completed': 'int',
-        'failed': 'int'
+        'failed': 'int',
+        'terminated': 'int'
     }
 
     attribute_map = {
@@ -45,10 +46,11 @@ class WorkflowExecutionStatisticReport(object):
         'last_executed': 'lastExecuted',
         'running': 'running',
         'completed': 'completed',
-        'failed': 'failed'
+        'failed': 'failed',
+        'terminated': 'terminated'
     }
 
-    def __init__(self, total=None, last_executed=None, running=None, completed=None, failed=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, total=None, last_executed=None, running=None, completed=None, failed=None, terminated=None, local_vars_configuration=None):  # noqa: E501
         """WorkflowExecutionStatisticReport - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class WorkflowExecutionStatisticReport(object):
         self._running = None
         self._completed = None
         self._failed = None
+        self._terminated = None
         self.discriminator = None
 
         if total is not None:
@@ -71,6 +74,8 @@ class WorkflowExecutionStatisticReport(object):
             self.completed = completed
         if failed is not None:
             self.failed = failed
+        if terminated is not None:
+            self.terminated = terminated
 
     @property
     def total(self):
@@ -176,6 +181,27 @@ class WorkflowExecutionStatisticReport(object):
         """
 
         self._failed = failed
+
+    @property
+    def terminated(self):
+        """Gets the terminated of this WorkflowExecutionStatisticReport.  # noqa: E501
+
+
+        :return: The terminated of this WorkflowExecutionStatisticReport.  # noqa: E501
+        :rtype: int
+        """
+        return self._terminated
+
+    @terminated.setter
+    def terminated(self, terminated):
+        """Sets the terminated of this WorkflowExecutionStatisticReport.
+
+
+        :param terminated: The terminated of this WorkflowExecutionStatisticReport.  # noqa: E501
+        :type: int
+        """
+
+        self._terminated = terminated
 
     def to_dict(self):
         """Returns the model properties as a dict"""
