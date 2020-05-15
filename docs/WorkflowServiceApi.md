@@ -4,28 +4,90 @@ All URIs are relative to *http://localhost:8888*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_workflow_template**](WorkflowServiceApi.md#archive_workflow_template) | **PUT** /apis/v1beta1/{namespace}/workflow_templates/{uid}/archive | 
+[**add_workflow_execution_statistics**](WorkflowServiceApi.md#add_workflow_execution_statistics) | **POST** /apis/v1beta1/{namespace}/workflow_executions/{uid}/statistics | 
+[**clone_workflow_execution**](WorkflowServiceApi.md#clone_workflow_execution) | **POST** /apis/v1beta1/{namespace}/workflow_executions/{uid} | 
 [**create_workflow_execution**](WorkflowServiceApi.md#create_workflow_execution) | **POST** /apis/v1beta1/{namespace}/workflow_executions | 
-[**create_workflow_template**](WorkflowServiceApi.md#create_workflow_template) | **POST** /apis/v1beta1/{namespace}/workflow_templates | 
-[**create_workflow_template_version**](WorkflowServiceApi.md#create_workflow_template_version) | **POST** /apis/v1beta1/{namespace}/workflow_templates/{workflowTemplate.uid}/versions | 
-[**get_artifact**](WorkflowServiceApi.md#get_artifact) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/artifacts/{key} | 
-[**get_workflow_execution**](WorkflowServiceApi.md#get_workflow_execution) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name} | 
-[**get_workflow_execution_logs**](WorkflowServiceApi.md#get_workflow_execution_logs) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/pods/{podName}/containers/{containerName}/logs | 
-[**get_workflow_execution_metrics**](WorkflowServiceApi.md#get_workflow_execution_metrics) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/pods/{podName}/metrics | 
-[**get_workflow_template**](WorkflowServiceApi.md#get_workflow_template) | **GET** /apis/v1beta1/{namespace}/workflow_templates/{uid} | 
-[**get_workflow_template2**](WorkflowServiceApi.md#get_workflow_template2) | **GET** /apis/v1beta1/{namespace}/workflow_templates/{uid}/versions/{version} | 
-[**list_files**](WorkflowServiceApi.md#list_files) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/files/{path} | 
+[**cron_start_workflow_execution_statistic**](WorkflowServiceApi.md#cron_start_workflow_execution_statistic) | **POST** /apis/v1beta1/{namespace}/workflow_executions/{uid}/cron_start_statistics | 
+[**get_artifact**](WorkflowServiceApi.md#get_artifact) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/artifacts/{key} | 
+[**get_workflow_execution**](WorkflowServiceApi.md#get_workflow_execution) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid} | 
+[**get_workflow_execution_logs**](WorkflowServiceApi.md#get_workflow_execution_logs) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/pods/{podName}/containers/{containerName}/logs | 
+[**get_workflow_execution_metrics**](WorkflowServiceApi.md#get_workflow_execution_metrics) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/pods/{podName}/metrics | 
+[**list_files**](WorkflowServiceApi.md#list_files) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/files/{path} | 
 [**list_workflow_executions**](WorkflowServiceApi.md#list_workflow_executions) | **GET** /apis/v1beta1/{namespace}/workflow_executions | 
-[**list_workflow_template_versions**](WorkflowServiceApi.md#list_workflow_template_versions) | **GET** /apis/v1beta1/{namespace}/workflow_templates/{uid}/versions | 
-[**list_workflow_templates**](WorkflowServiceApi.md#list_workflow_templates) | **GET** /apis/v1beta1/{namespace}/workflow_templates | 
-[**resubmit_workflow_execution**](WorkflowServiceApi.md#resubmit_workflow_execution) | **PUT** /apis/v1beta1/{namespace}/workflow_executions/{name}/resubmit | 
-[**terminate_workflow_execution**](WorkflowServiceApi.md#terminate_workflow_execution) | **PUT** /apis/v1beta1/{namespace}/workflow_executions/{name}/terminate | 
-[**update_workflow_template_version**](WorkflowServiceApi.md#update_workflow_template_version) | **PUT** /apis/v1beta1/{namespace}/workflow_templates/{workflowTemplate.uid}/versions/{workflowTemplate.version} | 
-[**watch_workflow_execution**](WorkflowServiceApi.md#watch_workflow_execution) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{name}/watch | 
+[**resubmit_workflow_execution**](WorkflowServiceApi.md#resubmit_workflow_execution) | **PUT** /apis/v1beta1/{namespace}/workflow_executions/{uid}/resubmit | 
+[**terminate_workflow_execution**](WorkflowServiceApi.md#terminate_workflow_execution) | **PUT** /apis/v1beta1/{namespace}/workflow_executions/{uid}/terminate | 
+[**watch_workflow_execution**](WorkflowServiceApi.md#watch_workflow_execution) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/watch | 
 
 
-# **archive_workflow_template**
-> ArchiveWorkflowTemplateResponse archive_workflow_template(namespace, uid)
+# **add_workflow_execution_statistics**
+> object add_workflow_execution_statistics(namespace, uid, body)
+
+
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import onepanel.core.api
+from onepanel.core.api.rest import ApiException
+from pprint import pprint
+configuration = onepanel.core.api.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost:8888
+configuration.host = "http://localhost:8888"
+
+# Enter a context with an instance of the API client
+with onepanel.core.api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
+    namespace = 'namespace_example' # str | 
+uid = 'uid_example' # str | 
+body = onepanel.core.api.Statistics() # Statistics | 
+
+    try:
+        api_response = api_instance.add_workflow_execution_statistics(namespace, uid, body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WorkflowServiceApi->add_workflow_execution_statistics: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **namespace** | **str**|  | 
+ **uid** | **str**|  | 
+ **body** | [**Statistics**](Statistics.md)|  | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **clone_workflow_execution**
+> WorkflowExecution clone_workflow_execution(namespace, uid)
 
 
 
@@ -55,10 +117,10 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
 uid = 'uid_example' # str | 
 
     try:
-        api_response = api_instance.archive_workflow_template(namespace, uid)
+        api_response = api_instance.clone_workflow_execution(namespace, uid)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling WorkflowServiceApi->archive_workflow_template: %s\n" % e)
+        print("Exception when calling WorkflowServiceApi->clone_workflow_execution: %s\n" % e)
 ```
 
 ### Parameters
@@ -70,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ArchiveWorkflowTemplateResponse**](ArchiveWorkflowTemplateResponse.md)
+[**WorkflowExecution**](WorkflowExecution.md)
 
 ### Authorization
 
@@ -117,7 +179,7 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-body = onepanel.core.api.WorkflowExecution() # WorkflowExecution | 
+body = onepanel.core.api.CreateWorkflowExecutionBody() # CreateWorkflowExecutionBody | 
 
     try:
         api_response = api_instance.create_workflow_execution(namespace, body)
@@ -131,7 +193,7 @@ body = onepanel.core.api.WorkflowExecution() # WorkflowExecution |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **body** | [**WorkflowExecution**](WorkflowExecution.md)|  | 
+ **body** | [**CreateWorkflowExecutionBody**](CreateWorkflowExecutionBody.md)|  | 
 
 ### Return type
 
@@ -154,8 +216,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_workflow_template**
-> WorkflowTemplate create_workflow_template(namespace, body)
+# **cron_start_workflow_execution_statistic**
+> object cron_start_workflow_execution_statistic(namespace, uid, body)
 
 
 
@@ -182,13 +244,14 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-body = onepanel.core.api.WorkflowTemplate() # WorkflowTemplate | 
+uid = 'uid_example' # str | 
+body = onepanel.core.api.Statistics() # Statistics | 
 
     try:
-        api_response = api_instance.create_workflow_template(namespace, body)
+        api_response = api_instance.cron_start_workflow_execution_statistic(namespace, uid, body)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling WorkflowServiceApi->create_workflow_template: %s\n" % e)
+        print("Exception when calling WorkflowServiceApi->cron_start_workflow_execution_statistic: %s\n" % e)
 ```
 
 ### Parameters
@@ -196,78 +259,12 @@ body = onepanel.core.api.WorkflowTemplate() # WorkflowTemplate |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **body** | [**WorkflowTemplate**](WorkflowTemplate.md)|  | 
+ **uid** | **str**|  | 
+ **body** | [**Statistics**](Statistics.md)|  | 
 
 ### Return type
 
-[**WorkflowTemplate**](WorkflowTemplate.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A successful response. |  -  |
-**0** | An unexpected error response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **create_workflow_template_version**
-> WorkflowTemplate create_workflow_template_version(namespace, workflow_template_uid, body)
-
-
-
-### Example
-
-* Api Key Authentication (Bearer):
-```python
-from __future__ import print_function
-import time
-import onepanel.core.api
-from onepanel.core.api.rest import ApiException
-from pprint import pprint
-configuration = onepanel.core.api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
-# Defining host is optional and default to http://localhost:8888
-configuration.host = "http://localhost:8888"
-
-# Enter a context with an instance of the API client
-with onepanel.core.api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
-    namespace = 'namespace_example' # str | 
-workflow_template_uid = 'workflow_template_uid_example' # str | 
-body = onepanel.core.api.WorkflowTemplate() # WorkflowTemplate | 
-
-    try:
-        api_response = api_instance.create_workflow_template_version(namespace, workflow_template_uid, body)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling WorkflowServiceApi->create_workflow_template_version: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **namespace** | **str**|  | 
- **workflow_template_uid** | **str**|  | 
- **body** | [**WorkflowTemplate**](WorkflowTemplate.md)|  | 
-
-### Return type
-
-[**WorkflowTemplate**](WorkflowTemplate.md)
+**object**
 
 ### Authorization
 
@@ -287,7 +284,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_artifact**
-> ArtifactResponse get_artifact(namespace, name, key)
+> ArtifactResponse get_artifact(namespace, uid, key)
 
 
 
@@ -314,11 +311,11 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 key = 'key_example' # str | 
 
     try:
-        api_response = api_instance.get_artifact(namespace, name, key)
+        api_response = api_instance.get_artifact(namespace, uid, key)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->get_artifact: %s\n" % e)
@@ -329,7 +326,7 @@ key = 'key_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
  **key** | **str**|  | 
 
 ### Return type
@@ -354,7 +351,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_workflow_execution**
-> WorkflowExecution get_workflow_execution(namespace, name)
+> WorkflowExecution get_workflow_execution(namespace, uid)
 
 
 
@@ -381,10 +378,10 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 
     try:
-        api_response = api_instance.get_workflow_execution(namespace, name)
+        api_response = api_instance.get_workflow_execution(namespace, uid)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->get_workflow_execution: %s\n" % e)
@@ -395,7 +392,7 @@ name = 'name_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
 
 ### Return type
 
@@ -419,7 +416,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_workflow_execution_logs**
-> StreamResultOfLogEntry get_workflow_execution_logs(namespace, name, pod_name, container_name)
+> StreamResultOfLogEntry get_workflow_execution_logs(namespace, uid, pod_name, container_name)
 
 
 
@@ -446,12 +443,12 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 pod_name = 'pod_name_example' # str | 
 container_name = 'container_name_example' # str | 
 
     try:
-        api_response = api_instance.get_workflow_execution_logs(namespace, name, pod_name, container_name)
+        api_response = api_instance.get_workflow_execution_logs(namespace, uid, pod_name, container_name)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->get_workflow_execution_logs: %s\n" % e)
@@ -462,7 +459,7 @@ container_name = 'container_name_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
  **pod_name** | **str**|  | 
  **container_name** | **str**|  | 
 
@@ -488,7 +485,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_workflow_execution_metrics**
-> GetWorkflowExecutionMetricsResponse get_workflow_execution_metrics(namespace, name, pod_name)
+> GetWorkflowExecutionMetricsResponse get_workflow_execution_metrics(namespace, uid, pod_name)
 
 
 
@@ -515,11 +512,11 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 pod_name = 'pod_name_example' # str | 
 
     try:
-        api_response = api_instance.get_workflow_execution_metrics(namespace, name, pod_name)
+        api_response = api_instance.get_workflow_execution_metrics(namespace, uid, pod_name)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->get_workflow_execution_metrics: %s\n" % e)
@@ -530,7 +527,7 @@ pod_name = 'pod_name_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
  **pod_name** | **str**|  | 
 
 ### Return type
@@ -554,142 +551,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_workflow_template**
-> WorkflowTemplate get_workflow_template(namespace, uid, version=version)
-
-
-
-### Example
-
-* Api Key Authentication (Bearer):
-```python
-from __future__ import print_function
-import time
-import onepanel.core.api
-from onepanel.core.api.rest import ApiException
-from pprint import pprint
-configuration = onepanel.core.api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
-# Defining host is optional and default to http://localhost:8888
-configuration.host = "http://localhost:8888"
-
-# Enter a context with an instance of the API client
-with onepanel.core.api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
-    namespace = 'namespace_example' # str | 
-uid = 'uid_example' # str | 
-version = 56 # int |  (optional)
-
-    try:
-        api_response = api_instance.get_workflow_template(namespace, uid, version=version)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling WorkflowServiceApi->get_workflow_template: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **namespace** | **str**|  | 
- **uid** | **str**|  | 
- **version** | **int**|  | [optional] 
-
-### Return type
-
-[**WorkflowTemplate**](WorkflowTemplate.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A successful response. |  -  |
-**0** | An unexpected error response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_workflow_template2**
-> WorkflowTemplate get_workflow_template2(namespace, uid, version)
-
-
-
-### Example
-
-* Api Key Authentication (Bearer):
-```python
-from __future__ import print_function
-import time
-import onepanel.core.api
-from onepanel.core.api.rest import ApiException
-from pprint import pprint
-configuration = onepanel.core.api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
-# Defining host is optional and default to http://localhost:8888
-configuration.host = "http://localhost:8888"
-
-# Enter a context with an instance of the API client
-with onepanel.core.api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
-    namespace = 'namespace_example' # str | 
-uid = 'uid_example' # str | 
-version = 56 # int | 
-
-    try:
-        api_response = api_instance.get_workflow_template2(namespace, uid, version)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling WorkflowServiceApi->get_workflow_template2: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **namespace** | **str**|  | 
- **uid** | **str**|  | 
- **version** | **int**|  | 
-
-### Return type
-
-[**WorkflowTemplate**](WorkflowTemplate.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A successful response. |  -  |
-**0** | An unexpected error response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **list_files**
-> ListFilesResponse list_files(namespace, name, path)
+> ListFilesResponse list_files(namespace, uid, path)
 
 
 
@@ -716,11 +579,11 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 path = 'path_example' # str | 
 
     try:
-        api_response = api_instance.list_files(namespace, name, path)
+        api_response = api_instance.list_files(namespace, uid, path)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->list_files: %s\n" % e)
@@ -731,7 +594,7 @@ path = 'path_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
  **path** | **str**|  | 
 
 ### Return type
@@ -826,8 +689,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_workflow_template_versions**
-> ListWorkflowTemplateVersionsResponse list_workflow_template_versions(namespace, uid)
+# **resubmit_workflow_execution**
+> WorkflowExecution resubmit_workflow_execution(namespace, uid)
 
 
 
@@ -857,135 +720,7 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
 uid = 'uid_example' # str | 
 
     try:
-        api_response = api_instance.list_workflow_template_versions(namespace, uid)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling WorkflowServiceApi->list_workflow_template_versions: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **namespace** | **str**|  | 
- **uid** | **str**|  | 
-
-### Return type
-
-[**ListWorkflowTemplateVersionsResponse**](ListWorkflowTemplateVersionsResponse.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A successful response. |  -  |
-**0** | An unexpected error response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_workflow_templates**
-> ListWorkflowTemplatesResponse list_workflow_templates(namespace)
-
-
-
-### Example
-
-* Api Key Authentication (Bearer):
-```python
-from __future__ import print_function
-import time
-import onepanel.core.api
-from onepanel.core.api.rest import ApiException
-from pprint import pprint
-configuration = onepanel.core.api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
-# Defining host is optional and default to http://localhost:8888
-configuration.host = "http://localhost:8888"
-
-# Enter a context with an instance of the API client
-with onepanel.core.api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
-    namespace = 'namespace_example' # str | 
-
-    try:
-        api_response = api_instance.list_workflow_templates(namespace)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling WorkflowServiceApi->list_workflow_templates: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **namespace** | **str**|  | 
-
-### Return type
-
-[**ListWorkflowTemplatesResponse**](ListWorkflowTemplatesResponse.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A successful response. |  -  |
-**0** | An unexpected error response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **resubmit_workflow_execution**
-> WorkflowExecution resubmit_workflow_execution(namespace, name)
-
-
-
-### Example
-
-* Api Key Authentication (Bearer):
-```python
-from __future__ import print_function
-import time
-import onepanel.core.api
-from onepanel.core.api.rest import ApiException
-from pprint import pprint
-configuration = onepanel.core.api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
-# Defining host is optional and default to http://localhost:8888
-configuration.host = "http://localhost:8888"
-
-# Enter a context with an instance of the API client
-with onepanel.core.api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
-    namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
-
-    try:
-        api_response = api_instance.resubmit_workflow_execution(namespace, name)
+        api_response = api_instance.resubmit_workflow_execution(namespace, uid)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->resubmit_workflow_execution: %s\n" % e)
@@ -996,7 +731,7 @@ name = 'name_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
 
 ### Return type
 
@@ -1020,7 +755,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **terminate_workflow_execution**
-> object terminate_workflow_execution(namespace, name)
+> object terminate_workflow_execution(namespace, uid)
 
 
 
@@ -1047,10 +782,10 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 
     try:
-        api_response = api_instance.terminate_workflow_execution(namespace, name)
+        api_response = api_instance.terminate_workflow_execution(namespace, uid)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->terminate_workflow_execution: %s\n" % e)
@@ -1061,7 +796,7 @@ name = 'name_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
 
 ### Return type
 
@@ -1084,77 +819,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_workflow_template_version**
-> WorkflowTemplate update_workflow_template_version(namespace, workflow_template_uid, workflow_template_version, body)
-
-
-
-### Example
-
-* Api Key Authentication (Bearer):
-```python
-from __future__ import print_function
-import time
-import onepanel.core.api
-from onepanel.core.api.rest import ApiException
-from pprint import pprint
-configuration = onepanel.core.api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
-# Defining host is optional and default to http://localhost:8888
-configuration.host = "http://localhost:8888"
-
-# Enter a context with an instance of the API client
-with onepanel.core.api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
-    namespace = 'namespace_example' # str | 
-workflow_template_uid = 'workflow_template_uid_example' # str | 
-workflow_template_version = 56 # int | 
-body = onepanel.core.api.WorkflowTemplate() # WorkflowTemplate | 
-
-    try:
-        api_response = api_instance.update_workflow_template_version(namespace, workflow_template_uid, workflow_template_version, body)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling WorkflowServiceApi->update_workflow_template_version: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **namespace** | **str**|  | 
- **workflow_template_uid** | **str**|  | 
- **workflow_template_version** | **int**|  | 
- **body** | [**WorkflowTemplate**](WorkflowTemplate.md)|  | 
-
-### Return type
-
-[**WorkflowTemplate**](WorkflowTemplate.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A successful response. |  -  |
-**0** | An unexpected error response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **watch_workflow_execution**
-> StreamResultOfWorkflowExecution watch_workflow_execution(namespace, name)
+> StreamResultOfWorkflowExecution watch_workflow_execution(namespace, uid)
 
 
 
@@ -1181,10 +847,10 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-name = 'name_example' # str | 
+uid = 'uid_example' # str | 
 
     try:
-        api_response = api_instance.watch_workflow_execution(namespace, name)
+        api_response = api_instance.watch_workflow_execution(namespace, uid)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->watch_workflow_execution: %s\n" % e)
@@ -1195,7 +861,7 @@ name = 'name_example' # str |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **name** | **str**|  | 
+ **uid** | **str**|  | 
 
 ### Return type
 

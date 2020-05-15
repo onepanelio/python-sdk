@@ -34,15 +34,21 @@ class ListWorkflowTemplatesResponse(object):
     """
     openapi_types = {
         'count': 'int',
-        'workflow_templates': 'list[WorkflowTemplate]'
+        'workflow_templates': 'list[WorkflowTemplate]',
+        'page': 'int',
+        'pages': 'int',
+        'total_count': 'int'
     }
 
     attribute_map = {
         'count': 'count',
-        'workflow_templates': 'workflowTemplates'
+        'workflow_templates': 'workflowTemplates',
+        'page': 'page',
+        'pages': 'pages',
+        'total_count': 'totalCount'
     }
 
-    def __init__(self, count=None, workflow_templates=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, count=None, workflow_templates=None, page=None, pages=None, total_count=None, local_vars_configuration=None):  # noqa: E501
         """ListWorkflowTemplatesResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -50,12 +56,21 @@ class ListWorkflowTemplatesResponse(object):
 
         self._count = None
         self._workflow_templates = None
+        self._page = None
+        self._pages = None
+        self._total_count = None
         self.discriminator = None
 
         if count is not None:
             self.count = count
         if workflow_templates is not None:
             self.workflow_templates = workflow_templates
+        if page is not None:
+            self.page = page
+        if pages is not None:
+            self.pages = pages
+        if total_count is not None:
+            self.total_count = total_count
 
     @property
     def count(self):
@@ -98,6 +113,69 @@ class ListWorkflowTemplatesResponse(object):
         """
 
         self._workflow_templates = workflow_templates
+
+    @property
+    def page(self):
+        """Gets the page of this ListWorkflowTemplatesResponse.  # noqa: E501
+
+
+        :return: The page of this ListWorkflowTemplatesResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._page
+
+    @page.setter
+    def page(self, page):
+        """Sets the page of this ListWorkflowTemplatesResponse.
+
+
+        :param page: The page of this ListWorkflowTemplatesResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._page = page
+
+    @property
+    def pages(self):
+        """Gets the pages of this ListWorkflowTemplatesResponse.  # noqa: E501
+
+
+        :return: The pages of this ListWorkflowTemplatesResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._pages
+
+    @pages.setter
+    def pages(self, pages):
+        """Sets the pages of this ListWorkflowTemplatesResponse.
+
+
+        :param pages: The pages of this ListWorkflowTemplatesResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._pages = pages
+
+    @property
+    def total_count(self):
+        """Gets the total_count of this ListWorkflowTemplatesResponse.  # noqa: E501
+
+
+        :return: The total_count of this ListWorkflowTemplatesResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._total_count
+
+    @total_count.setter
+    def total_count(self, total_count):
+        """Sets the total_count of this ListWorkflowTemplatesResponse.
+
+
+        :param total_count: The total_count of this ListWorkflowTemplatesResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._total_count = total_count
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -10,8 +10,9 @@ Name | Type | Description | Notes
 **started_at** | **str** |  | [optional] 
 **finished_at** | **str** |  | [optional] 
 **manifest** | **str** |  | [optional] 
-**parameters** | [**list[WorkflowExecutionParameter]**](WorkflowExecutionParameter.md) |  | [optional] 
+**parameters** | [**list[Parameter]**](Parameter.md) |  | [optional] 
 **workflow_template** | [**WorkflowTemplate**](WorkflowTemplate.md) |  | [optional] 
+**labels** | [**list[KeyValue]**](KeyValue.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
