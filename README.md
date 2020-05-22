@@ -67,13 +67,12 @@ configuration.host = "http://localhost:8888"
 with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.AuthServiceApi(api_client)
-    body = onepanel.core.api.TokenWrapper() # TokenWrapper | 
-
+    
     try:
-        api_response = api_instance.is_valid_token(body)
+        api_response = api_instance.is_authorized()
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AuthServiceApi->is_valid_token: %s\n" % e)
+        print("Exception when calling AuthServiceApi->is_authorized: %s\n" % e)
     
 ```
 
@@ -83,7 +82,7 @@ All URIs are relative to *http://localhost:8888*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AuthServiceApi* | [**is_valid_token**](docs/AuthServiceApi.md#is_valid_token) | **POST** /apis/v1beta1/auth/token | 
+*AuthServiceApi* | [**is_authorized**](docs/AuthServiceApi.md#is_authorized) | **POST** /apis/v1beta1/auth/token | 
 *CronWorkflowServiceApi* | [**create_cron_workflow**](docs/CronWorkflowServiceApi.md#create_cron_workflow) | **POST** /apis/v1beta1/{namespace}/cron_workflow | 
 *CronWorkflowServiceApi* | [**get_cron_workflow**](docs/CronWorkflowServiceApi.md#get_cron_workflow) | **GET** /apis/v1beta1/{namespace}/cron_workflow/{uid} | 
 *CronWorkflowServiceApi* | [**list_cron_workflows**](docs/CronWorkflowServiceApi.md#list_cron_workflows) | **GET** /apis/v1beta1/{namespace}/cron_workflows | 
@@ -116,6 +115,7 @@ Class | Method | HTTP request | Description
 *WorkflowServiceApi* | [**list_workflow_executions**](docs/WorkflowServiceApi.md#list_workflow_executions) | **GET** /apis/v1beta1/{namespace}/workflow_executions | 
 *WorkflowServiceApi* | [**resubmit_workflow_execution**](docs/WorkflowServiceApi.md#resubmit_workflow_execution) | **PUT** /apis/v1beta1/{namespace}/workflow_executions/{uid}/resubmit | 
 *WorkflowServiceApi* | [**terminate_workflow_execution**](docs/WorkflowServiceApi.md#terminate_workflow_execution) | **PUT** /apis/v1beta1/{namespace}/workflow_executions/{uid}/terminate | 
+*WorkflowServiceApi* | [**update_workflow_execution_status**](docs/WorkflowServiceApi.md#update_workflow_execution_status) | **PUT** /apis/v1beta1/{namespace}/workflow_executions/{uid}/status | 
 *WorkflowServiceApi* | [**watch_workflow_execution**](docs/WorkflowServiceApi.md#watch_workflow_execution) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/watch | 
 *WorkflowTemplateServiceApi* | [**archive_workflow_template**](docs/WorkflowTemplateServiceApi.md#archive_workflow_template) | **PUT** /apis/v1beta1/{namespace}/workflow_templates/{uid}/archive | 
 *WorkflowTemplateServiceApi* | [**clone_workflow_template**](docs/WorkflowTemplateServiceApi.md#clone_workflow_template) | **GET** /apis/v1beta1/{namespace}/workflow_templates/{uid}/clone/{name} | 
@@ -135,6 +135,7 @@ Class | Method | HTTP request | Description
 *WorkspaceServiceApi* | [**resume_workspace**](docs/WorkspaceServiceApi.md#resume_workspace) | **PUT** /apis/v1beta1/{namespace}/workspaces/{uid}/resume | 
 *WorkspaceServiceApi* | [**update_workspace**](docs/WorkspaceServiceApi.md#update_workspace) | **PUT** /apis/v1beta1/{namespace}/workspaces/{uid} | 
 *WorkspaceServiceApi* | [**update_workspace_status**](docs/WorkspaceServiceApi.md#update_workspace_status) | **PUT** /apis/v1beta1/{namespace}/workspaces/{uid}/status | 
+*WorkspaceTemplateServiceApi* | [**archive_workspace_template**](docs/WorkspaceTemplateServiceApi.md#archive_workspace_template) | **PUT** /apis/v1beta1/{namespace}/workspace_templates/{uid}/archive | 
 *WorkspaceTemplateServiceApi* | [**create_workspace_template**](docs/WorkspaceTemplateServiceApi.md#create_workspace_template) | **POST** /apis/v1beta1/{namespace}/workspace_templates | 
 *WorkspaceTemplateServiceApi* | [**generate_workspace_template_workflow_template**](docs/WorkspaceTemplateServiceApi.md#generate_workspace_template_workflow_template) | **POST** /apis/v1beta1/{namespace}/workspace_templates/{uid}/workflow_template | 
 *WorkspaceTemplateServiceApi* | [**get_workspace_template**](docs/WorkspaceTemplateServiceApi.md#get_workspace_template) | **GET** /apis/v1beta1/{namespace}/workspace_templates/{uid} | 
@@ -160,6 +161,7 @@ Class | Method | HTTP request | Description
  - [GoogleProtobufAny](docs/GoogleProtobufAny.md)
  - [GrpcGatewayRuntimeError](docs/GrpcGatewayRuntimeError.md)
  - [GrpcGatewayRuntimeStreamError](docs/GrpcGatewayRuntimeStreamError.md)
+ - [IsAuthorizedResponse](docs/IsAuthorizedResponse.md)
  - [IsValidTokenResponse](docs/IsValidTokenResponse.md)
  - [KeyValue](docs/KeyValue.md)
  - [Labels](docs/Labels.md)
@@ -188,6 +190,7 @@ Class | Method | HTTP request | Description
  - [UpdateWorkspaceBody](docs/UpdateWorkspaceBody.md)
  - [WorkflowExecution](docs/WorkflowExecution.md)
  - [WorkflowExecutionStatisticReport](docs/WorkflowExecutionStatisticReport.md)
+ - [WorkflowExecutionStatus](docs/WorkflowExecutionStatus.md)
  - [WorkflowTemplate](docs/WorkflowTemplate.md)
  - [Workspace](docs/Workspace.md)
  - [WorkspaceStatus](docs/WorkspaceStatus.md)

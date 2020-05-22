@@ -29,6 +29,7 @@ from onepanel.core.api.models.get_workflow_execution_metrics_response import Get
 from onepanel.core.api.models.google_protobuf_any import GoogleProtobufAny
 from onepanel.core.api.models.grpc_gateway_runtime_error import GrpcGatewayRuntimeError
 from onepanel.core.api.models.grpc_gateway_runtime_stream_error import GrpcGatewayRuntimeStreamError
+from onepanel.core.api.models.is_authorized_response import IsAuthorizedResponse
 from onepanel.core.api.models.is_valid_token_response import IsValidTokenResponse
 from onepanel.core.api.models.key_value import KeyValue
 from onepanel.core.api.models.labels import Labels
@@ -57,6 +58,7 @@ from onepanel.core.api.models.update_secret_key_value_response import UpdateSecr
 from onepanel.core.api.models.update_workspace_body import UpdateWorkspaceBody
 from onepanel.core.api.models.workflow_execution import WorkflowExecution
 from onepanel.core.api.models.workflow_execution_statistic_report import WorkflowExecutionStatisticReport
+from onepanel.core.api.models.workflow_execution_status import WorkflowExecutionStatus
 from onepanel.core.api.models.workflow_template import WorkflowTemplate
 from onepanel.core.api.models.workspace import Workspace
 from onepanel.core.api.models.workspace_status import WorkspaceStatus

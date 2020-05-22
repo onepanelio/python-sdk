@@ -36,16 +36,15 @@ class AuthServiceApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def is_valid_token(self, body, **kwargs):  # noqa: E501
-        """is_valid_token  # noqa: E501
+    def is_authorized(self, **kwargs):  # noqa: E501
+        """is_authorized  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.is_valid_token(body, async_req=True)
+        >>> thread = api.is_authorized(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param TokenWrapper body: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -53,23 +52,22 @@ class AuthServiceApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: IsValidTokenResponse
+        :return: IsAuthorizedResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.is_valid_token_with_http_info(body, **kwargs)  # noqa: E501
+        return self.is_authorized_with_http_info(**kwargs)  # noqa: E501
 
-    def is_valid_token_with_http_info(self, body, **kwargs):  # noqa: E501
-        """is_valid_token  # noqa: E501
+    def is_authorized_with_http_info(self, **kwargs):  # noqa: E501
+        """is_authorized  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.is_valid_token_with_http_info(body, async_req=True)
+        >>> thread = api.is_authorized_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param TokenWrapper body: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -79,14 +77,14 @@ class AuthServiceApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(IsValidTokenResponse, status_code(int), headers(HTTPHeaderDict))
+        :return: tuple(IsAuthorizedResponse, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['body']  # noqa: E501
+        all_params = []  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -96,14 +94,10 @@ class AuthServiceApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method is_valid_token" % key
+                    " to method is_authorized" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
-        # verify the required parameter 'body' is set
-        if self.api_client.client_side_validation and ('body' not in local_var_params or  # noqa: E501
-                                                        local_var_params['body'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `body` when calling `is_valid_token`")  # noqa: E501
 
         collection_formats = {}
 
@@ -117,14 +111,8 @@ class AuthServiceApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
@@ -138,7 +126,7 @@ class AuthServiceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='IsValidTokenResponse',  # noqa: E501
+            response_type='IsAuthorizedResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

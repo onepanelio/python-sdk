@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **is_latest** | **bool** |  | [optional] 
 **created_at** | **str** |  | [optional] 
 **workflow_template** | [**WorkflowTemplate**](WorkflowTemplate.md) |  | [optional] 
+**labels** | [**list[KeyValue]**](KeyValue.md) |  | [optional] 
+**is_archived** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

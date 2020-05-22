@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost:8888*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**archive_workspace_template**](WorkspaceTemplateServiceApi.md#archive_workspace_template) | **PUT** /apis/v1beta1/{namespace}/workspace_templates/{uid}/archive | 
 [**create_workspace_template**](WorkspaceTemplateServiceApi.md#create_workspace_template) | **POST** /apis/v1beta1/{namespace}/workspace_templates | 
 [**generate_workspace_template_workflow_template**](WorkspaceTemplateServiceApi.md#generate_workspace_template_workflow_template) | **POST** /apis/v1beta1/{namespace}/workspace_templates/{uid}/workflow_template | 
 [**get_workspace_template**](WorkspaceTemplateServiceApi.md#get_workspace_template) | **GET** /apis/v1beta1/{namespace}/workspace_templates/{uid} | 
@@ -11,6 +12,71 @@ Method | HTTP request | Description
 [**list_workspace_templates**](WorkspaceTemplateServiceApi.md#list_workspace_templates) | **GET** /apis/v1beta1/{namespace}/workspace_templates | 
 [**update_workspace_template**](WorkspaceTemplateServiceApi.md#update_workspace_template) | **PUT** /apis/v1beta1/{namespace}/workspace_templates/{uid} | 
 
+
+# **archive_workspace_template**
+> WorkspaceTemplate archive_workspace_template(namespace, uid)
+
+
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import onepanel.core.api
+from onepanel.core.api.rest import ApiException
+from pprint import pprint
+configuration = onepanel.core.api.Configuration()
+# Configure API key authorization: Bearer
+configuration.api_key['authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost:8888
+configuration.host = "http://localhost:8888"
+
+# Enter a context with an instance of the API client
+with onepanel.core.api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = onepanel.core.api.WorkspaceTemplateServiceApi(api_client)
+    namespace = 'namespace_example' # str | 
+uid = 'uid_example' # str | 
+
+    try:
+        api_response = api_instance.archive_workspace_template(namespace, uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WorkspaceTemplateServiceApi->archive_workspace_template: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **namespace** | **str**|  | 
+ **uid** | **str**|  | 
+
+### Return type
+
+[**WorkspaceTemplate**](WorkspaceTemplate.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_workspace_template**
 > WorkspaceTemplate create_workspace_template(namespace, body)

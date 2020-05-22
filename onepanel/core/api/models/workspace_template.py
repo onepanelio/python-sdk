@@ -39,7 +39,9 @@ class WorkspaceTemplate(object):
         'manifest': 'str',
         'is_latest': 'bool',
         'created_at': 'str',
-        'workflow_template': 'WorkflowTemplate'
+        'workflow_template': 'WorkflowTemplate',
+        'labels': 'list[KeyValue]',
+        'is_archived': 'bool'
     }
 
     attribute_map = {
@@ -49,10 +51,12 @@ class WorkspaceTemplate(object):
         'manifest': 'manifest',
         'is_latest': 'isLatest',
         'created_at': 'createdAt',
-        'workflow_template': 'workflowTemplate'
+        'workflow_template': 'workflowTemplate',
+        'labels': 'labels',
+        'is_archived': 'isArchived'
     }
 
-    def __init__(self, uid=None, name=None, version=None, manifest=None, is_latest=None, created_at=None, workflow_template=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, uid=None, name=None, version=None, manifest=None, is_latest=None, created_at=None, workflow_template=None, labels=None, is_archived=None, local_vars_configuration=None):  # noqa: E501
         """WorkspaceTemplate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +69,8 @@ class WorkspaceTemplate(object):
         self._is_latest = None
         self._created_at = None
         self._workflow_template = None
+        self._labels = None
+        self._is_archived = None
         self.discriminator = None
 
         if uid is not None:
@@ -81,6 +87,10 @@ class WorkspaceTemplate(object):
             self.created_at = created_at
         if workflow_template is not None:
             self.workflow_template = workflow_template
+        if labels is not None:
+            self.labels = labels
+        if is_archived is not None:
+            self.is_archived = is_archived
 
     @property
     def uid(self):
@@ -228,6 +238,48 @@ class WorkspaceTemplate(object):
         """
 
         self._workflow_template = workflow_template
+
+    @property
+    def labels(self):
+        """Gets the labels of this WorkspaceTemplate.  # noqa: E501
+
+
+        :return: The labels of this WorkspaceTemplate.  # noqa: E501
+        :rtype: list[KeyValue]
+        """
+        return self._labels
+
+    @labels.setter
+    def labels(self, labels):
+        """Sets the labels of this WorkspaceTemplate.
+
+
+        :param labels: The labels of this WorkspaceTemplate.  # noqa: E501
+        :type: list[KeyValue]
+        """
+
+        self._labels = labels
+
+    @property
+    def is_archived(self):
+        """Gets the is_archived of this WorkspaceTemplate.  # noqa: E501
+
+
+        :return: The is_archived of this WorkspaceTemplate.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_archived
+
+    @is_archived.setter
+    def is_archived(self, is_archived):
+        """Sets the is_archived of this WorkspaceTemplate.
+
+
+        :param is_archived: The is_archived of this WorkspaceTemplate.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_archived = is_archived
 
     def to_dict(self):
         """Returns the model properties as a dict"""

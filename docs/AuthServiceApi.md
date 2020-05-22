@@ -4,11 +4,11 @@ All URIs are relative to *http://localhost:8888*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**is_valid_token**](AuthServiceApi.md#is_valid_token) | **POST** /apis/v1beta1/auth/token | 
+[**is_authorized**](AuthServiceApi.md#is_authorized) | **POST** /apis/v1beta1/auth/token | 
 
 
-# **is_valid_token**
-> IsValidTokenResponse is_valid_token(body)
+# **is_authorized**
+> IsAuthorizedResponse is_authorized()
 
 
 
@@ -34,24 +34,20 @@ configuration.host = "http://localhost:8888"
 with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.AuthServiceApi(api_client)
-    body = onepanel.core.api.TokenWrapper() # TokenWrapper | 
-
+    
     try:
-        api_response = api_instance.is_valid_token(body)
+        api_response = api_instance.is_authorized()
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AuthServiceApi->is_valid_token: %s\n" % e)
+        print("Exception when calling AuthServiceApi->is_authorized: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**TokenWrapper**](TokenWrapper.md)|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**IsValidTokenResponse**](IsValidTokenResponse.md)
+[**IsAuthorizedResponse**](IsAuthorizedResponse.md)
 
 ### Authorization
 
@@ -59,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
