@@ -11,3 +11,9 @@ make path=<path-to-swagger-file> version=<version>
 `path` is the local path to [Onepanel Core API's swagger file](https://github.com/onepanelio/core/blob/master/api/api.swagger.json), example: `path=../core/api/api.swagger.json`
 
 `version` is the version of the SDK, following [SemVer](https://semver.org), example: `version=0.5`
+
+## Publishing to PyPI
+
+```
+make publish-pip-package version=<version>
+```
