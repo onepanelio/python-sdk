@@ -36,17 +36,19 @@ class CronWorkflow(object):
         'name': 'str',
         'manifest': 'str',
         'workflow_execution': 'WorkflowExecution',
-        'labels': 'list[KeyValue]'
+        'labels': 'list[KeyValue]',
+        'namespace': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'manifest': 'manifest',
         'workflow_execution': 'workflowExecution',
-        'labels': 'labels'
+        'labels': 'labels',
+        'namespace': 'namespace'
     }
 
-    def __init__(self, name=None, manifest=None, workflow_execution=None, labels=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, manifest=None, workflow_execution=None, labels=None, namespace=None, local_vars_configuration=None):  # noqa: E501
         """CronWorkflow - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,6 +58,7 @@ class CronWorkflow(object):
         self._manifest = None
         self._workflow_execution = None
         self._labels = None
+        self._namespace = None
         self.discriminator = None
 
         if name is not None:
@@ -66,6 +69,8 @@ class CronWorkflow(object):
             self.workflow_execution = workflow_execution
         if labels is not None:
             self.labels = labels
+        if namespace is not None:
+            self.namespace = namespace
 
     @property
     def name(self):
@@ -150,6 +155,27 @@ class CronWorkflow(object):
         """
 
         self._labels = labels
+
+    @property
+    def namespace(self):
+        """Gets the namespace of this CronWorkflow.  # noqa: E501
+
+
+        :return: The namespace of this CronWorkflow.  # noqa: E501
+        :rtype: str
+        """
+        return self._namespace
+
+    @namespace.setter
+    def namespace(self, namespace):
+        """Sets the namespace of this CronWorkflow.
+
+
+        :param namespace: The namespace of this CronWorkflow.  # noqa: E501
+        :type: str
+        """
+
+        self._namespace = namespace
 
     def to_dict(self):
         """Returns the model properties as a dict"""

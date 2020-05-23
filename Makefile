@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := sdk
+.DEFAULT_GOAL := all
 
 init:
 ifndef version
@@ -15,7 +15,7 @@ endif
 sdk: init
 	# generate sdk
 	docker run --rm -v ${PWD}/.build:/build openapitools/openapi-generator-cli \
-		generate -p packageName=onepanel.core.api,projectName=onepanel-core-sdk,packageVersion=$(version) -i /build/api.swagger.json -g python -o /build/
+		generate -p packageName=onepanel.core.api,projectName=onepanel-sdk,packageVersion=$(version) -i /build/api.swagger.json -g python -o /build/
 	rm .build/api.swagger.json
 	
 	# Update repository files with generated files
@@ -23,7 +23,7 @@ sdk: init
 	rm -rf onepanel-core-sdk
 
 	# Update generated files
-	sed -i '' 's/git\+https:\/\/github.com\/GIT_USER_ID\/GIT_REPO_ID.git/onepanel-core-sdk/g' README.md
+	sed -i '' 's/git\+https:\/\/github.com\/GIT_USER_ID\/GIT_REPO_ID.git/onepanel-sdk/g' README.md
 
 publish-pip-package:
 	python3 setup.py sdist

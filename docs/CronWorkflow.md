@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **manifest** | **str** |  | [optional] 
 **workflow_execution** | [**WorkflowExecution**](WorkflowExecution.md) |  | [optional] 
 **labels** | [**list[KeyValue]**](KeyValue.md) |  | [optional] 
+**namespace** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
