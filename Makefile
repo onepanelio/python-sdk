@@ -27,6 +27,6 @@ sdk: init
 
 publish-pip-package:
 	python3 setup.py sdist
-	twine upload dist/onepanel-core-sdk-$(version).tar.gz
+	twine upload dist/onepanel-sdk-$(version).tar.gz
 
 all: sdk publish-pip-package
