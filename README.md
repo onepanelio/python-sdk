@@ -82,12 +82,13 @@ All URIs are relative to *http://localhost:8888*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AuthServiceApi* | [**is_authorized**](docs/AuthServiceApi.md#is_authorized) | **POST** /apis/v1beta1/auth/token | 
+*AuthServiceApi* | [**is_authorized**](docs/AuthServiceApi.md#is_authorized) | **POST** /apis/v1beta1/auth | 
+*AuthServiceApi* | [**is_valid_token**](docs/AuthServiceApi.md#is_valid_token) | **POST** /apis/v1beta1/auth/token | 
 *CronWorkflowServiceApi* | [**create_cron_workflow**](docs/CronWorkflowServiceApi.md#create_cron_workflow) | **POST** /apis/v1beta1/{namespace}/cron_workflow | 
+*CronWorkflowServiceApi* | [**delete_cron_workflow**](docs/CronWorkflowServiceApi.md#delete_cron_workflow) | **DELETE** /apis/v1beta1/{namespace}/cron_workflows/{uid} | 
 *CronWorkflowServiceApi* | [**get_cron_workflow**](docs/CronWorkflowServiceApi.md#get_cron_workflow) | **GET** /apis/v1beta1/{namespace}/cron_workflow/{uid} | 
 *CronWorkflowServiceApi* | [**list_cron_workflows**](docs/CronWorkflowServiceApi.md#list_cron_workflows) | **GET** /apis/v1beta1/{namespace}/cron_workflows | 
 *CronWorkflowServiceApi* | [**list_cron_workflows2**](docs/CronWorkflowServiceApi.md#list_cron_workflows2) | **GET** /apis/v1beta1/{namespace}/cron_workflows/{workflow_template_name} | 
-*CronWorkflowServiceApi* | [**terminate_cron_workflow**](docs/CronWorkflowServiceApi.md#terminate_cron_workflow) | **DELETE** /apis/v1beta1/{namespace}/cron_workflows/{uid}/terminate | 
 *CronWorkflowServiceApi* | [**update_cron_workflow**](docs/CronWorkflowServiceApi.md#update_cron_workflow) | **PUT** /apis/v1beta1/{namespace}/cron_workflow/{uid} | 
 *LabelServiceApi* | [**add_labels**](docs/LabelServiceApi.md#add_labels) | **POST** /apis/v1beta1/{namespace}/{resource}/{uid}/labels | 
 *LabelServiceApi* | [**delete_label**](docs/LabelServiceApi.md#delete_label) | **DELETE** /apis/v1beta1/{namespace}/{resource}/{uid}/labels/{key} | 

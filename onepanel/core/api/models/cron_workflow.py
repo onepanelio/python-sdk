@@ -34,6 +34,7 @@ class CronWorkflow(object):
     """
     openapi_types = {
         'name': 'str',
+        'uid': 'str',
         'manifest': 'str',
         'workflow_execution': 'WorkflowExecution',
         'labels': 'list[KeyValue]',
@@ -42,19 +43,21 @@ class CronWorkflow(object):
 
     attribute_map = {
         'name': 'name',
+        'uid': 'uid',
         'manifest': 'manifest',
         'workflow_execution': 'workflowExecution',
         'labels': 'labels',
         'namespace': 'namespace'
     }
 
-    def __init__(self, name=None, manifest=None, workflow_execution=None, labels=None, namespace=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, uid=None, manifest=None, workflow_execution=None, labels=None, namespace=None, local_vars_configuration=None):  # noqa: E501
         """CronWorkflow - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._name = None
+        self._uid = None
         self._manifest = None
         self._workflow_execution = None
         self._labels = None
@@ -63,6 +66,8 @@ class CronWorkflow(object):
 
         if name is not None:
             self.name = name
+        if uid is not None:
+            self.uid = uid
         if manifest is not None:
             self.manifest = manifest
         if workflow_execution is not None:
@@ -92,6 +97,27 @@ class CronWorkflow(object):
         """
 
         self._name = name
+
+    @property
+    def uid(self):
+        """Gets the uid of this CronWorkflow.  # noqa: E501
+
+
+        :return: The uid of this CronWorkflow.  # noqa: E501
+        :rtype: str
+        """
+        return self._uid
+
+    @uid.setter
+    def uid(self, uid):
+        """Sets the uid of this CronWorkflow.
+
+
+        :param uid: The uid of this CronWorkflow.  # noqa: E501
+        :type: str
+        """
+
+        self._uid = uid
 
     @property
     def manifest(self):

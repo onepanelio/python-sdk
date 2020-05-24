@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
+**uid** | **str** |  | [optional] 
 **manifest** | **str** |  | [optional] 
 **workflow_execution** | [**WorkflowExecution**](WorkflowExecution.md) |  | [optional] 
 **labels** | [**list[KeyValue]**](KeyValue.md) |  | [optional] 
