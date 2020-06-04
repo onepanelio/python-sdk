@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **str** |  | [optional] 
+**modified_at** | **str** |  | [optional] 
 **uid** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **version** | **str** |  | [optional] 
