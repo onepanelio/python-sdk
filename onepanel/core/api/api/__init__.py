@@ -4,6 +4,7 @@ from __future__ import absolute_import
 
 # import apis into api package
 from onepanel.core.api.api.auth_service_api import AuthServiceApi
+from onepanel.core.api.api.config_service_api import ConfigServiceApi
 from onepanel.core.api.api.cron_workflow_service_api import CronWorkflowServiceApi
 from onepanel.core.api.api.label_service_api import LabelServiceApi
 from onepanel.core.api.api.namespace_service_api import NamespaceServiceApi

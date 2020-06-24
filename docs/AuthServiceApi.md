@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **is_authorized**
-> IsAuthorizedResponse is_authorized()
+> IsAuthorizedResponse is_authorized(body)
 
 
 
@@ -35,16 +35,20 @@ configuration.host = "http://localhost:8888"
 with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.AuthServiceApi(api_client)
-    
+    body = onepanel.core.api.IsAuthorized() # IsAuthorized | 
+
     try:
-        api_response = api_instance.is_authorized()
+        api_response = api_instance.is_authorized(body)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling AuthServiceApi->is_authorized: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**IsAuthorized**](IsAuthorized.md)|  | 
 
 ### Return type
 
@@ -56,7 +60,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
