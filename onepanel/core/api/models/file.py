@@ -98,7 +98,7 @@ class File(object):
 
 
         :param path: The path of this File.  # noqa: E501
-        :type: str
+        :type path: str
         """
 
         self._path = path
@@ -119,7 +119,7 @@ class File(object):
 
 
         :param name: The name of this File.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name
@@ -140,7 +140,7 @@ class File(object):
 
 
         :param extension: The extension of this File.  # noqa: E501
-        :type: str
+        :type extension: str
         """
 
         self._extension = extension
@@ -161,7 +161,7 @@ class File(object):
 
 
         :param size: The size of this File.  # noqa: E501
-        :type: str
+        :type size: str
         """
 
         self._size = size
@@ -182,7 +182,7 @@ class File(object):
 
 
         :param content_type: The content_type of this File.  # noqa: E501
-        :type: str
+        :type content_type: str
         """
 
         self._content_type = content_type
@@ -203,7 +203,7 @@ class File(object):
 
 
         :param last_modified: The last_modified of this File.  # noqa: E501
-        :type: str
+        :type last_modified: str
         """
 
         self._last_modified = last_modified
@@ -224,7 +224,7 @@ class File(object):
 
 
         :param directory: The directory of this File.  # noqa: E501
-        :type: bool
+        :type directory: bool
         """
 
         self._directory = directory

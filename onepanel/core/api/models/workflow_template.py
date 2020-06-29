@@ -123,7 +123,7 @@ class WorkflowTemplate(object):
 
 
         :param created_at: The created_at of this WorkflowTemplate.  # noqa: E501
-        :type: str
+        :type created_at: str
         """
 
         self._created_at = created_at
@@ -144,7 +144,7 @@ class WorkflowTemplate(object):
 
 
         :param modified_at: The modified_at of this WorkflowTemplate.  # noqa: E501
-        :type: str
+        :type modified_at: str
         """
 
         self._modified_at = modified_at
@@ -165,7 +165,7 @@ class WorkflowTemplate(object):
 
 
         :param uid: The uid of this WorkflowTemplate.  # noqa: E501
-        :type: str
+        :type uid: str
         """
 
         self._uid = uid
@@ -186,7 +186,7 @@ class WorkflowTemplate(object):
 
 
         :param name: The name of this WorkflowTemplate.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name
@@ -207,7 +207,7 @@ class WorkflowTemplate(object):
 
 
         :param version: The version of this WorkflowTemplate.  # noqa: E501
-        :type: str
+        :type version: str
         """
 
         self._version = version
@@ -228,7 +228,7 @@ class WorkflowTemplate(object):
 
 
         :param versions: The versions of this WorkflowTemplate.  # noqa: E501
-        :type: str
+        :type versions: str
         """
 
         self._versions = versions
@@ -249,7 +249,7 @@ class WorkflowTemplate(object):
 
 
         :param manifest: The manifest of this WorkflowTemplate.  # noqa: E501
-        :type: str
+        :type manifest: str
         """
 
         self._manifest = manifest
@@ -270,7 +270,7 @@ class WorkflowTemplate(object):
 
 
         :param is_latest: The is_latest of this WorkflowTemplate.  # noqa: E501
-        :type: bool
+        :type is_latest: bool
         """
 
         self._is_latest = is_latest
@@ -291,7 +291,7 @@ class WorkflowTemplate(object):
 
 
         :param is_archived: The is_archived of this WorkflowTemplate.  # noqa: E501
-        :type: bool
+        :type is_archived: bool
         """
 
         self._is_archived = is_archived
@@ -312,7 +312,7 @@ class WorkflowTemplate(object):
 
 
         :param labels: The labels of this WorkflowTemplate.  # noqa: E501
-        :type: list[KeyValue]
+        :type labels: list[KeyValue]
         """
 
         self._labels = labels
@@ -333,7 +333,7 @@ class WorkflowTemplate(object):
 
 
         :param stats: The stats of this WorkflowTemplate.  # noqa: E501
-        :type: WorkflowExecutionStatisticReport
+        :type stats: WorkflowExecutionStatisticReport
         """
 
         self._stats = stats
@@ -354,7 +354,7 @@ class WorkflowTemplate(object):
 
 
         :param cron_stats: The cron_stats of this WorkflowTemplate.  # noqa: E501
-        :type: CronWorkflowStatisticsReport
+        :type cron_stats: CronWorkflowStatisticsReport
         """
 
         self._cron_stats = cron_stats

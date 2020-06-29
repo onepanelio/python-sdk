@@ -68,7 +68,7 @@ class IsValidTokenResponse(object):
 
 
         :param domain: The domain of this IsValidTokenResponse.  # noqa: E501
-        :type: str
+        :type domain: str
         """
 
         self._domain = domain

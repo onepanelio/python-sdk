@@ -88,7 +88,7 @@ class ListNamespacesResponse(object):
 
 
         :param count: The count of this ListNamespacesResponse.  # noqa: E501
-        :type: int
+        :type count: int
         """
 
         self._count = count
@@ -109,7 +109,7 @@ class ListNamespacesResponse(object):
 
 
         :param namespaces: The namespaces of this ListNamespacesResponse.  # noqa: E501
-        :type: list[Namespace]
+        :type namespaces: list[Namespace]
         """
 
         self._namespaces = namespaces
@@ -130,7 +130,7 @@ class ListNamespacesResponse(object):
 
 
         :param page: The page of this ListNamespacesResponse.  # noqa: E501
-        :type: int
+        :type page: int
         """
 
         self._page = page
@@ -151,7 +151,7 @@ class ListNamespacesResponse(object):
 
 
         :param pages: The pages of this ListNamespacesResponse.  # noqa: E501
-        :type: int
+        :type pages: int
         """
 
         self._pages = pages
@@ -172,7 +172,7 @@ class ListNamespacesResponse(object):
 
 
         :param total_count: The total_count of this ListNamespacesResponse.  # noqa: E501
-        :type: int
+        :type total_count: int
         """
 
         self._total_count = total_count

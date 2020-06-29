@@ -73,7 +73,7 @@ class StreamResultOfWorkflowExecution(object):
 
 
         :param result: The result of this StreamResultOfWorkflowExecution.  # noqa: E501
-        :type: WorkflowExecution
+        :type result: WorkflowExecution
         """
 
         self._result = result
@@ -94,7 +94,7 @@ class StreamResultOfWorkflowExecution(object):
 
 
         :param error: The error of this StreamResultOfWorkflowExecution.  # noqa: E501
-        :type: GrpcGatewayRuntimeStreamError
+        :type error: GrpcGatewayRuntimeStreamError
         """
 
         self._error = error

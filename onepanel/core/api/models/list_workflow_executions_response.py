@@ -88,7 +88,7 @@ class ListWorkflowExecutionsResponse(object):
 
 
         :param count: The count of this ListWorkflowExecutionsResponse.  # noqa: E501
-        :type: int
+        :type count: int
         """
 
         self._count = count
@@ -109,7 +109,7 @@ class ListWorkflowExecutionsResponse(object):
 
 
         :param workflow_executions: The workflow_executions of this ListWorkflowExecutionsResponse.  # noqa: E501
-        :type: list[WorkflowExecution]
+        :type workflow_executions: list[WorkflowExecution]
         """
 
         self._workflow_executions = workflow_executions
@@ -130,7 +130,7 @@ class ListWorkflowExecutionsResponse(object):
 
 
         :param page: The page of this ListWorkflowExecutionsResponse.  # noqa: E501
-        :type: int
+        :type page: int
         """
 
         self._page = page
@@ -151,7 +151,7 @@ class ListWorkflowExecutionsResponse(object):
 
 
         :param pages: The pages of this ListWorkflowExecutionsResponse.  # noqa: E501
-        :type: int
+        :type pages: int
         """
 
         self._pages = pages
@@ -172,7 +172,7 @@ class ListWorkflowExecutionsResponse(object):
 
 
         :param total_count: The total_count of this ListWorkflowExecutionsResponse.  # noqa: E501
-        :type: int
+        :type total_count: int
         """
 
         self._total_count = total_count

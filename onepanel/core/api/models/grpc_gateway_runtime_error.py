@@ -83,7 +83,7 @@ class GrpcGatewayRuntimeError(object):
 
 
         :param error: The error of this GrpcGatewayRuntimeError.  # noqa: E501
-        :type: str
+        :type error: str
         """
 
         self._error = error
@@ -104,7 +104,7 @@ class GrpcGatewayRuntimeError(object):
 
 
         :param code: The code of this GrpcGatewayRuntimeError.  # noqa: E501
-        :type: int
+        :type code: int
         """
 
         self._code = code
@@ -125,7 +125,7 @@ class GrpcGatewayRuntimeError(object):
 
 
         :param message: The message of this GrpcGatewayRuntimeError.  # noqa: E501
-        :type: str
+        :type message: str
         """
 
         self._message = message
@@ -146,7 +146,7 @@ class GrpcGatewayRuntimeError(object):
 
 
         :param details: The details of this GrpcGatewayRuntimeError.  # noqa: E501
-        :type: list[GoogleProtobufAny]
+        :type details: list[GoogleProtobufAny]
         """
 
         self._details = details

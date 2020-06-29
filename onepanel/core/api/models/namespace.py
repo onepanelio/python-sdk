@@ -68,7 +68,7 @@ class Namespace(object):
 
 
         :param name: The name of this Namespace.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name

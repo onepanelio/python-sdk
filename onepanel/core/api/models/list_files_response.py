@@ -73,7 +73,7 @@ class ListFilesResponse(object):
 
 
         :param files: The files of this ListFilesResponse.  # noqa: E501
-        :type: list[File]
+        :type files: list[File]
         """
 
         self._files = files
@@ -94,7 +94,7 @@ class ListFilesResponse(object):
 
 
         :param parent_path: The parent_path of this ListFilesResponse.  # noqa: E501
-        :type: str
+        :type parent_path: str
         """
 
         self._parent_path = parent_path

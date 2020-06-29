@@ -68,7 +68,7 @@ class GetLabelsResponse(object):
 
 
         :param labels: The labels of this GetLabelsResponse.  # noqa: E501
-        :type: list[KeyValue]
+        :type labels: list[KeyValue]
         """
 
         self._labels = labels

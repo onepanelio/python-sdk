@@ -68,7 +68,7 @@ class DeleteSecretResponse(object):
 
 
         :param deleted: The deleted of this DeleteSecretResponse.  # noqa: E501
-        :type: bool
+        :type deleted: bool
         """
 
         self._deleted = deleted

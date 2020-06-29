@@ -73,7 +73,7 @@ class NodePoolOption(object):
 
 
         :param name: The name of this NodePoolOption.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name
@@ -94,7 +94,7 @@ class NodePoolOption(object):
 
 
         :param value: The value of this NodePoolOption.  # noqa: E501
-        :type: str
+        :type value: str
         """
 
         self._value = value

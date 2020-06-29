@@ -28,26 +28,26 @@ class TestLabelServiceApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_label_service_add_labels(self):
-        """Test case for label_service_add_labels
+    def test_add_labels(self):
+        """Test case for add_labels
 
         """
         pass
 
-    def test_label_service_delete_label(self):
-        """Test case for label_service_delete_label
+    def test_delete_label(self):
+        """Test case for delete_label
 
         """
         pass
 
-    def test_label_service_get_labels(self):
-        """Test case for label_service_get_labels
+    def test_get_labels(self):
+        """Test case for get_labels
 
         """
         pass
 
-    def test_label_service_replace_labels(self):
-        """Test case for label_service_replace_labels
+    def test_replace_labels(self):
+        """Test case for replace_labels
 
         """
         pass

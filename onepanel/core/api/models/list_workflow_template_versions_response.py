@@ -73,7 +73,7 @@ class ListWorkflowTemplateVersionsResponse(object):
 
 
         :param count: The count of this ListWorkflowTemplateVersionsResponse.  # noqa: E501
-        :type: int
+        :type count: int
         """
 
         self._count = count
@@ -94,7 +94,7 @@ class ListWorkflowTemplateVersionsResponse(object):
 
 
         :param workflow_templates: The workflow_templates of this ListWorkflowTemplateVersionsResponse.  # noqa: E501
-        :type: list[WorkflowTemplate]
+        :type workflow_templates: list[WorkflowTemplate]
         """
 
         self._workflow_templates = workflow_templates

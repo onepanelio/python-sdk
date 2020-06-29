@@ -83,7 +83,7 @@ class GetConfigResponse(object):
 
 
         :param api_url: The api_url of this GetConfigResponse.  # noqa: E501
-        :type: str
+        :type api_url: str
         """
 
         self._api_url = api_url
@@ -104,7 +104,7 @@ class GetConfigResponse(object):
 
 
         :param domain: The domain of this GetConfigResponse.  # noqa: E501
-        :type: str
+        :type domain: str
         """
 
         self._domain = domain
@@ -125,7 +125,7 @@ class GetConfigResponse(object):
 
 
         :param fqdn: The fqdn of this GetConfigResponse.  # noqa: E501
-        :type: str
+        :type fqdn: str
         """
 
         self._fqdn = fqdn
@@ -146,7 +146,7 @@ class GetConfigResponse(object):
 
 
         :param node_pool: The node_pool of this GetConfigResponse.  # noqa: E501
-        :type: NodePool
+        :type node_pool: NodePool
         """
 
         self._node_pool = node_pool

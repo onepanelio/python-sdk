@@ -68,7 +68,7 @@ class IsAuthorizedResponse(object):
 
 
         :param authorized: The authorized of this IsAuthorizedResponse.  # noqa: E501
-        :type: bool
+        :type authorized: bool
         """
 
         self._authorized = authorized

@@ -68,7 +68,7 @@ class SecretExistsResponse(object):
 
 
         :param exists: The exists of this SecretExistsResponse.  # noqa: E501
-        :type: bool
+        :type exists: bool
         """
 
         self._exists = exists

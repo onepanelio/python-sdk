@@ -68,7 +68,7 @@ class ArtifactResponse(object):
 
 
         :param data: The data of this ArtifactResponse.  # noqa: E501
-        :type: str
+        :type data: str
         """
         if (self.local_vars_configuration.client_side_validation and
                 data is not None and not re.search(r'^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$', data)):  # noqa: E501

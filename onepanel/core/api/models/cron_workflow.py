@@ -93,7 +93,7 @@ class CronWorkflow(object):
 
 
         :param name: The name of this CronWorkflow.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name
@@ -114,7 +114,7 @@ class CronWorkflow(object):
 
 
         :param uid: The uid of this CronWorkflow.  # noqa: E501
-        :type: str
+        :type uid: str
         """
 
         self._uid = uid
@@ -135,7 +135,7 @@ class CronWorkflow(object):
 
 
         :param manifest: The manifest of this CronWorkflow.  # noqa: E501
-        :type: str
+        :type manifest: str
         """
 
         self._manifest = manifest
@@ -156,7 +156,7 @@ class CronWorkflow(object):
 
 
         :param workflow_execution: The workflow_execution of this CronWorkflow.  # noqa: E501
-        :type: WorkflowExecution
+        :type workflow_execution: WorkflowExecution
         """
 
         self._workflow_execution = workflow_execution
@@ -177,7 +177,7 @@ class CronWorkflow(object):
 
 
         :param labels: The labels of this CronWorkflow.  # noqa: E501
-        :type: list[KeyValue]
+        :type labels: list[KeyValue]
         """
 
         self._labels = labels
@@ -198,7 +198,7 @@ class CronWorkflow(object):
 
 
         :param namespace: The namespace of this CronWorkflow.  # noqa: E501
-        :type: str
+        :type namespace: str
         """
 
         self._namespace = namespace

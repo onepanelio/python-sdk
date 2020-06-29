@@ -68,7 +68,7 @@ class Labels(object):
 
 
         :param items: The items of this Labels.  # noqa: E501
-        :type: list[KeyValue]
+        :type items: list[KeyValue]
         """
 
         self._items = items

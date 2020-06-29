@@ -73,7 +73,7 @@ class LogEntry(object):
 
 
         :param timestamp: The timestamp of this LogEntry.  # noqa: E501
-        :type: str
+        :type timestamp: str
         """
 
         self._timestamp = timestamp
@@ -94,7 +94,7 @@ class LogEntry(object):
 
 
         :param content: The content of this LogEntry.  # noqa: E501
-        :type: str
+        :type content: str
         """
 
         self._content = content

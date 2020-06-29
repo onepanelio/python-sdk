@@ -28,14 +28,26 @@ import time
 import onepanel.core.api
 from onepanel.core.api.rest import ApiException
 from pprint import pprint
-configuration = onepanel.core.api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# Defining the host is optional and defaults to http://localhost:8888
+# See configuration.py for a list of all supported configuration parameters.
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888"
+)
 
-# Defining host is optional and default to http://localhost:8888
-configuration.host = "http://localhost:8888"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888",
+    api_key = {
+        'Bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -95,14 +107,26 @@ import time
 import onepanel.core.api
 from onepanel.core.api.rest import ApiException
 from pprint import pprint
-configuration = onepanel.core.api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# Defining the host is optional and defaults to http://localhost:8888
+# See configuration.py for a list of all supported configuration parameters.
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888"
+)
 
-# Defining host is optional and default to http://localhost:8888
-configuration.host = "http://localhost:8888"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888",
+    api_key = {
+        'Bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -160,14 +184,26 @@ import time
 import onepanel.core.api
 from onepanel.core.api.rest import ApiException
 from pprint import pprint
-configuration = onepanel.core.api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# Defining the host is optional and defaults to http://localhost:8888
+# See configuration.py for a list of all supported configuration parameters.
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888"
+)
 
-# Defining host is optional and default to http://localhost:8888
-configuration.host = "http://localhost:8888"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888",
+    api_key = {
+        'Bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -225,14 +261,26 @@ import time
 import onepanel.core.api
 from onepanel.core.api.rest import ApiException
 from pprint import pprint
-configuration = onepanel.core.api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# Defining the host is optional and defaults to http://localhost:8888
+# See configuration.py for a list of all supported configuration parameters.
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888"
+)
 
-# Defining host is optional and default to http://localhost:8888
-configuration.host = "http://localhost:8888"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888",
+    api_key = {
+        'Bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -292,14 +340,26 @@ import time
 import onepanel.core.api
 from onepanel.core.api.rest import ApiException
 from pprint import pprint
-configuration = onepanel.core.api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# Defining the host is optional and defaults to http://localhost:8888
+# See configuration.py for a list of all supported configuration parameters.
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888"
+)
 
-# Defining host is optional and default to http://localhost:8888
-configuration.host = "http://localhost:8888"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888",
+    api_key = {
+        'Bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -357,14 +417,26 @@ import time
 import onepanel.core.api
 from onepanel.core.api.rest import ApiException
 from pprint import pprint
-configuration = onepanel.core.api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# Defining the host is optional and defaults to http://localhost:8888
+# See configuration.py for a list of all supported configuration parameters.
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888"
+)
 
-# Defining host is optional and default to http://localhost:8888
-configuration.host = "http://localhost:8888"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888",
+    api_key = {
+        'Bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -420,14 +492,26 @@ import time
 import onepanel.core.api
 from onepanel.core.api.rest import ApiException
 from pprint import pprint
-configuration = onepanel.core.api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# Defining the host is optional and defaults to http://localhost:8888
+# See configuration.py for a list of all supported configuration parameters.
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888"
+)
 
-# Defining host is optional and default to http://localhost:8888
-configuration.host = "http://localhost:8888"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888",
+    api_key = {
+        'Bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -485,14 +569,26 @@ import time
 import onepanel.core.api
 from onepanel.core.api.rest import ApiException
 from pprint import pprint
-configuration = onepanel.core.api.Configuration()
-# Configure API key authorization: Bearer
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# Defining the host is optional and defaults to http://localhost:8888
+# See configuration.py for a list of all supported configuration parameters.
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888"
+)
 
-# Defining host is optional and default to http://localhost:8888
-configuration.host = "http://localhost:8888"
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888",
+    api_key = {
+        'Bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
