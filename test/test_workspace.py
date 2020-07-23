@@ -87,7 +87,12 @@ class TestWorkspace(unittest.TestCase):
                     phase = '0', 
                     started_at = '0', 
                     paused_at = '0', 
-                    terminated_at = '0', )
+                    terminated_at = '0', ), 
+                labels = [
+                    onepanel.core.api.models.key_value.KeyValue(
+                        key = '0', 
+                        value = '0', )
+                    ]
             )
         else :
             return Workspace(

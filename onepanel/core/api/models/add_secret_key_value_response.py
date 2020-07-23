@@ -68,7 +68,7 @@ class AddSecretKeyValueResponse(object):
 
 
         :param inserted: The inserted of this AddSecretKeyValueResponse.  # noqa: E501
-        :type: bool
+        :type inserted: bool
         """
 
         self._inserted = inserted

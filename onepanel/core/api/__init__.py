@@ -35,6 +35,7 @@ from onepanel.core.api.exceptions import OpenApiException
 from onepanel.core.api.exceptions import ApiTypeError
 from onepanel.core.api.exceptions import ApiValueError
 from onepanel.core.api.exceptions import ApiKeyError
+from onepanel.core.api.exceptions import ApiAttributeError
 from onepanel.core.api.exceptions import ApiException
 # import models into sdk package
 from onepanel.core.api.models.add_secret_key_value_response import AddSecretKeyValueResponse

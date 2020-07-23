@@ -73,7 +73,7 @@ class ListSecretsResponse(object):
 
 
         :param count: The count of this ListSecretsResponse.  # noqa: E501
-        :type: int
+        :type count: int
         """
 
         self._count = count
@@ -94,7 +94,7 @@ class ListSecretsResponse(object):
 
 
         :param secrets: The secrets of this ListSecretsResponse.  # noqa: E501
-        :type: list[Secret]
+        :type secrets: list[Secret]
         """
 
         self._secrets = secrets

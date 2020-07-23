@@ -73,7 +73,7 @@ class ListWorkspaceTemplateVersionsResponse(object):
 
 
         :param count: The count of this ListWorkspaceTemplateVersionsResponse.  # noqa: E501
-        :type: int
+        :type count: int
         """
 
         self._count = count
@@ -94,7 +94,7 @@ class ListWorkspaceTemplateVersionsResponse(object):
 
 
         :param workspace_templates: The workspace_templates of this ListWorkspaceTemplateVersionsResponse.  # noqa: E501
-        :type: list[WorkspaceTemplate]
+        :type workspace_templates: list[WorkspaceTemplate]
         """
 
         self._workspace_templates = workspace_templates

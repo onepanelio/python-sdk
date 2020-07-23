@@ -28,38 +28,38 @@ class TestCronWorkflowServiceApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_cron_workflow_service_create_cron_workflow(self):
-        """Test case for cron_workflow_service_create_cron_workflow
+    def test_create_cron_workflow(self):
+        """Test case for create_cron_workflow
 
         """
         pass
 
-    def test_cron_workflow_service_get_cron_workflow(self):
-        """Test case for cron_workflow_service_get_cron_workflow
+    def test_get_cron_workflow(self):
+        """Test case for get_cron_workflow
 
         """
         pass
 
-    def test_cron_workflow_service_list_cron_workflows(self):
-        """Test case for cron_workflow_service_list_cron_workflows
+    def test_list_cron_workflows(self):
+        """Test case for list_cron_workflows
 
         """
         pass
 
-    def test_cron_workflow_service_list_cron_workflows2(self):
-        """Test case for cron_workflow_service_list_cron_workflows2
+    def test_list_cron_workflows2(self):
+        """Test case for list_cron_workflows2
 
         """
         pass
 
-    def test_cron_workflow_service_terminate_cron_workflow(self):
-        """Test case for cron_workflow_service_terminate_cron_workflow
+    def test_terminate_cron_workflow(self):
+        """Test case for terminate_cron_workflow
 
         """
         pass
 
-    def test_cron_workflow_service_update_cron_workflow(self):
-        """Test case for cron_workflow_service_update_cron_workflow
+    def test_update_cron_workflow(self):
+        """Test case for update_cron_workflow
 
         """
         pass

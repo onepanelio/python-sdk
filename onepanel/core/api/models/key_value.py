@@ -73,7 +73,7 @@ class KeyValue(object):
 
 
         :param key: The key of this KeyValue.  # noqa: E501
-        :type: str
+        :type key: str
         """
 
         self._key = key
@@ -94,7 +94,7 @@ class KeyValue(object):
 
 
         :param value: The value of this KeyValue.  # noqa: E501
-        :type: str
+        :type value: str
         """
 
         self._value = value

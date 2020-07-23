@@ -88,7 +88,7 @@ class IsAuthorized(object):
 
 
         :param namespace: The namespace of this IsAuthorized.  # noqa: E501
-        :type: str
+        :type namespace: str
         """
 
         self._namespace = namespace
@@ -109,7 +109,7 @@ class IsAuthorized(object):
 
 
         :param verb: The verb of this IsAuthorized.  # noqa: E501
-        :type: str
+        :type verb: str
         """
 
         self._verb = verb
@@ -130,7 +130,7 @@ class IsAuthorized(object):
 
 
         :param group: The group of this IsAuthorized.  # noqa: E501
-        :type: str
+        :type group: str
         """
 
         self._group = group
@@ -151,7 +151,7 @@ class IsAuthorized(object):
 
 
         :param resource: The resource of this IsAuthorized.  # noqa: E501
-        :type: str
+        :type resource: str
         """
 
         self._resource = resource
@@ -172,7 +172,7 @@ class IsAuthorized(object):
 
 
         :param resource_name: The resource_name of this IsAuthorized.  # noqa: E501
-        :type: str
+        :type resource_name: str
         """
 
         self._resource_name = resource_name

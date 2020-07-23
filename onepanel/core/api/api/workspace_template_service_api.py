@@ -18,7 +18,7 @@ import re  # noqa: F401
 import six
 
 from onepanel.core.api.api_client import ApiClient
-from onepanel.core.api.exceptions import (
+from onepanel.core.api.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )
@@ -41,22 +41,28 @@ class WorkspaceTemplateServiceApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.archive_workspace_template(namespace, uid, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: (required)
-        :param str uid: (required)
+        :param namespace: (required)
+        :type namespace: str
+        :param uid: (required)
+        :type uid: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: WorkspaceTemplate
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: WorkspaceTemplate
         """
         kwargs['_return_http_data_only'] = True
         return self.archive_workspace_template_with_http_info(namespace, uid, **kwargs)  # noqa: E501
@@ -66,33 +72,52 @@ class WorkspaceTemplateServiceApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.archive_workspace_template_with_http_info(namespace, uid, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: (required)
-        :param str uid: (required)
+        :param namespace: (required)
+        :type namespace: str
+        :param uid: (required)
+        :type uid: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(WorkspaceTemplate, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(WorkspaceTemplate, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'uid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'namespace',
+            'uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -148,29 +173,36 @@ class WorkspaceTemplateServiceApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def create_workspace_template(self, namespace, body, **kwargs):  # noqa: E501
         """create_workspace_template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.create_workspace_template(namespace, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: (required)
-        :param WorkspaceTemplate body: (required)
+        :param namespace: (required)
+        :type namespace: str
+        :param body: (required)
+        :type body: WorkspaceTemplate
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: WorkspaceTemplate
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: WorkspaceTemplate
         """
         kwargs['_return_http_data_only'] = True
         return self.create_workspace_template_with_http_info(namespace, body, **kwargs)  # noqa: E501
@@ -180,33 +212,52 @@ class WorkspaceTemplateServiceApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.create_workspace_template_with_http_info(namespace, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: (required)
-        :param WorkspaceTemplate body: (required)
+        :param namespace: (required)
+        :type namespace: str
+        :param body: (required)
+        :type body: WorkspaceTemplate
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(WorkspaceTemplate, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(WorkspaceTemplate, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'namespace',
+            'body'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -266,30 +317,38 @@ class WorkspaceTemplateServiceApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def generate_workspace_template_workflow_template(self, namespace, uid, body, **kwargs):  # noqa: E501
         """generate_workspace_template_workflow_template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.generate_workspace_template_workflow_template(namespace, uid, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: (required)
-        :param str uid: (required)
-        :param WorkspaceTemplate body: (required)
+        :param namespace: (required)
+        :type namespace: str
+        :param uid: (required)
+        :type uid: str
+        :param body: (required)
+        :type body: WorkspaceTemplate
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: WorkflowTemplate
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: WorkflowTemplate
         """
         kwargs['_return_http_data_only'] = True
         return self.generate_workspace_template_workflow_template_with_http_info(namespace, uid, body, **kwargs)  # noqa: E501
@@ -299,34 +358,55 @@ class WorkspaceTemplateServiceApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.generate_workspace_template_workflow_template_with_http_info(namespace, uid, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: (required)
-        :param str uid: (required)
-        :param WorkspaceTemplate body: (required)
+        :param namespace: (required)
+        :type namespace: str
+        :param uid: (required)
+        :type uid: str
+        :param body: (required)
+        :type body: WorkspaceTemplate
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(WorkflowTemplate, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(WorkflowTemplate, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'uid', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'namespace',
+            'uid',
+            'body'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -392,30 +472,38 @@ class WorkspaceTemplateServiceApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def get_workspace_template(self, namespace, uid, **kwargs):  # noqa: E501
         """get_workspace_template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.get_workspace_template(namespace, uid, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: (required)
-        :param str uid: (required)
-        :param str version:
+        :param namespace: (required)
+        :type namespace: str
+        :param uid: (required)
+        :type uid: str
+        :param version:
+        :type version: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: WorkspaceTemplate
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: WorkspaceTemplate
         """
         kwargs['_return_http_data_only'] = True
         return self.get_workspace_template_with_http_info(namespace, uid, **kwargs)  # noqa: E501
@@ -425,34 +513,55 @@ class WorkspaceTemplateServiceApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.get_workspace_template_with_http_info(namespace, uid, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: (required)
-        :param str uid: (required)
-        :param str version:
+        :param namespace: (required)
+        :type namespace: str
+        :param uid: (required)
+        :type uid: str
+        :param version:
+        :type version: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(WorkspaceTemplate, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(WorkspaceTemplate, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'uid', 'version']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'namespace',
+            'uid',
+            'version'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -510,29 +619,36 @@ class WorkspaceTemplateServiceApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def list_workspace_template_versions(self, namespace, uid, **kwargs):  # noqa: E501
         """list_workspace_template_versions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.list_workspace_template_versions(namespace, uid, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: (required)
-        :param str uid: (required)
+        :param namespace: (required)
+        :type namespace: str
+        :param uid: (required)
+        :type uid: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: ListWorkspaceTemplateVersionsResponse
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: ListWorkspaceTemplateVersionsResponse
         """
         kwargs['_return_http_data_only'] = True
         return self.list_workspace_template_versions_with_http_info(namespace, uid, **kwargs)  # noqa: E501
@@ -542,33 +658,52 @@ class WorkspaceTemplateServiceApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.list_workspace_template_versions_with_http_info(namespace, uid, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: (required)
-        :param str uid: (required)
+        :param namespace: (required)
+        :type namespace: str
+        :param uid: (required)
+        :type uid: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(ListWorkspaceTemplateVersionsResponse, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(ListWorkspaceTemplateVersionsResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'uid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'namespace',
+            'uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -624,30 +759,38 @@ class WorkspaceTemplateServiceApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def list_workspace_templates(self, namespace, **kwargs):  # noqa: E501
         """list_workspace_templates  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.list_workspace_templates(namespace, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: (required)
-        :param int page_size:
-        :param int page:
+        :param namespace: (required)
+        :type namespace: str
+        :param page_size:
+        :type page_size: int
+        :param page:
+        :type page: int
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: ListWorkspaceTemplatesResponse
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: ListWorkspaceTemplatesResponse
         """
         kwargs['_return_http_data_only'] = True
         return self.list_workspace_templates_with_http_info(namespace, **kwargs)  # noqa: E501
@@ -657,34 +800,55 @@ class WorkspaceTemplateServiceApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.list_workspace_templates_with_http_info(namespace, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: (required)
-        :param int page_size:
-        :param int page:
+        :param namespace: (required)
+        :type namespace: str
+        :param page_size:
+        :type page_size: int
+        :param page:
+        :type page: int
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(ListWorkspaceTemplatesResponse, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(ListWorkspaceTemplatesResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'page_size', 'page']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'namespace',
+            'page_size',
+            'page'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -738,30 +902,38 @@ class WorkspaceTemplateServiceApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def update_workspace_template(self, namespace, uid, body, **kwargs):  # noqa: E501
         """update_workspace_template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.update_workspace_template(namespace, uid, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: (required)
-        :param str uid: (required)
-        :param WorkspaceTemplate body: (required)
+        :param namespace: (required)
+        :type namespace: str
+        :param uid: (required)
+        :type uid: str
+        :param body: (required)
+        :type body: WorkspaceTemplate
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: WorkspaceTemplate
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: WorkspaceTemplate
         """
         kwargs['_return_http_data_only'] = True
         return self.update_workspace_template_with_http_info(namespace, uid, body, **kwargs)  # noqa: E501
@@ -771,34 +943,55 @@ class WorkspaceTemplateServiceApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.update_workspace_template_with_http_info(namespace, uid, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: (required)
-        :param str uid: (required)
-        :param WorkspaceTemplate body: (required)
+        :param namespace: (required)
+        :type namespace: str
+        :param uid: (required)
+        :type uid: str
+        :param body: (required)
+        :type body: WorkspaceTemplate
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(WorkspaceTemplate, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(WorkspaceTemplate, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
 
-        all_params = ['namespace', 'uid', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'namespace',
+            'uid',
+            'body'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout',
+                '_request_auth'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -864,4 +1057,5 @@ class WorkspaceTemplateServiceApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))

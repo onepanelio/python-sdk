@@ -83,7 +83,7 @@ class WorkspaceStatus(object):
 
 
         :param phase: The phase of this WorkspaceStatus.  # noqa: E501
-        :type: str
+        :type phase: str
         """
 
         self._phase = phase
@@ -104,7 +104,7 @@ class WorkspaceStatus(object):
 
 
         :param started_at: The started_at of this WorkspaceStatus.  # noqa: E501
-        :type: str
+        :type started_at: str
         """
 
         self._started_at = started_at
@@ -125,7 +125,7 @@ class WorkspaceStatus(object):
 
 
         :param paused_at: The paused_at of this WorkspaceStatus.  # noqa: E501
-        :type: str
+        :type paused_at: str
         """
 
         self._paused_at = paused_at
@@ -146,7 +146,7 @@ class WorkspaceStatus(object):
 
 
         :param terminated_at: The terminated_at of this WorkspaceStatus.  # noqa: E501
-        :type: str
+        :type terminated_at: str
         """
 
         self._terminated_at = terminated_at

@@ -28,14 +28,32 @@ class TestWorkspaceServiceApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_workspace_service_create_workspace(self):
-        """Test case for workspace_service_create_workspace
+    def test_create_workspace(self):
+        """Test case for create_workspace
 
         """
         pass
 
-    def test_workspace_service_update_workspace_status(self):
-        """Test case for workspace_service_update_workspace_status
+    def test_delete_workspace(self):
+        """Test case for delete_workspace
+
+        """
+        pass
+
+    def test_list_workspaces(self):
+        """Test case for list_workspaces
+
+        """
+        pass
+
+    def test_pause_workspace(self):
+        """Test case for pause_workspace
+
+        """
+        pass
+
+    def test_update_workspace_status(self):
+        """Test case for update_workspace_status
 
         """
         pass

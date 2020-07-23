@@ -113,7 +113,7 @@ class WorkflowExecution(object):
 
 
         :param created_at: The created_at of this WorkflowExecution.  # noqa: E501
-        :type: str
+        :type created_at: str
         """
 
         self._created_at = created_at
@@ -134,7 +134,7 @@ class WorkflowExecution(object):
 
 
         :param uid: The uid of this WorkflowExecution.  # noqa: E501
-        :type: str
+        :type uid: str
         """
 
         self._uid = uid
@@ -155,7 +155,7 @@ class WorkflowExecution(object):
 
 
         :param name: The name of this WorkflowExecution.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name
@@ -176,7 +176,7 @@ class WorkflowExecution(object):
 
 
         :param phase: The phase of this WorkflowExecution.  # noqa: E501
-        :type: str
+        :type phase: str
         """
 
         self._phase = phase
@@ -197,7 +197,7 @@ class WorkflowExecution(object):
 
 
         :param started_at: The started_at of this WorkflowExecution.  # noqa: E501
-        :type: str
+        :type started_at: str
         """
 
         self._started_at = started_at
@@ -218,7 +218,7 @@ class WorkflowExecution(object):
 
 
         :param finished_at: The finished_at of this WorkflowExecution.  # noqa: E501
-        :type: str
+        :type finished_at: str
         """
 
         self._finished_at = finished_at
@@ -239,7 +239,7 @@ class WorkflowExecution(object):
 
 
         :param manifest: The manifest of this WorkflowExecution.  # noqa: E501
-        :type: str
+        :type manifest: str
         """
 
         self._manifest = manifest
@@ -260,7 +260,7 @@ class WorkflowExecution(object):
 
 
         :param parameters: The parameters of this WorkflowExecution.  # noqa: E501
-        :type: list[Parameter]
+        :type parameters: list[Parameter]
         """
 
         self._parameters = parameters
@@ -281,7 +281,7 @@ class WorkflowExecution(object):
 
 
         :param workflow_template: The workflow_template of this WorkflowExecution.  # noqa: E501
-        :type: WorkflowTemplate
+        :type workflow_template: WorkflowTemplate
         """
 
         self._workflow_template = workflow_template
@@ -302,7 +302,7 @@ class WorkflowExecution(object):
 
 
         :param labels: The labels of this WorkflowExecution.  # noqa: E501
-        :type: list[KeyValue]
+        :type labels: list[KeyValue]
         """
 
         self._labels = labels

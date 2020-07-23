@@ -68,7 +68,7 @@ class CronWorkflowStatisticsReport(object):
 
 
         :param total: The total of this CronWorkflowStatisticsReport.  # noqa: E501
-        :type: int
+        :type total: int
         """
 
         self._total = total

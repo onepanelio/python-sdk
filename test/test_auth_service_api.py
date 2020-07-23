@@ -28,8 +28,8 @@ class TestAuthServiceApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_auth_service_is_valid_token(self):
-        """Test case for auth_service_is_valid_token
+    def test_is_valid_token(self):
+        """Test case for is_valid_token
 
         """
         pass

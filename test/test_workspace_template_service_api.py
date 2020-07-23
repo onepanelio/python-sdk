@@ -28,38 +28,38 @@ class TestWorkspaceTemplateServiceApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_workspace_template_service_create_workspace_template(self):
-        """Test case for workspace_template_service_create_workspace_template
+    def test_create_workspace_template(self):
+        """Test case for create_workspace_template
 
         """
         pass
 
-    def test_workspace_template_service_generate_workspace_template_workflow_template(self):
-        """Test case for workspace_template_service_generate_workspace_template_workflow_template
+    def test_generate_workspace_template_workflow_template(self):
+        """Test case for generate_workspace_template_workflow_template
 
         """
         pass
 
-    def test_workspace_template_service_get_workspace_template(self):
-        """Test case for workspace_template_service_get_workspace_template
+    def test_get_workspace_template(self):
+        """Test case for get_workspace_template
 
         """
         pass
 
-    def test_workspace_template_service_list_workspace_template_versions(self):
-        """Test case for workspace_template_service_list_workspace_template_versions
+    def test_list_workspace_template_versions(self):
+        """Test case for list_workspace_template_versions
 
         """
         pass
 
-    def test_workspace_template_service_list_workspace_templates(self):
-        """Test case for workspace_template_service_list_workspace_templates
+    def test_list_workspace_templates(self):
+        """Test case for list_workspace_templates
 
         """
         pass
 
-    def test_workspace_template_service_update_workspace_template(self):
-        """Test case for workspace_template_service_update_workspace_template
+    def test_update_workspace_template(self):
+        """Test case for update_workspace_template
 
         """
         pass

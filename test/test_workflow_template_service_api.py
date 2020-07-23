@@ -28,62 +28,62 @@ class TestWorkflowTemplateServiceApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_workflow_template_service_archive_workflow_template(self):
-        """Test case for workflow_template_service_archive_workflow_template
+    def test_archive_workflow_template(self):
+        """Test case for archive_workflow_template
 
         """
         pass
 
-    def test_workflow_template_service_clone_workflow_template(self):
-        """Test case for workflow_template_service_clone_workflow_template
+    def test_clone_workflow_template(self):
+        """Test case for clone_workflow_template
 
         """
         pass
 
-    def test_workflow_template_service_clone_workflow_template2(self):
-        """Test case for workflow_template_service_clone_workflow_template2
+    def test_clone_workflow_template2(self):
+        """Test case for clone_workflow_template2
 
         """
         pass
 
-    def test_workflow_template_service_create_workflow_template(self):
-        """Test case for workflow_template_service_create_workflow_template
+    def test_create_workflow_template(self):
+        """Test case for create_workflow_template
 
         """
         pass
 
-    def test_workflow_template_service_create_workflow_template_version(self):
-        """Test case for workflow_template_service_create_workflow_template_version
+    def test_create_workflow_template_version(self):
+        """Test case for create_workflow_template_version
 
         """
         pass
 
-    def test_workflow_template_service_get_workflow_template(self):
-        """Test case for workflow_template_service_get_workflow_template
+    def test_get_workflow_template(self):
+        """Test case for get_workflow_template
 
         """
         pass
 
-    def test_workflow_template_service_get_workflow_template2(self):
-        """Test case for workflow_template_service_get_workflow_template2
+    def test_get_workflow_template2(self):
+        """Test case for get_workflow_template2
 
         """
         pass
 
-    def test_workflow_template_service_list_workflow_template_versions(self):
-        """Test case for workflow_template_service_list_workflow_template_versions
+    def test_list_workflow_template_versions(self):
+        """Test case for list_workflow_template_versions
 
         """
         pass
 
-    def test_workflow_template_service_list_workflow_templates(self):
-        """Test case for workflow_template_service_list_workflow_templates
+    def test_list_workflow_templates(self):
+        """Test case for list_workflow_templates
 
         """
         pass
 
-    def test_workflow_template_service_update_workflow_template_version(self):
-        """Test case for workflow_template_service_update_workflow_template_version
+    def test_update_workflow_template_version(self):
+        """Test case for update_workflow_template_version
 
         """
         pass

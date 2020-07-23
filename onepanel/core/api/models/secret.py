@@ -73,7 +73,7 @@ class Secret(object):
 
 
         :param name: The name of this Secret.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name
@@ -94,7 +94,7 @@ class Secret(object):
 
 
         :param data: The data of this Secret.  # noqa: E501
-        :type: dict(str, str)
+        :type data: dict(str, str)
         """
 
         self._data = data

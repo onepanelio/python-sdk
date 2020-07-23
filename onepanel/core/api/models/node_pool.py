@@ -73,7 +73,7 @@ class NodePool(object):
 
 
         :param label: The label of this NodePool.  # noqa: E501
-        :type: str
+        :type label: str
         """
 
         self._label = label
@@ -94,7 +94,7 @@ class NodePool(object):
 
 
         :param options: The options of this NodePool.  # noqa: E501
-        :type: list[NodePoolOption]
+        :type options: list[NodePoolOption]
         """
 
         self._options = options

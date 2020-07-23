@@ -68,7 +68,7 @@ class UpdateSecretKeyValueResponse(object):
 
 
         :param updated: The updated of this UpdateSecretKeyValueResponse.  # noqa: E501
-        :type: bool
+        :type updated: bool
         """
 
         self._updated = updated

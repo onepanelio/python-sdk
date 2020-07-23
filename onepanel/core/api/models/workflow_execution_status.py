@@ -68,7 +68,7 @@ class WorkflowExecutionStatus(object):
 
 
         :param phase: The phase of this WorkflowExecutionStatus.  # noqa: E501
-        :type: str
+        :type phase: str
         """
 
         self._phase = phase

@@ -68,7 +68,7 @@ class GetWorkflowExecutionMetricsResponse(object):
 
 
         :param metrics: The metrics of this GetWorkflowExecutionMetricsResponse.  # noqa: E501
-        :type: list[Metric]
+        :type metrics: list[Metric]
         """
 
         self._metrics = metrics

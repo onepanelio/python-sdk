@@ -73,7 +73,7 @@ class StreamResultOfLogEntry(object):
 
 
         :param result: The result of this StreamResultOfLogEntry.  # noqa: E501
-        :type: LogEntry
+        :type result: LogEntry
         """
 
         self._result = result
@@ -94,7 +94,7 @@ class StreamResultOfLogEntry(object):
 
 
         :param error: The error of this StreamResultOfLogEntry.  # noqa: E501
-        :type: GrpcGatewayRuntimeStreamError
+        :type error: GrpcGatewayRuntimeStreamError
         """
 
         self._error = error

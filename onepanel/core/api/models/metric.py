@@ -78,7 +78,7 @@ class Metric(object):
 
 
         :param name: The name of this Metric.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name
@@ -99,7 +99,7 @@ class Metric(object):
 
 
         :param value: The value of this Metric.  # noqa: E501
-        :type: float
+        :type value: float
         """
 
         self._value = value
@@ -120,7 +120,7 @@ class Metric(object):
 
 
         :param format: The format of this Metric.  # noqa: E501
-        :type: str
+        :type format: str
         """
 
         self._format = format

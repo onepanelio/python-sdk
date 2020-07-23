@@ -73,7 +73,7 @@ class UpdateWorkspaceBody(object):
 
 
         :param parameters: The parameters of this UpdateWorkspaceBody.  # noqa: E501
-        :type: list[Parameter]
+        :type parameters: list[Parameter]
         """
 
         self._parameters = parameters
@@ -94,7 +94,7 @@ class UpdateWorkspaceBody(object):
 
 
         :param labels: The labels of this UpdateWorkspaceBody.  # noqa: E501
-        :type: list[KeyValue]
+        :type labels: list[KeyValue]
         """
 
         self._labels = labels

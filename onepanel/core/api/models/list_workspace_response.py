@@ -88,7 +88,7 @@ class ListWorkspaceResponse(object):
 
 
         :param count: The count of this ListWorkspaceResponse.  # noqa: E501
-        :type: int
+        :type count: int
         """
 
         self._count = count
@@ -109,7 +109,7 @@ class ListWorkspaceResponse(object):
 
 
         :param workspaces: The workspaces of this ListWorkspaceResponse.  # noqa: E501
-        :type: list[Workspace]
+        :type workspaces: list[Workspace]
         """
 
         self._workspaces = workspaces
@@ -130,7 +130,7 @@ class ListWorkspaceResponse(object):
 
 
         :param page: The page of this ListWorkspaceResponse.  # noqa: E501
-        :type: int
+        :type page: int
         """
 
         self._page = page
@@ -151,7 +151,7 @@ class ListWorkspaceResponse(object):
 
 
         :param pages: The pages of this ListWorkspaceResponse.  # noqa: E501
-        :type: int
+        :type pages: int
         """
 
         self._pages = pages
@@ -172,7 +172,7 @@ class ListWorkspaceResponse(object):
 
 
         :param total_count: The total_count of this ListWorkspaceResponse.  # noqa: E501
-        :type: int
+        :type total_count: int
         """
 
         self._total_count = total_count

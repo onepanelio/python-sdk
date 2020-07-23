@@ -68,7 +68,7 @@ class TokenWrapper(object):
 
 
         :param token: The token of this TokenWrapper.  # noqa: E501
-        :type: str
+        :type token: str
         """
 
         self._token = token
