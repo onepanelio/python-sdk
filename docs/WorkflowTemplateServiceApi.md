@@ -13,7 +13,6 @@ Method | HTTP request | Description
 [**get_workflow_template2**](WorkflowTemplateServiceApi.md#get_workflow_template2) | **GET** /apis/v1beta1/{namespace}/workflow_templates/{uid}/versions/{version} | 
 [**list_workflow_template_versions**](WorkflowTemplateServiceApi.md#list_workflow_template_versions) | **GET** /apis/v1beta1/{namespace}/workflow_templates/{uid}/versions | 
 [**list_workflow_templates**](WorkflowTemplateServiceApi.md#list_workflow_templates) | **GET** /apis/v1beta1/{namespace}/workflow_templates | 
-[**update_workflow_template_version**](WorkflowTemplateServiceApi.md#update_workflow_template_version) | **PUT** /apis/v1beta1/{namespace}/workflow_templates/{workflowTemplate.uid}/versions/{workflowTemplate.version} | 
 
 
 # **archive_workflow_template**
@@ -715,87 +714,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A successful response. |  -  |
-**0** | An unexpected error response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_workflow_template_version**
-> WorkflowTemplate update_workflow_template_version(namespace, workflow_template_uid, workflow_template_version, body)
-
-
-
-### Example
-
-* Api Key Authentication (Bearer):
-```python
-from __future__ import print_function
-import time
-import onepanel.core.api
-from onepanel.core.api.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:8888
-# See configuration.py for a list of all supported configuration parameters.
-configuration = onepanel.core.api.Configuration(
-    host = "http://localhost:8888"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration = onepanel.core.api.Configuration(
-    host = "http://localhost:8888",
-    api_key = {
-        'Bearer': 'YOUR_API_KEY'
-    }
-)
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with onepanel.core.api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = onepanel.core.api.WorkflowTemplateServiceApi(api_client)
-    namespace = 'namespace_example' # str | 
-workflow_template_uid = 'workflow_template_uid_example' # str | 
-workflow_template_version = 'workflow_template_version_example' # str | 
-body = onepanel.core.api.WorkflowTemplate() # WorkflowTemplate | 
-
-    try:
-        api_response = api_instance.update_workflow_template_version(namespace, workflow_template_uid, workflow_template_version, body)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling WorkflowTemplateServiceApi->update_workflow_template_version: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **namespace** | **str**|  | 
- **workflow_template_uid** | **str**|  | 
- **workflow_template_version** | **str**|  | 
- **body** | [**WorkflowTemplate**](WorkflowTemplate.md)|  | 
-
-### Return type
-
-[**WorkflowTemplate**](WorkflowTemplate.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
