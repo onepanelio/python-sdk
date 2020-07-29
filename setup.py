@@ -13,7 +13,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "onepanel-sdk"
-VERSION = "0.12.0b"
+VERSION = "0.12.0b2"
 # To install the library, run the following
 #
 # python setup.py install

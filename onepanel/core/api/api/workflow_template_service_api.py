@@ -1248,6 +1248,8 @@ class WorkflowTemplateServiceApi(object):
         :type page_size: int
         :param page:
         :type page: int
+        :param labels:
+        :type labels: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1281,6 +1283,8 @@ class WorkflowTemplateServiceApi(object):
         :type page_size: int
         :param page:
         :type page: int
+        :param labels:
+        :type labels: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -1309,7 +1313,8 @@ class WorkflowTemplateServiceApi(object):
         all_params = [
             'namespace',
             'page_size',
-            'page'
+            'page',
+            'labels'
         ]
         all_params.extend(
             [
@@ -1345,6 +1350,8 @@ class WorkflowTemplateServiceApi(object):
             query_params.append(('pageSize', local_var_params['page_size']))  # noqa: E501
         if 'page' in local_var_params and local_var_params['page'] is not None:  # noqa: E501
             query_params.append(('page', local_var_params['page']))  # noqa: E501
+        if 'labels' in local_var_params and local_var_params['labels'] is not None:  # noqa: E501
+            query_params.append(('labels', local_var_params['labels']))  # noqa: E501
 
         header_params = {}
 

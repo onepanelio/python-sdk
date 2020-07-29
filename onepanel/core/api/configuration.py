@@ -208,7 +208,7 @@ conf = onepanel.core.api.Configuration(
         self.retries = None
         """Adding retries to override urllib3 default value 3
         """
-        # Enable client side validation
+        # Disable client side validation
         self.client_side_validation = True
 
     def __deepcopy__(self, memo):
@@ -403,7 +403,7 @@ conf = onepanel.core.api.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 0.12.0\n"\
-               "SDK Package Version: 0.12.0b".\
+               "SDK Package Version: 0.12.0b2".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):

@@ -39,6 +39,7 @@ from onepanel.core.api.models.list_cron_workflows_response import ListCronWorkfl
 from onepanel.core.api.models.list_files_response import ListFilesResponse
 from onepanel.core.api.models.list_namespaces_response import ListNamespacesResponse
 from onepanel.core.api.models.list_secrets_response import ListSecretsResponse
+from onepanel.core.api.models.list_services_response import ListServicesResponse
 from onepanel.core.api.models.list_workflow_executions_response import ListWorkflowExecutionsResponse
 from onepanel.core.api.models.list_workflow_template_versions_response import ListWorkflowTemplateVersionsResponse
 from onepanel.core.api.models.list_workflow_templates_response import ListWorkflowTemplatesResponse
@@ -54,6 +55,7 @@ from onepanel.core.api.models.parameter import Parameter
 from onepanel.core.api.models.parameter_option import ParameterOption
 from onepanel.core.api.models.secret import Secret
 from onepanel.core.api.models.secret_exists_response import SecretExistsResponse
+from onepanel.core.api.models.service import Service
 from onepanel.core.api.models.statistics import Statistics
 from onepanel.core.api.models.stream_result_of_log_entry import StreamResultOfLogEntry
 from onepanel.core.api.models.stream_result_of_workflow_execution import StreamResultOfWorkflowExecution
@@ -61,6 +63,7 @@ from onepanel.core.api.models.token_wrapper import TokenWrapper
 from onepanel.core.api.models.update_secret_key_value_response import UpdateSecretKeyValueResponse
 from onepanel.core.api.models.update_workspace_body import UpdateWorkspaceBody
 from onepanel.core.api.models.workflow_execution import WorkflowExecution
+from onepanel.core.api.models.workflow_execution_metadata import WorkflowExecutionMetadata
 from onepanel.core.api.models.workflow_execution_statistic_report import WorkflowExecutionStatisticReport
 from onepanel.core.api.models.workflow_execution_status import WorkflowExecutionStatus
 from onepanel.core.api.models.workflow_template import WorkflowTemplate
