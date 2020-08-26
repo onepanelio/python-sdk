@@ -84,21 +84,7 @@ class TestWorkspace(unittest.TestCase):
                             failed = 56, 
                             terminated = 56, ), 
                         cron_stats = onepanel.core.api.models.cron_workflow_statistics_report.CronWorkflowStatisticsReport(
-                            total = 56, ), 
-                        parameters = [
-                            onepanel.core.api.models.parameter.Parameter(
-                                name = '0', 
-                                value = '0', 
-                                type = '0', 
-                                display_name = '0', 
-                                hint = '0', 
-                                required = True, 
-                                options = [
-                                    onepanel.core.api.models.parameter_option.ParameterOption(
-                                        name = '0', 
-                                        value = '0', )
-                                    ], )
-                            ], ), 
+                            total = 56, ), ), 
                     labels = [
                         onepanel.core.api.models.key_value.KeyValue(
                             key = '0', 

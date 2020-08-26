@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -479,7 +479,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -558,7 +558,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -635,7 +635,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -646,7 +646,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_workflow_templates**
-> ListWorkflowTemplatesResponse list_workflow_templates(namespace, page_size=page_size, page=page)
+> ListWorkflowTemplatesResponse list_workflow_templates(namespace, page_size=page_size, page=page, labels=labels)
 
 
 
@@ -687,9 +687,10 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     namespace = 'namespace_example' # str | 
 page_size = 56 # int |  (optional)
 page = 56 # int |  (optional)
+labels = 'labels_example' # str |  (optional)
 
     try:
-        api_response = api_instance.list_workflow_templates(namespace, page_size=page_size, page=page)
+        api_response = api_instance.list_workflow_templates(namespace, page_size=page_size, page=page, labels=labels)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowTemplateServiceApi->list_workflow_templates: %s\n" % e)
@@ -702,6 +703,7 @@ Name | Type | Description  | Notes
  **namespace** | **str**|  | 
  **page_size** | **int**|  | [optional] 
  **page** | **int**|  | [optional] 
+ **labels** | **str**|  | [optional] 
 
 ### Return type
 
@@ -714,7 +716,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |
