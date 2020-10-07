@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**get_workflow_execution**](WorkflowServiceApi.md#get_workflow_execution) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid} | 
 [**get_workflow_execution_logs**](WorkflowServiceApi.md#get_workflow_execution_logs) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/pods/{podName}/containers/{containerName}/logs | 
 [**get_workflow_execution_metrics**](WorkflowServiceApi.md#get_workflow_execution_metrics) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/pods/{podName}/metrics | 
+[**get_workflow_execution_statistics_for_namespace**](WorkflowServiceApi.md#get_workflow_execution_statistics_for_namespace) | **GET** /apis/v1beta1/{namespace}/workflow_executions/statistics | 
 [**list_files**](WorkflowServiceApi.md#list_files) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/files/{path} | 
 [**list_workflow_executions**](WorkflowServiceApi.md#list_workflow_executions) | **GET** /apis/v1beta1/{namespace}/workflow_executions | 
 [**resubmit_workflow_execution**](WorkflowServiceApi.md#resubmit_workflow_execution) | **PUT** /apis/v1beta1/{namespace}/workflow_executions/{uid}/resubmit | 
@@ -49,11 +50,11 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'Bearer': 'YOUR_API_KEY'
+        'authorization': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -128,11 +129,11 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'Bearer': 'YOUR_API_KEY'
+        'authorization': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -205,11 +206,11 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'Bearer': 'YOUR_API_KEY'
+        'authorization': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -282,11 +283,11 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'Bearer': 'YOUR_API_KEY'
+        'authorization': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -361,11 +362,11 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'Bearer': 'YOUR_API_KEY'
+        'authorization': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -440,11 +441,11 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'Bearer': 'YOUR_API_KEY'
+        'authorization': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -517,11 +518,11 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'Bearer': 'YOUR_API_KEY'
+        'authorization': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -598,11 +599,11 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'Bearer': 'YOUR_API_KEY'
+        'authorization': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -630,6 +631,81 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetWorkflowExecutionMetricsResponse**](GetWorkflowExecutionMetricsResponse.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/octet-stream
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_workflow_execution_statistics_for_namespace**
+> GetWorkflowExecutionStatisticsForNamespaceResponse get_workflow_execution_statistics_for_namespace(namespace)
+
+
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import onepanel.core.api
+from onepanel.core.api.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8888
+# See configuration.py for a list of all supported configuration parameters.
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888",
+    api_key = {
+        'authorization': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['authorization'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with onepanel.core.api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
+    namespace = 'namespace_example' # str | 
+
+    try:
+        api_response = api_instance.get_workflow_execution_statistics_for_namespace(namespace)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WorkflowServiceApi->get_workflow_execution_statistics_for_namespace: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **namespace** | **str**|  | 
+
+### Return type
+
+[**GetWorkflowExecutionStatisticsForNamespaceResponse**](GetWorkflowExecutionStatisticsForNamespaceResponse.md)
 
 ### Authorization
 
@@ -677,11 +753,11 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'Bearer': 'YOUR_API_KEY'
+        'authorization': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -728,7 +804,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_workflow_executions**
-> ListWorkflowExecutionsResponse list_workflow_executions(namespace, workflow_template_uid=workflow_template_uid, workflow_template_version=workflow_template_version, page_size=page_size, page=page)
+> ListWorkflowExecutionsResponse list_workflow_executions(namespace, workflow_template_uid=workflow_template_uid, workflow_template_version=workflow_template_version, page_size=page_size, page=page, order=order, labels=labels, phase=phase, include_system=include_system)
 
 
 
@@ -756,11 +832,11 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'Bearer': 'YOUR_API_KEY'
+        'authorization': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -771,9 +847,13 @@ workflow_template_uid = 'workflow_template_uid_example' # str |  (optional)
 workflow_template_version = 'workflow_template_version_example' # str |  (optional)
 page_size = 56 # int |  (optional)
 page = 56 # int |  (optional)
+order = 'order_example' # str |  (optional)
+labels = 'labels_example' # str |  (optional)
+phase = 'phase_example' # str |  (optional)
+include_system = True # bool |  (optional)
 
     try:
-        api_response = api_instance.list_workflow_executions(namespace, workflow_template_uid=workflow_template_uid, workflow_template_version=workflow_template_version, page_size=page_size, page=page)
+        api_response = api_instance.list_workflow_executions(namespace, workflow_template_uid=workflow_template_uid, workflow_template_version=workflow_template_version, page_size=page_size, page=page, order=order, labels=labels, phase=phase, include_system=include_system)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkflowServiceApi->list_workflow_executions: %s\n" % e)
@@ -788,6 +868,10 @@ Name | Type | Description  | Notes
  **workflow_template_version** | **str**|  | [optional] 
  **page_size** | **int**|  | [optional] 
  **page** | **int**|  | [optional] 
+ **order** | **str**|  | [optional] 
+ **labels** | **str**|  | [optional] 
+ **phase** | **str**|  | [optional] 
+ **include_system** | **bool**|  | [optional] 
 
 ### Return type
 
@@ -839,11 +923,11 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'Bearer': 'YOUR_API_KEY'
+        'authorization': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -916,11 +1000,11 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'Bearer': 'YOUR_API_KEY'
+        'authorization': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -993,11 +1077,11 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'Bearer': 'YOUR_API_KEY'
+        'authorization': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -1072,11 +1156,11 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'Bearer': 'YOUR_API_KEY'
+        'authorization': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
