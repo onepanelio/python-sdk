@@ -34,31 +34,31 @@ class IsValidTokenResponse(object):
     """
     openapi_types = {
         'domain': 'str',
-        'jwt_token': 'str',
+        'token': 'str',
         'username': 'str'
     }
 
     attribute_map = {
         'domain': 'domain',
-        'jwt_token': 'jwtToken',
+        'token': 'token',
         'username': 'username'
     }
 
-    def __init__(self, domain=None, jwt_token=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, domain=None, token=None, username=None, local_vars_configuration=None):  # noqa: E501
         """IsValidTokenResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._domain = None
-        self._jwt_token = None
+        self._token = None
         self._username = None
         self.discriminator = None
 
         if domain is not None:
             self.domain = domain
-        if jwt_token is not None:
-            self.jwt_token = jwt_token
+        if token is not None:
+            self.token = token
         if username is not None:
             self.username = username
 
@@ -84,25 +84,25 @@ class IsValidTokenResponse(object):
         self._domain = domain
 
     @property
-    def jwt_token(self):
-        """Gets the jwt_token of this IsValidTokenResponse.  # noqa: E501
+    def token(self):
+        """Gets the token of this IsValidTokenResponse.  # noqa: E501
 
 
-        :return: The jwt_token of this IsValidTokenResponse.  # noqa: E501
+        :return: The token of this IsValidTokenResponse.  # noqa: E501
         :rtype: str
         """
-        return self._jwt_token
+        return self._token
 
-    @jwt_token.setter
-    def jwt_token(self, jwt_token):
-        """Sets the jwt_token of this IsValidTokenResponse.
+    @token.setter
+    def token(self, token):
+        """Sets the token of this IsValidTokenResponse.
 
 
-        :param jwt_token: The jwt_token of this IsValidTokenResponse.  # noqa: E501
+        :param token: The token of this IsValidTokenResponse.  # noqa: E501
         :type: str
         """
 
-        self._jwt_token = jwt_token
+        self._token = token
 
     @property
     def username(self):
