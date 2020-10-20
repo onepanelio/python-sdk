@@ -122,7 +122,7 @@ configuration = onepanel.core.api.Configuration(
 with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = onepanel.core.api.AuthServiceApi(api_client)
-    body = onepanel.core.api.TokenWrapper() # TokenWrapper | 
+    body = onepanel.core.api.IsValidTokenRequest() # IsValidTokenRequest | 
 
     try:
         api_response = api_instance.is_valid_token(body)
@@ -135,7 +135,7 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TokenWrapper**](TokenWrapper.md)|  | 
+ **body** | [**IsValidTokenRequest**](IsValidTokenRequest.md)|  | 
 
 ### Return type
 
