@@ -45,7 +45,8 @@ class WorkflowTemplate(object):
         'labels': 'list[KeyValue]',
         'stats': 'WorkflowExecutionStatisticReport',
         'cron_stats': 'CronWorkflowStatisticsReport',
-        'parameters': 'list[Parameter]'
+        'parameters': 'list[Parameter]',
+        'is_system': 'bool'
     }
 
     attribute_map = {
@@ -61,10 +62,11 @@ class WorkflowTemplate(object):
         'labels': 'labels',
         'stats': 'stats',
         'cron_stats': 'cronStats',
-        'parameters': 'parameters'
+        'parameters': 'parameters',
+        'is_system': 'isSystem'
     }
 
-    def __init__(self, created_at=None, modified_at=None, uid=None, name=None, version=None, versions=None, manifest=None, is_latest=None, is_archived=None, labels=None, stats=None, cron_stats=None, parameters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, created_at=None, modified_at=None, uid=None, name=None, version=None, versions=None, manifest=None, is_latest=None, is_archived=None, labels=None, stats=None, cron_stats=None, parameters=None, is_system=None, local_vars_configuration=None):  # noqa: E501
         """WorkflowTemplate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class WorkflowTemplate(object):
         self._stats = None
         self._cron_stats = None
         self._parameters = None
+        self._is_system = None
         self.discriminator = None
 
         if created_at is not None:
@@ -111,6 +114,8 @@ class WorkflowTemplate(object):
             self.cron_stats = cron_stats
         if parameters is not None:
             self.parameters = parameters
+        if is_system is not None:
+            self.is_system = is_system
 
     @property
     def created_at(self):
@@ -384,6 +389,27 @@ class WorkflowTemplate(object):
         """
 
         self._parameters = parameters
+
+    @property
+    def is_system(self):
+        """Gets the is_system of this WorkflowTemplate.  # noqa: E501
+
+
+        :return: The is_system of this WorkflowTemplate.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_system
+
+    @is_system.setter
+    def is_system(self, is_system):
+        """Sets the is_system of this WorkflowTemplate.
+
+
+        :param is_system: The is_system of this WorkflowTemplate.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_system = is_system
 
     def to_dict(self):
         """Returns the model properties as a dict"""
