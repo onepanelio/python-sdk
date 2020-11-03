@@ -36,8 +36,6 @@ from onepanel.core.api.models.grpc_gateway_runtime_error import GrpcGatewayRunti
 from onepanel.core.api.models.grpc_gateway_runtime_stream_error import GrpcGatewayRuntimeStreamError
 from onepanel.core.api.models.is_authorized import IsAuthorized
 from onepanel.core.api.models.is_authorized_response import IsAuthorizedResponse
-from onepanel.core.api.models.is_valid_token_request import IsValidTokenRequest
-from onepanel.core.api.models.is_valid_token_response import IsValidTokenResponse
 from onepanel.core.api.models.key_value import KeyValue
 from onepanel.core.api.models.labels import Labels
 from onepanel.core.api.models.list_cron_workflows_response import ListCronWorkflowsResponse

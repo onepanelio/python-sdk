@@ -34,28 +34,28 @@ class GetAccessTokenRequest(object):
     """
     openapi_types = {
         'username': 'str',
-        'token_hash': 'str'
+        'token': 'str'
     }
 
     attribute_map = {
         'username': 'username',
-        'token_hash': 'tokenHash'
+        'token': 'token'
     }
 
-    def __init__(self, username=None, token_hash=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, username=None, token=None, local_vars_configuration=None):  # noqa: E501
         """GetAccessTokenRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._username = None
-        self._token_hash = None
+        self._token = None
         self.discriminator = None
 
         if username is not None:
             self.username = username
-        if token_hash is not None:
-            self.token_hash = token_hash
+        if token is not None:
+            self.token = token
 
     @property
     def username(self):
@@ -79,25 +79,25 @@ class GetAccessTokenRequest(object):
         self._username = username
 
     @property
-    def token_hash(self):
-        """Gets the token_hash of this GetAccessTokenRequest.  # noqa: E501
+    def token(self):
+        """Gets the token of this GetAccessTokenRequest.  # noqa: E501
 
 
-        :return: The token_hash of this GetAccessTokenRequest.  # noqa: E501
+        :return: The token of this GetAccessTokenRequest.  # noqa: E501
         :rtype: str
         """
-        return self._token_hash
+        return self._token
 
-    @token_hash.setter
-    def token_hash(self, token_hash):
-        """Sets the token_hash of this GetAccessTokenRequest.
+    @token.setter
+    def token(self, token):
+        """Sets the token of this GetAccessTokenRequest.
 
 
-        :param token_hash: The token_hash of this GetAccessTokenRequest.  # noqa: E501
+        :param token: The token of this GetAccessTokenRequest.  # noqa: E501
         :type: str
         """
 
-        self._token_hash = token_hash
+        self._token = token
 
     def to_dict(self):
         """Returns the model properties as a dict"""

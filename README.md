@@ -97,7 +97,6 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AuthServiceApi* | [**get_access_token**](docs/AuthServiceApi.md#get_access_token) | **POST** /apis/v1beta1/auth/get_access_token | 
 *AuthServiceApi* | [**is_authorized**](docs/AuthServiceApi.md#is_authorized) | **POST** /apis/v1beta1/auth | 
-*AuthServiceApi* | [**is_valid_token**](docs/AuthServiceApi.md#is_valid_token) | **POST** /apis/v1beta1/auth/token | 
 *ConfigServiceApi* | [**get_config**](docs/ConfigServiceApi.md#get_config) | **GET** /apis/v1beta1/config | 
 *CronWorkflowServiceApi* | [**create_cron_workflow**](docs/CronWorkflowServiceApi.md#create_cron_workflow) | **POST** /apis/v1beta1/{namespace}/cron_workflow | 
 *CronWorkflowServiceApi* | [**delete_cron_workflow**](docs/CronWorkflowServiceApi.md#delete_cron_workflow) | **DELETE** /apis/v1beta1/{namespace}/cron_workflows/{uid} | 
@@ -189,8 +188,6 @@ Class | Method | HTTP request | Description
  - [GrpcGatewayRuntimeStreamError](docs/GrpcGatewayRuntimeStreamError.md)
  - [IsAuthorized](docs/IsAuthorized.md)
  - [IsAuthorizedResponse](docs/IsAuthorizedResponse.md)
- - [IsValidTokenRequest](docs/IsValidTokenRequest.md)
- - [IsValidTokenResponse](docs/IsValidTokenResponse.md)
  - [KeyValue](docs/KeyValue.md)
  - [Labels](docs/Labels.md)
  - [ListCronWorkflowsResponse](docs/ListCronWorkflowsResponse.md)
