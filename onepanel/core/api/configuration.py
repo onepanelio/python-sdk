@@ -352,7 +352,7 @@ conf = onepanel.core.api.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 0.15.0\n"\
-               "SDK Package Version: v0.15.0".\
+               "SDK Package Version: 0.15.0b2".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):

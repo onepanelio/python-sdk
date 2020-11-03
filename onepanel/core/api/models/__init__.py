@@ -24,6 +24,8 @@ from onepanel.core.api.models.cron_workflow_statistics_report import CronWorkflo
 from onepanel.core.api.models.delete_secret_key_response import DeleteSecretKeyResponse
 from onepanel.core.api.models.delete_secret_response import DeleteSecretResponse
 from onepanel.core.api.models.file import File
+from onepanel.core.api.models.get_access_token_request import GetAccessTokenRequest
+from onepanel.core.api.models.get_access_token_response import GetAccessTokenResponse
 from onepanel.core.api.models.get_config_response import GetConfigResponse
 from onepanel.core.api.models.get_labels_response import GetLabelsResponse
 from onepanel.core.api.models.get_workflow_execution_metrics_response import GetWorkflowExecutionMetricsResponse
@@ -50,8 +52,6 @@ from onepanel.core.api.models.list_workspace_response import ListWorkspaceRespon
 from onepanel.core.api.models.list_workspace_template_versions_response import ListWorkspaceTemplateVersionsResponse
 from onepanel.core.api.models.list_workspace_templates_response import ListWorkspaceTemplatesResponse
 from onepanel.core.api.models.log_entry import LogEntry
-from onepanel.core.api.models.log_in_request import LogInRequest
-from onepanel.core.api.models.log_in_response import LogInResponse
 from onepanel.core.api.models.metric import Metric
 from onepanel.core.api.models.namespace import Namespace
 from onepanel.core.api.models.node_pool import NodePool

@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **stats** | [**WorkflowExecutionStatisticReport**](WorkflowExecutionStatisticReport.md) |  | [optional] 
 **cron_stats** | [**CronWorkflowStatisticsReport**](CronWorkflowStatisticsReport.md) |  | [optional] 
 **parameters** | [**list[Parameter]**](Parameter.md) |  | [optional] 
-**is_system** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
