@@ -2,6 +2,7 @@ import logging
 import pyaml
 import os
 import json
+import zlib
 
 from couler.argo_submitter import ArgoSubmitter
 
