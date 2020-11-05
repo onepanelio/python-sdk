@@ -48,14 +48,17 @@ class OnepanelSubmitter(ArgoSubmitter):
 
     # If template exist, compare the crc32 hash of workflow_yaml and the YAML returned from get_workflow_template()
     def _get_workflow_template(self, namespace, name, workflow_template):
-        with onepanel.core.api.ApiClient(self.configuration) as api_client:
-            # Create an instance of the API class
-            api_instance = onepanel.core.api.WorkflowTemplateServiceApi(api_client)
-            api_response = api_instance.get_workflow_template(namespace, name)
-            yaml_str = api_response.to_dict()['manifest']
-            hash1 = str(zlib.crc32(workflow_template.encode()))
-            hash2 = str(zlib.crc32(yaml_str.encode()))
-        return bool(hash1 != hash2)
+        try:
+            with onepanel.core.api.ApiClient(self.configuration) as api_client:
+                # Create an instance of the API class
+                api_instance = onepanel.core.api.WorkflowTemplateServiceApi(api_client)
+                api_response = api_instance.get_workflow_template(namespace, name)
+                yaml_str = api_response.to_dict()['manifest']
+                hash1 = str(zlib.crc32(workflow_template.encode()))
+                hash2 = str(zlib.crc32(yaml_str.encode()))
+            return bool(hash1 != hash2)
+        except ApiException as e:
+            return
 
     def _create_workflow_template(self, namespace, body):
         try:
@@ -72,9 +75,9 @@ class OnepanelSubmitter(ArgoSubmitter):
             # Create an instance of the API class
             api_instance=onepanel.core.api.WorkflowTemplateServiceApi(api_client)
             try:
-                api_response = api_instance.create_workflow_template_version(namespace, workflow_template_uid, body)
+                api_instance.create_workflow_template_version(namespace, workflow_template_uid, body)
                 logging.info("New template version added to %s" % workflow_template_uid)
-                print(api_response)
+                self._execute_workflow(namespace, workflow_template_uid)
             except ApiException as e:
                 print("Exception when calling WorkflowTemplateServiceApi->create_workflow_template_version: %s\n" % e)
 
