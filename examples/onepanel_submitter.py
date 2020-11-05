@@ -136,9 +136,8 @@ class OnepanelSubmitter(ArgoSubmitter):
         if secrets:
             for secret in secrets:
                 self._create_secret(secret.to_yaml())
-        # NOTE: `label` was added here
-        # NOTE: Need to create or update
-        # Need to first get Workflow Template: https://github.com/onepanelio/python-sdk/blob/master/docs/WorkflowTemplateServiceApi.md#get_workflow_template
-        # If the Workflow Template doesn't exist, then create the Workflow Template like we do below
-        # If the hashes are different, create a new template version: https://github.com/onepanelio/python-sdk/blob/master/docs/WorkflowTemplateServiceApi.md#create_workflow_template_version
+        # The method calls should all be here as follows:
+        # _get_workflow_template
+        # If workflow_template exists, call _create_worfklow_template_version
+        # If it does not exist, call create_workflow_template
         workflow_template=self._get_workflow_template(self.namespace, self.workflow_name, workflow_yaml)
