@@ -46,38 +46,43 @@ class OnepanelSubmitter(ArgoSubmitter):
             self.api_instance = onepanel.core.api.WorkflowTemplateServiceApi(api_client)
         logging.info('Initialized')
 
-    def _create_workflow_template(self, workflow_yaml, name):
-        manifest = self.template_to_argo(workflow_yaml)
+    # If template exist, compare the crc32 hash of workflow_yaml and the YAML returned from get_workflow_template()
+    def _get_workflow_template(self, namespace, name, workflow_template):
         if len(name) >= 20:
             logging.info('Name must be 20 characters or less.')
             return
+        manifest = self.template_to_argo(workflow_template)
         # NOTE: `label` was added here
         body = onepanel.core.api.WorkflowTemplate(
             manifest=manifest,
             name=name,
             labels=[{'key': 'created-by', 'value': 'couler'}])
         try:
+            with onepanel.core.api.ApiClient(self.configuration) as api_client:
+                # Create an instance of the API class
+                api_instance = onepanel.core.api.WorkflowTemplateServiceApi(api_client)
+                api_response = api_instance.get_workflow_template(namespace, name)
+                yaml_str = api_response.to_dict()['manifest']
+                hash1 = str(zlib.crc32(manifest.encode()))
+                hash2 = str(zlib.crc32(yaml_str.encode()))
+                if hash1 != hash2:
+                    self._create_template_version(namespace, name, body)
+                else:
+                    logging.info("Duplicate template, exiting...")
+        except Exception as e:
+            print(e)
+            self._create_workflow_template(namespace, body)
+
+
+    def _create_workflow_template(self, namespace, body):
+        try:
             workflow_template = self.api_instance.create_workflow_template(
-                self.namespace,
+                namespace,
                 body
             )
-            return workflow_template
+            self._execute_workflow(namespace, workflow_template.uid)
         except ApiException as e:
-            self._get_workflow_template(self.namespace, self.workflow_name, manifest, body)
-
-    # If template exist, compare the crc32 hash of workflow_yaml and the YAML returned from get_workflow_template()
-    def _get_workflow_template(self, namespace, uid, workflow_template, body):
-        with onepanel.core.api.ApiClient(self.configuration) as api_client:
-            # Create an instance of the API class
-            api_instance = onepanel.core.api.WorkflowTemplateServiceApi(api_client)
-            api_response = api_instance.get_workflow_template(namespace, uid)
-            yaml_str = api_response.to_dict()['manifest']
-            hash1 = str(zlib.crc32(workflow_template.encode()))
-            hash2 = str(zlib.crc32(yaml_str.encode()))
-            if hash1 != hash2:
-                self._create_template_version(self.namespace, self.workflow_name, body)
-            else:
-                logging.info("Duplicate templates, exiting...")
+            print("Exception when calling WorkflowTemplateServiceApi->create_workflow_template: %s\n" % e)
 
     def _create_template_version(self, namespace, workflow_template_uid, body):
         with onepanel.core.api.ApiClient(self.configuration) as api_client:
@@ -131,10 +136,9 @@ class OnepanelSubmitter(ArgoSubmitter):
         if secrets:
             for secret in secrets:
                 self._create_secret(secret.to_yaml())
+        # NOTE: `label` was added here
         # NOTE: Need to create or update
         # Need to first get Workflow Template: https://github.com/onepanelio/python-sdk/blob/master/docs/WorkflowTemplateServiceApi.md#get_workflow_template
         # If the Workflow Template doesn't exist, then create the Workflow Template like we do below
         # If the hashes are different, create a new template version: https://github.com/onepanelio/python-sdk/blob/master/docs/WorkflowTemplateServiceApi.md#create_workflow_template_version
-        workflow_template=self._create_workflow_template(workflow_yaml, self.workflow_name)
-        if workflow_template:
-            self._execute_workflow(self.namespace, workflow_template.uid)
+        workflow_template=self._get_workflow_template(self.namespace, self.workflow_name, workflow_yaml)
