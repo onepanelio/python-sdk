@@ -3,20 +3,24 @@ import pyaml
 import os
 import json
 import zlib
-
 from couler.argo_submitter import ArgoSubmitter
-
 import onepanel.core.api
 from onepanel.core.api.rest import ApiException
+
 
 class OnepanelException(Exception):
     """Base-class for all exceptions raised by the OnepanelSubmitter"""
 
 
-class MissingTokenFileException(OnepanelException):
+class MissingTokenException(OnepanelException):
     """
-    Happens when the file containing the authentication token is missing on the system
-    Usually happens when not run on the onepanel system.
+    Happens when there is no provided token and one can't be found on the system.
+    """
+
+
+class MissingHostException(OnepanelException):
+    """
+    Happens when there is no provided host and can't be found on the system
     """
 
 
@@ -34,8 +38,7 @@ class LongWorkflowNameException(OnepanelException):
 
 class OnepanelSubmitter(ArgoSubmitter):
     """A submitter which submits a workflow to Onepanel"""
-
-    def __init__(self, username, workflow_name, host, token=None):
+    def __init__(self, workflow_name, username=None, host=None, token=None):
         """
         username is usually 'admin'.
         host is obtained via os.getenv('ONEPANEL_API_URL') when running in onepanel
@@ -43,15 +46,23 @@ class OnepanelSubmitter(ArgoSubmitter):
 
         if len(workflow_name) >= 20:
             raise LongWorkflowNameException('workflow_name must be 20 characters or less.')
-
         # If token and api_url are not passed in, use the values from token file and environment variable
         # If those don't exist, throw an exception
         self.namespace = os.getenv('ONEPANEL_RESOURCE_NAMESPACE')
         self.workflow_name = workflow_name
-        self.host = host
-        self.username = username
-        self.configuration = onepanel.core.api.Configuration(self.host)
 
+        if username is not None and token is None:
+            raise InvalidCredentialsException('You must provide a token with a username')
+
+        if username is None:
+            username = 'admin'
+
+        if host is None:
+            host = os.getenv('ONEPANEL_API_URL')
+            if host is None:
+                raise MissingHostException()
+
+        self.configuration = onepanel.core.api.Configuration(host)
         logging.basicConfig(level=logging.INFO)
 
         if token is None:
@@ -59,15 +70,15 @@ class OnepanelSubmitter(ArgoSubmitter):
                 with open('/var/run/secrets/kubernetes.io/serviceaccount/token') as f:
                     self.token = f.read()
             except FileNotFoundError:
-                raise MissingTokenFileException('The system does not have the file containing the token')
+                raise MissingTokenException('Token not set and no token found on system')
             logging.info('Onepanel configuration detected')
-
         else:
             try:
                 self.token = self._get_token(host, username, token)
             except ApiException as e:
                 if e.status == 400:
                     raise InvalidCredentialsException('The provided credentials are invalid')
+
         self.configuration.api_key['authorization'] = self.token
         self.configuration.api_key_prefix['authorization'] = 'Bearer'
         logging.info('Initialized')
@@ -86,7 +97,6 @@ class OnepanelSubmitter(ArgoSubmitter):
         except ApiException as e:
             if e.status == 404:
                 return None
-
         return None
 
     def _are_workflow_template_manifests_equal(self, workflow_template, manifest):
@@ -97,7 +107,6 @@ class OnepanelSubmitter(ArgoSubmitter):
         """
         if workflow_template is None:
             return False
-
         yaml_str = workflow_template.to_dict()['manifest']
         hash1 = str(zlib.crc32(manifest.encode()))
         hash2 = str(zlib.crc32(yaml_str.encode()))
@@ -120,12 +129,10 @@ class OnepanelSubmitter(ArgoSubmitter):
     def _execute_workflow(self, namespace, workflow_template_uid):
         with onepanel.core.api.ApiClient(self.configuration) as api_client:
             api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
-
             body = onepanel.core.api.CreateWorkflowExecutionBody(
                 parameters=[],
                 workflow_template_uid=workflow_template_uid,
                 labels=[{'key': 'created-by', 'value': 'couler'}])
-
             return api_instance.create_workflow_execution(namespace, body)
 
     def _get_token(self, host, username, token):
@@ -143,20 +150,16 @@ class OnepanelSubmitter(ArgoSubmitter):
     def submit(self, workflow_yaml, secrets=None):
         if secrets is None:
             secrets = []
- 
+
         for secret in secrets:
             self._create_secret(secret.to_yaml())
-
         manifest = self.template_to_argo(workflow_yaml)
-
         body = onepanel.core.api.WorkflowTemplate(
             manifest=manifest,
             name=self.workflow_name,
             labels=[{'key': 'created-by', 'value': 'couler'}]
         )
-
         workflow_template = self._get_workflow_template(self.namespace, self.workflow_name)
-
         # If we don't have a template, create one
         if workflow_template is None:
             workflow_template = self._create_workflow_template(self.namespace, body)
@@ -166,6 +169,5 @@ class OnepanelSubmitter(ArgoSubmitter):
             # If the contents are the same, no need for a new version.
             self._create_template_version(self.namespace, self.workflow_name, body)
             logging.info('Workflow Template updated')
-
         self._execute_workflow(self.namespace, workflow_template.uid)
         logging.info('Workflow Executed')
