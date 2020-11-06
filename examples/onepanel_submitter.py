@@ -40,8 +40,7 @@ class OnepanelSubmitter(ArgoSubmitter):
     """A submitter which submits a workflow to Onepanel"""
     def __init__(self, workflow_name, username=None, host=None, token=None):
         """
-        username is usually 'admin'.
-        host is obtained via os.getenv('ONEPANEL_API_URL') when running in onepanel
+        username defaults to 'admin'
         """
 
         if len(workflow_name) >= 20:
