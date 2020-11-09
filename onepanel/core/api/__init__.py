@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.15.0b2"
+__version__ = "0.15.0"
 
 # import apis into sdk package
 from onepanel.core.api.api.auth_service_api import AuthServiceApi
