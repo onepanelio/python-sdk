@@ -38,23 +38,13 @@ class LongWorkflowNameException(OnepanelException):
 
 class OnepanelSubmitter(ArgoSubmitter):
     """A submitter which submits a workflow to Onepanel"""
-    def __init__(self, workflow_name, username=None, host=None, token=None):
-        """
-        username defaults to 'admin'
-        """
-
+    def __init__(self, workflow_name, username=None, token=None, host=None):
         if len(workflow_name) >= 20:
             raise LongWorkflowNameException('workflow_name must be 20 characters or less.')
         # If token and api_url are not passed in, use the values from token file and environment variable
         # If those don't exist, throw an exception
         self.namespace = os.getenv('ONEPANEL_RESOURCE_NAMESPACE')
         self.workflow_name = workflow_name
-
-        if username is not None and token is None:
-            raise InvalidCredentialsException('You must provide a token with a username')
-
-        if username is None:
-            username = 'admin'
 
         if host is None:
             host = os.getenv('ONEPANEL_API_URL')
