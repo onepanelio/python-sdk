@@ -11,6 +11,7 @@
 
 
 from setuptools import setup, find_packages  # noqa: H301
+from setuptools.command.install import install as InstallCommand
 
 NAME = "onepanel-sdk"
 VERSION = "0.15.0"
@@ -21,7 +22,17 @@ VERSION = "0.15.0"
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 
-REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
+REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil", "pyaml"]
+
+
+class Install(InstallCommand):
+    """ Customized setuptools install command which uses pip. """
+
+    def run(self, *args, **kwargs):
+        import subprocess
+        subprocess.call(['pip', 'install','git+https://github.com/couler-proj/couler'])
+        InstallCommand.run(self, *args, **kwargs)
+
 
 setup(
     name=NAME,
@@ -32,6 +43,9 @@ setup(
     url="",
     keywords=["OpenAPI", "OpenAPI-Generator", "Onepanel"],
     install_requires=REQUIRES,
+    cmdclass={
+        'install': Install,
+    },
     packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
     long_description="""\
