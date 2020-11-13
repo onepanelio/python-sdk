@@ -7,6 +7,7 @@ from couler.argo_submitter import ArgoSubmitter
 import onepanel.core.api
 from onepanel.core.api.rest import ApiException
 
+
 class OnepanelException(Exception):
     """Base-class for all exceptions raised by the OnepanelSubmitter"""
 
