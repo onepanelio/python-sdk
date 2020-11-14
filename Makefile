@@ -14,7 +14,7 @@ endif
 
 sdk: init
 	# generate sdk
-	docker run --rm -v ${PWD}/.build:/build -v ${PWD}/templates:/onepanel openapitools/openapi-generator-cli:v4.3.1 \
+	docker run --rm -v ${PWD}/.build:/build -v ${PWD}/openapi/templates:/onepanel openapitools/openapi-generator-cli:v4.3.1 \
 		generate -p packageName=onepanel.core.api,projectName=onepanel-sdk,packageVersion=$(version) -t onepanel -i /build/api.swagger.json -g python -o /build/
 	rm .build/api.swagger.json
 	
