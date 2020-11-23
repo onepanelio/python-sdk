@@ -16,7 +16,7 @@ jobs:
           name: onepanel/python-sdk
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
-          tags: "${{ env.GIT_TAG_NAME }}"
+          tags: "v${{ env.GIT_TAG_NAME }}"
           buildargs: "VERSION=${{ env.GIT_TAG_NAME }}"
       - name: Notify Slack Channels
         uses: rtCamp/action-slack-notify@v2.1.1
