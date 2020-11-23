@@ -1,0 +1,32 @@
+name: Publish docker image on tag push
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: little-core-labs/get-git-tag@v3.0.1
+        id: tagName
+        with:
+          tagRegex: "v(.*)"
+      - name: Publish to Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: onepanel/python-sdk
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+          tags: "v${{ env.GIT_TAG_NAME }}"
+          buildargs: "VERSION=${{ env.GIT_TAG_NAME }}"
+      - name: Notify Slack Channels
+        uses: rtCamp/action-slack-notify@v2.1.1
+        env:
+          SLACK_CHANNEL: org
+          SLACK_ICON: https://avatars1.githubusercontent.com/u/30390575?s=48&v=4
+          SLACK_TITLE: New Python-SDK Image
+          SLACK_USERNAME: opBot
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          MSG_MINIMAL: true
+          SLACK_MESSAGE: "v${{ env.GIT_TAG_NAME }}\nDocker Tag: onepanel/python-sdk:v${{ env.GIT_TAG_NAME }}"
