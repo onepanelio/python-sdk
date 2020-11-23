@@ -10,6 +10,8 @@ jobs:
       - uses: actions/checkout@master
       - uses: little-core-labs/get-git-tag@v3.0.1
         id: tagName
+        with:
+          tagRegex: "v(.*)"
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
@@ -27,4 +29,4 @@ jobs:
           SLACK_USERNAME: opBot
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           MSG_MINIMAL: true
-          SLACK_MESSAGE: "${{ env.GIT_TAG_NAME }}\nDocker Tag: onepanel/python-sdk:${{ env.GIT_TAG_NAME }}"
+          SLACK_MESSAGE: "v${{ env.GIT_TAG_NAME }}\nDocker Tag: onepanel/python-sdk:v${{ env.GIT_TAG_NAME }}"
