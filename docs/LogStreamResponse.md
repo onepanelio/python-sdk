@@ -1,10 +1,9 @@
-# GoogleProtobufAny
+# LogStreamResponse
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type_url** | **str** |  | [optional] 
-**value** | **str** |  | [optional] 
+**log_entries** | [**list[LogEntry]**](LogEntry.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

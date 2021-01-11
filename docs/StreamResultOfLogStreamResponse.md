@@ -1,10 +1,10 @@
-# GoogleProtobufAny
+# StreamResultOfLogStreamResponse
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type_url** | **str** |  | [optional] 
-**value** | **str** |  | [optional] 
+**result** | [**LogStreamResponse**](LogStreamResponse.md) |  | [optional] 
+**error** | [**GoogleRpcStatus**](GoogleRpcStatus.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

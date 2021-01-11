@@ -4,19 +4,19 @@ All URIs are relative to *http://localhost:8888*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**archive_workspace_template**](WorkspaceTemplateServiceApi.md#archive_workspace_template) | **PUT** /apis/v1beta1/{namespace}/workspace_templates/{uid}/archive | 
-[**create_workspace_template**](WorkspaceTemplateServiceApi.md#create_workspace_template) | **POST** /apis/v1beta1/{namespace}/workspace_templates | 
-[**generate_workspace_template_workflow_template**](WorkspaceTemplateServiceApi.md#generate_workspace_template_workflow_template) | **POST** /apis/v1beta1/{namespace}/workspace_templates/{uid}/workflow_template | 
-[**get_workspace_template**](WorkspaceTemplateServiceApi.md#get_workspace_template) | **GET** /apis/v1beta1/{namespace}/workspace_templates/{uid} | 
+[**archive_workspace_template**](WorkspaceTemplateServiceApi.md#archive_workspace_template) | **PUT** /apis/v1beta1/{namespace}/workspace_templates/{uid}/archive | Archives a WorkspaceTemplate
+[**create_workspace_template**](WorkspaceTemplateServiceApi.md#create_workspace_template) | **POST** /apis/v1beta1/{namespace}/workspace_templates | Creates a WorkspaceTemplate
+[**generate_workspace_template_workflow_template**](WorkspaceTemplateServiceApi.md#generate_workspace_template_workflow_template) | **POST** /apis/v1beta1/{namespace}/workspace_templates/{uid}/workflow_template | Get the generated WorkflowTemplate for a WorkspaceTemplate
+[**get_workspace_template**](WorkspaceTemplateServiceApi.md#get_workspace_template) | **GET** /apis/v1beta1/{namespace}/workspace_templates/{uid} | Get a WorkspaceTemplate
 [**list_workspace_template_versions**](WorkspaceTemplateServiceApi.md#list_workspace_template_versions) | **GET** /apis/v1beta1/{namespace}/workspace_templates/{uid}/versions | 
 [**list_workspace_templates**](WorkspaceTemplateServiceApi.md#list_workspace_templates) | **GET** /apis/v1beta1/{namespace}/workspace_templates | 
-[**update_workspace_template**](WorkspaceTemplateServiceApi.md#update_workspace_template) | **PUT** /apis/v1beta1/{namespace}/workspace_templates/{uid} | 
+[**update_workspace_template**](WorkspaceTemplateServiceApi.md#update_workspace_template) | **PUT** /apis/v1beta1/{namespace}/workspace_templates/{uid} | Updates a WorkspaceTemplate
 
 
 # **archive_workspace_template**
 > WorkspaceTemplate archive_workspace_template(namespace, uid)
 
-
+Archives a WorkspaceTemplate
 
 ### Example
 
@@ -42,11 +42,10 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'authorization': 'YOUR_ACCESS_TOKEN'
     }
 )
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -56,6 +55,7 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
 uid = 'uid_example' # str | 
 
     try:
+        # Archives a WorkspaceTemplate
         api_response = api_instance.archive_workspace_template(namespace, uid)
         pprint(api_response)
     except ApiException as e:
@@ -86,14 +86,14 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
-**0** | An unexpected error response |  -  |
+**0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_workspace_template**
 > WorkspaceTemplate create_workspace_template(namespace, body)
 
-
+Creates a WorkspaceTemplate
 
 ### Example
 
@@ -119,11 +119,10 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'authorization': 'YOUR_ACCESS_TOKEN'
     }
 )
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -133,6 +132,7 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
 body = onepanel.core.api.WorkspaceTemplate() # WorkspaceTemplate | 
 
     try:
+        # Creates a WorkspaceTemplate
         api_response = api_instance.create_workspace_template(namespace, body)
         pprint(api_response)
     except ApiException as e:
@@ -163,14 +163,14 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
-**0** | An unexpected error response |  -  |
+**0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **generate_workspace_template_workflow_template**
 > WorkflowTemplate generate_workspace_template_workflow_template(namespace, uid, body)
 
-
+Get the generated WorkflowTemplate for a WorkspaceTemplate
 
 ### Example
 
@@ -196,11 +196,10 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'authorization': 'YOUR_ACCESS_TOKEN'
     }
 )
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -211,6 +210,7 @@ uid = 'uid_example' # str |
 body = onepanel.core.api.WorkspaceTemplate() # WorkspaceTemplate | 
 
     try:
+        # Get the generated WorkflowTemplate for a WorkspaceTemplate
         api_response = api_instance.generate_workspace_template_workflow_template(namespace, uid, body)
         pprint(api_response)
     except ApiException as e:
@@ -242,14 +242,14 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
-**0** | An unexpected error response |  -  |
+**0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_workspace_template**
 > WorkspaceTemplate get_workspace_template(namespace, uid, version=version)
 
-
+Get a WorkspaceTemplate
 
 ### Example
 
@@ -275,11 +275,10 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'authorization': 'YOUR_ACCESS_TOKEN'
     }
 )
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -290,6 +289,7 @@ uid = 'uid_example' # str |
 version = 'version_example' # str |  (optional)
 
     try:
+        # Get a WorkspaceTemplate
         api_response = api_instance.get_workspace_template(namespace, uid, version=version)
         pprint(api_response)
     except ApiException as e:
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
-**0** | An unexpected error response |  -  |
+**0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -354,11 +354,10 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'authorization': 'YOUR_ACCESS_TOKEN'
     }
 )
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -398,7 +397,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
-**0** | An unexpected error response |  -  |
+**0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -431,11 +430,10 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'authorization': 'YOUR_ACCESS_TOKEN'
     }
 )
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -483,14 +481,14 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
-**0** | An unexpected error response |  -  |
+**0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_workspace_template**
 > WorkspaceTemplate update_workspace_template(namespace, uid, body)
 
-
+Updates a WorkspaceTemplate
 
 ### Example
 
@@ -516,11 +514,10 @@ configuration = onepanel.core.api.Configuration(
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'authorization': 'YOUR_ACCESS_TOKEN'
     }
 )
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
@@ -531,6 +528,7 @@ uid = 'uid_example' # str |
 body = onepanel.core.api.WorkspaceTemplate() # WorkspaceTemplate | 
 
     try:
+        # Updates a WorkspaceTemplate
         api_response = api_instance.update_workspace_template(namespace, uid, body)
         pprint(api_response)
     except ApiException as e:
@@ -562,7 +560,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
-**0** | An unexpected error response |  -  |
+**0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
