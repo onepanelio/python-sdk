@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **labels** | [**list[KeyValue]**](KeyValue.md) |  | [optional] 
 **url** | **str** |  | [optional] 
 **template_parameters** | [**list[Parameter]**](Parameter.md) |  | [optional] 
+**workspace_components** | [**list[WorkspaceComponent]**](WorkspaceComponent.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

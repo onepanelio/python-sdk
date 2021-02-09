@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**create_workspace**](WorkspaceServiceApi.md#create_workspace) | **POST** /apis/v1beta1/{namespace}/workspaces | 
 [**delete_workspace**](WorkspaceServiceApi.md#delete_workspace) | **DELETE** /apis/v1beta1/{namespace}/workspaces/{uid} | 
 [**get_workspace**](WorkspaceServiceApi.md#get_workspace) | **GET** /apis/v1beta1/{namespace}/workspaces/{uid} | 
+[**get_workspace_container_logs**](WorkspaceServiceApi.md#get_workspace_container_logs) | **GET** /apis/v1beta1/{namespace}/workspaces/{uid}/containers/{containerName}/logs | 
 [**get_workspace_statistics_for_namespace**](WorkspaceServiceApi.md#get_workspace_statistics_for_namespace) | **GET** /apis/v1beta1/{namespace}/workspace/statistics | 
 [**list_workspaces**](WorkspaceServiceApi.md#list_workspaces) | **GET** /apis/v1beta1/{namespace}/workspaces | 
 [**pause_workspace**](WorkspaceServiceApi.md#pause_workspace) | **PUT** /apis/v1beta1/{namespace}/workspaces/{uid}/pause | 
@@ -240,6 +241,86 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_workspace_container_logs**
+> StreamResultOfLogStreamResponse get_workspace_container_logs(namespace, uid, container_name, since_time=since_time)
+
+
+
+### Example
+
+* Api Key Authentication (Bearer):
+```python
+from __future__ import print_function
+import time
+import onepanel.core.api
+from onepanel.core.api.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8888
+# See configuration.py for a list of all supported configuration parameters.
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: Bearer
+configuration = onepanel.core.api.Configuration(
+    host = "http://localhost:8888",
+    api_key = {
+        'authorization': 'YOUR_ACCESS_TOKEN'
+    }
+)
+configuration.api_key_prefix['authorization'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with onepanel.core.api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = onepanel.core.api.WorkspaceServiceApi(api_client)
+    namespace = 'namespace_example' # str | 
+uid = 'uid_example' # str | 
+container_name = 'container_name_example' # str | 
+since_time = 'since_time_example' # str |  (optional)
+
+    try:
+        api_response = api_instance.get_workspace_container_logs(namespace, uid, container_name, since_time=since_time)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling WorkspaceServiceApi->get_workspace_container_logs: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **namespace** | **str**|  | 
+ **uid** | **str**|  | 
+ **container_name** | **str**|  | 
+ **since_time** | **str**|  | [optional] 
+
+### Return type
+
+[**StreamResultOfLogStreamResponse**](StreamResultOfLogStreamResponse.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/octet-stream
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response.(streaming responses) |  -  |
 **0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
