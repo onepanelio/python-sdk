@@ -37,7 +37,7 @@ class TestGetAccessTokenRequest(unittest.TestCase):
         if include_optional :
             return GetAccessTokenRequest(
                 username = '0', 
-                token_hash = '0'
+                token = '0'
             )
         else :
             return GetAccessTokenRequest(
