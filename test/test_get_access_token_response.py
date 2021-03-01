@@ -37,7 +37,7 @@ class TestGetAccessTokenResponse(unittest.TestCase):
         if include_optional :
             return GetAccessTokenResponse(
                 domain = '0', 
-                token = '0', 
+                access_token = '0', 
                 username = '0'
             )
         else :
