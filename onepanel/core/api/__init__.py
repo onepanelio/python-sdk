@@ -70,12 +70,16 @@ from onepanel.core.api.models.list_files_response import ListFilesResponse
 from onepanel.core.api.models.list_namespaces_response import ListNamespacesResponse
 from onepanel.core.api.models.list_secrets_response import ListSecretsResponse
 from onepanel.core.api.models.list_services_response import ListServicesResponse
+from onepanel.core.api.models.list_workflow_executions_field_response import ListWorkflowExecutionsFieldResponse
 from onepanel.core.api.models.list_workflow_executions_response import ListWorkflowExecutionsResponse
 from onepanel.core.api.models.list_workflow_template_versions_response import ListWorkflowTemplateVersionsResponse
+from onepanel.core.api.models.list_workflow_templates_field_response import ListWorkflowTemplatesFieldResponse
 from onepanel.core.api.models.list_workflow_templates_response import ListWorkflowTemplatesResponse
 from onepanel.core.api.models.list_workspace_response import ListWorkspaceResponse
 from onepanel.core.api.models.list_workspace_template_versions_response import ListWorkspaceTemplateVersionsResponse
+from onepanel.core.api.models.list_workspace_templates_field_response import ListWorkspaceTemplatesFieldResponse
 from onepanel.core.api.models.list_workspace_templates_response import ListWorkspaceTemplatesResponse
+from onepanel.core.api.models.list_workspaces_field_response import ListWorkspacesFieldResponse
 from onepanel.core.api.models.log_entry import LogEntry
 from onepanel.core.api.models.log_stream_response import LogStreamResponse
 from onepanel.core.api.models.metric import Metric
