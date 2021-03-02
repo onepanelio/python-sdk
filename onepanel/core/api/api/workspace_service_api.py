@@ -1029,17 +1029,18 @@ class WorkspaceServiceApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def resume_workspace(self, namespace, uid, **kwargs):  # noqa: E501
+    def resume_workspace(self, namespace, uid, body, **kwargs):  # noqa: E501
         """resume_workspace  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.resume_workspace(namespace, uid, async_req=True)
+        >>> thread = api.resume_workspace(namespace, uid, body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
         :param str uid: (required)
+        :param UpdateWorkspaceBody body: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1052,19 +1053,20 @@ class WorkspaceServiceApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.resume_workspace_with_http_info(namespace, uid, **kwargs)  # noqa: E501
+        return self.resume_workspace_with_http_info(namespace, uid, body, **kwargs)  # noqa: E501
 
-    def resume_workspace_with_http_info(self, namespace, uid, **kwargs):  # noqa: E501
+    def resume_workspace_with_http_info(self, namespace, uid, body, **kwargs):  # noqa: E501
         """resume_workspace  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.resume_workspace_with_http_info(namespace, uid, async_req=True)
+        >>> thread = api.resume_workspace_with_http_info(namespace, uid, body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str namespace: (required)
         :param str uid: (required)
+        :param UpdateWorkspaceBody body: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1083,7 +1085,8 @@ class WorkspaceServiceApi(object):
 
         all_params = [
             'namespace',
-            'uid'
+            'uid',
+            'body'
         ]
         all_params.extend(
             [
@@ -1110,6 +1113,10 @@ class WorkspaceServiceApi(object):
         if self.api_client.client_side_validation and ('uid' not in local_var_params or  # noqa: E501
                                                         local_var_params['uid'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `uid` when calling `resume_workspace`")  # noqa: E501
+        # verify the required parameter 'body' is set
+        if self.api_client.client_side_validation and ('body' not in local_var_params or  # noqa: E501
+                                                        local_var_params['body'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `body` when calling `resume_workspace`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1127,9 +1134,15 @@ class WorkspaceServiceApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in local_var_params:
+            body_params = local_var_params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json', 'application/octet-stream'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['Bearer']  # noqa: E501
