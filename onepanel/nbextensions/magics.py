@@ -8,10 +8,10 @@ class IPythonMagics(Magics):
 
     @line_magic
     def nni_ui(self, line):
-        domain = os.getenv('ONEPANEL_DOMAIN', 'localhost')
+        domain = os.getenv('ONEPANEL_DOMAIN', '127.0.0.1')
 
-        if domain == 'localhost':
-            src = '//{domain}:8080'.format(domain=domain, port=port)
+        if domain == '127.0.0.1':
+            src = '//{domain}:8080'.format(domain=domain)
         else:
             src = '//{uid}--{namespace}.{domain}/nni'.format(
                 uid=os.getenv('ONEPANEL_RESOURCE_UID'),

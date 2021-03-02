@@ -637,7 +637,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **resume_workspace**
-> object resume_workspace(namespace, uid)
+> object resume_workspace(namespace, uid, body)
 
 
 
@@ -676,9 +676,10 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     api_instance = onepanel.core.api.WorkspaceServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 uid = 'uid_example' # str | 
+body = onepanel.core.api.UpdateWorkspaceBody() # UpdateWorkspaceBody | 
 
     try:
-        api_response = api_instance.resume_workspace(namespace, uid)
+        api_response = api_instance.resume_workspace(namespace, uid, body)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling WorkspaceServiceApi->resume_workspace: %s\n" % e)
@@ -690,6 +691,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
  **uid** | **str**|  | 
+ **body** | [**UpdateWorkspaceBody**](UpdateWorkspaceBody.md)|  | 
 
 ### Return type
 
@@ -701,7 +703,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json, application/octet-stream
 
 ### HTTP response details
