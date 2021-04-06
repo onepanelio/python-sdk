@@ -16,11 +16,11 @@ import unittest
 import datetime
 
 import onepanel.core.api
-from onepanel.core.api.models.node_pool import NodePool  # noqa: E501
+from onepanel.core.api.models.machine_type import MachineType  # noqa: E501
 from onepanel.core.api.rest import ApiException
 
-class TestNodePool(unittest.TestCase):
-    """NodePool unit test stubs"""
+class TestMachineType(unittest.TestCase):
+    """MachineType unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,26 +29,22 @@ class TestNodePool(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test NodePool
+        """Test MachineType
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = onepanel.core.api.models.node_pool.NodePool()  # noqa: E501
+        # model = onepanel.core.api.models.machine_type.MachineType()  # noqa: E501
         if include_optional :
-            return NodePool(
-                label = '0', 
-                options = [
-                    onepanel.core.api.models.node_pool_option.NodePoolOption(
-                        name = '0', 
-                        value = '0', )
-                    ]
+            return MachineType(
+                name = '0', 
+                value = '0'
             )
         else :
-            return NodePool(
+            return MachineType(
         )
 
-    def testNodePool(self):
-        """Test NodePool"""
+    def testMachineType(self):
+        """Test MachineType"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 
