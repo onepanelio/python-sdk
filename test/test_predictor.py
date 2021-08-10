@@ -36,16 +36,12 @@ class TestPredictor(unittest.TestCase):
         # model = onepanel.core.api.models.predictor.Predictor()  # noqa: E501
         if include_optional :
             return Predictor(
-                node_selector = onepanel.core.api.models.node_selector.NodeSelector(
-                    key = '0', 
-                    value = '0', ), 
-                server = onepanel.core.api.models.predictor_server.PredictorServer(
-                    name = '0', 
-                    runtime_version = '0', 
-                    storage_uri = '0', 
-                    limits = onepanel.core.api.models.resource_limits.ResourceLimits(
-                        cpu = '0', 
-                        memory = '0', ), )
+                name = '0', 
+                runtime_version = '0', 
+                storage_uri = '0', 
+                node_selector = '0', 
+                cpu = '0', 
+                memory = '0'
             )
         else :
             return Predictor(

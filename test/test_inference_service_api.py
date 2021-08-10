@@ -14,16 +14,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import onepanel.core
-from onepanel.core.api.inference_service_api import InferenceServiceApi  # noqa: E501
-from onepanel.core.rest import ApiException
+import onepanel.core.api
+from onepanel.core.api.api.inference_service_api import InferenceServiceApi  # noqa: E501
+from onepanel.core.api.rest import ApiException
 
 
 class TestInferenceServiceApi(unittest.TestCase):
     """InferenceServiceApi unit test stubs"""
 
     def setUp(self):
-        self.api = onepanel.core.api.inference_service_api.InferenceServiceApi()  # noqa: E501
+        self.api = onepanel.core.api.api.inference_service_api.InferenceServiceApi()  # noqa: E501
 
     def tearDown(self):
         pass

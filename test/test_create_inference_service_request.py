@@ -44,9 +44,8 @@ class TestCreateInferenceServiceRequest(unittest.TestCase):
                     runtime_version = '0', 
                     storage_uri = '0', 
                     node_selector = '0', 
-                    limits = onepanel.core.api.models.resource_limits.ResourceLimits(
-                        cpu = '0', 
-                        memory = '0', ), ), 
+                    cpu = '0', 
+                    memory = '0', ), 
                 transformer = onepanel.core.api.models.transformer.Transformer(
                     containers = [
                         onepanel.core.api.models.container.Container(
