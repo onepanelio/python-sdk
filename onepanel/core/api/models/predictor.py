@@ -37,7 +37,8 @@ class Predictor(object):
         'runtime_version': 'str',
         'storage_uri': 'str',
         'node_selector': 'str',
-        'limits': 'ResourceLimits'
+        'cpu': 'str',
+        'memory': 'str'
     }
 
     attribute_map = {
@@ -45,10 +46,11 @@ class Predictor(object):
         'runtime_version': 'runtimeVersion',
         'storage_uri': 'storageUri',
         'node_selector': 'nodeSelector',
-        'limits': 'limits'
+        'cpu': 'cpu',
+        'memory': 'memory'
     }
 
-    def __init__(self, name=None, runtime_version=None, storage_uri=None, node_selector=None, limits=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, runtime_version=None, storage_uri=None, node_selector=None, cpu=None, memory=None, local_vars_configuration=None):  # noqa: E501
         """Predictor - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -58,7 +60,8 @@ class Predictor(object):
         self._runtime_version = None
         self._storage_uri = None
         self._node_selector = None
-        self._limits = None
+        self._cpu = None
+        self._memory = None
         self.discriminator = None
 
         if name is not None:
@@ -69,8 +72,10 @@ class Predictor(object):
             self.storage_uri = storage_uri
         if node_selector is not None:
             self.node_selector = node_selector
-        if limits is not None:
-            self.limits = limits
+        if cpu is not None:
+            self.cpu = cpu
+        if memory is not None:
+            self.memory = memory
 
     @property
     def name(self):
@@ -157,25 +162,46 @@ class Predictor(object):
         self._node_selector = node_selector
 
     @property
-    def limits(self):
-        """Gets the limits of this Predictor.  # noqa: E501
+    def cpu(self):
+        """Gets the cpu of this Predictor.  # noqa: E501
 
 
-        :return: The limits of this Predictor.  # noqa: E501
-        :rtype: ResourceLimits
+        :return: The cpu of this Predictor.  # noqa: E501
+        :rtype: str
         """
-        return self._limits
+        return self._cpu
 
-    @limits.setter
-    def limits(self, limits):
-        """Sets the limits of this Predictor.
+    @cpu.setter
+    def cpu(self, cpu):
+        """Sets the cpu of this Predictor.
 
 
-        :param limits: The limits of this Predictor.  # noqa: E501
-        :type: ResourceLimits
+        :param cpu: The cpu of this Predictor.  # noqa: E501
+        :type: str
         """
 
-        self._limits = limits
+        self._cpu = cpu
+
+    @property
+    def memory(self):
+        """Gets the memory of this Predictor.  # noqa: E501
+
+
+        :return: The memory of this Predictor.  # noqa: E501
+        :rtype: str
+        """
+        return self._memory
+
+    @memory.setter
+    def memory(self, memory):
+        """Sets the memory of this Predictor.
+
+
+        :param memory: The memory of this Predictor.  # noqa: E501
+        :type: str
+        """
+
+        self._memory = memory
 
     def to_dict(self):
         """Returns the model properties as a dict"""

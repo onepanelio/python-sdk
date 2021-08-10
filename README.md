@@ -237,7 +237,6 @@ Class | Method | HTTP request | Description
  - [Parameter](docs/Parameter.md)
  - [ParameterOption](docs/ParameterOption.md)
  - [Predictor](docs/Predictor.md)
- - [ResourceLimits](docs/ResourceLimits.md)
  - [Secret](docs/Secret.md)
  - [SecretExistsResponse](docs/SecretExistsResponse.md)
  - [Service](docs/Service.md)

@@ -72,7 +72,6 @@ from onepanel.core.api.models.node_pool_option import NodePoolOption
 from onepanel.core.api.models.parameter import Parameter
 from onepanel.core.api.models.parameter_option import ParameterOption
 from onepanel.core.api.models.predictor import Predictor
-from onepanel.core.api.models.resource_limits import ResourceLimits
 from onepanel.core.api.models.secret import Secret
 from onepanel.core.api.models.secret_exists_response import SecretExistsResponse
 from onepanel.core.api.models.service import Service
