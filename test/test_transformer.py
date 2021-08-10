@@ -45,7 +45,11 @@ class TestTransformer(unittest.TestCase):
                                 name = '0', 
                                 value = '0', )
                             ], )
-                    ]
+                    ], 
+                min_cpu = '0', 
+                min_memory = '0', 
+                max_cpu = '0', 
+                max_memory = '0'
             )
         else :
             return Transformer(

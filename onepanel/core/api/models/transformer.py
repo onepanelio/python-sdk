@@ -33,24 +33,44 @@ class Transformer(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'containers': 'list[Container]'
+        'containers': 'list[Container]',
+        'min_cpu': 'str',
+        'min_memory': 'str',
+        'max_cpu': 'str',
+        'max_memory': 'str'
     }
 
     attribute_map = {
-        'containers': 'containers'
+        'containers': 'containers',
+        'min_cpu': 'minCpu',
+        'min_memory': 'minMemory',
+        'max_cpu': 'maxCpu',
+        'max_memory': 'maxMemory'
     }
 
-    def __init__(self, containers=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, containers=None, min_cpu=None, min_memory=None, max_cpu=None, max_memory=None, local_vars_configuration=None):  # noqa: E501
         """Transformer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._containers = None
+        self._min_cpu = None
+        self._min_memory = None
+        self._max_cpu = None
+        self._max_memory = None
         self.discriminator = None
 
         if containers is not None:
             self.containers = containers
+        if min_cpu is not None:
+            self.min_cpu = min_cpu
+        if min_memory is not None:
+            self.min_memory = min_memory
+        if max_cpu is not None:
+            self.max_cpu = max_cpu
+        if max_memory is not None:
+            self.max_memory = max_memory
 
     @property
     def containers(self):
@@ -72,6 +92,90 @@ class Transformer(object):
         """
 
         self._containers = containers
+
+    @property
+    def min_cpu(self):
+        """Gets the min_cpu of this Transformer.  # noqa: E501
+
+
+        :return: The min_cpu of this Transformer.  # noqa: E501
+        :rtype: str
+        """
+        return self._min_cpu
+
+    @min_cpu.setter
+    def min_cpu(self, min_cpu):
+        """Sets the min_cpu of this Transformer.
+
+
+        :param min_cpu: The min_cpu of this Transformer.  # noqa: E501
+        :type: str
+        """
+
+        self._min_cpu = min_cpu
+
+    @property
+    def min_memory(self):
+        """Gets the min_memory of this Transformer.  # noqa: E501
+
+
+        :return: The min_memory of this Transformer.  # noqa: E501
+        :rtype: str
+        """
+        return self._min_memory
+
+    @min_memory.setter
+    def min_memory(self, min_memory):
+        """Sets the min_memory of this Transformer.
+
+
+        :param min_memory: The min_memory of this Transformer.  # noqa: E501
+        :type: str
+        """
+
+        self._min_memory = min_memory
+
+    @property
+    def max_cpu(self):
+        """Gets the max_cpu of this Transformer.  # noqa: E501
+
+
+        :return: The max_cpu of this Transformer.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_cpu
+
+    @max_cpu.setter
+    def max_cpu(self, max_cpu):
+        """Sets the max_cpu of this Transformer.
+
+
+        :param max_cpu: The max_cpu of this Transformer.  # noqa: E501
+        :type: str
+        """
+
+        self._max_cpu = max_cpu
+
+    @property
+    def max_memory(self):
+        """Gets the max_memory of this Transformer.  # noqa: E501
+
+
+        :return: The max_memory of this Transformer.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_memory
+
+    @max_memory.setter
+    def max_memory(self, max_memory):
+        """Sets the max_memory of this Transformer.
+
+
+        :param max_memory: The max_memory of this Transformer.  # noqa: E501
+        :type: str
+        """
+
+        self._max_memory = max_memory
 
     def to_dict(self):
         """Returns the model properties as a dict"""

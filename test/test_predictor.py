@@ -40,8 +40,10 @@ class TestPredictor(unittest.TestCase):
                 runtime_version = '0', 
                 storage_uri = '0', 
                 node_selector = '0', 
-                cpu = '0', 
-                memory = '0'
+                min_cpu = '0', 
+                min_memory = '0', 
+                max_cpu = '0', 
+                max_memory = '0'
             )
         else :
             return Predictor(

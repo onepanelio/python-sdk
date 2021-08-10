@@ -37,8 +37,10 @@ class Predictor(object):
         'runtime_version': 'str',
         'storage_uri': 'str',
         'node_selector': 'str',
-        'cpu': 'str',
-        'memory': 'str'
+        'min_cpu': 'str',
+        'min_memory': 'str',
+        'max_cpu': 'str',
+        'max_memory': 'str'
     }
 
     attribute_map = {
@@ -46,11 +48,13 @@ class Predictor(object):
         'runtime_version': 'runtimeVersion',
         'storage_uri': 'storageUri',
         'node_selector': 'nodeSelector',
-        'cpu': 'cpu',
-        'memory': 'memory'
+        'min_cpu': 'minCpu',
+        'min_memory': 'minMemory',
+        'max_cpu': 'maxCpu',
+        'max_memory': 'maxMemory'
     }
 
-    def __init__(self, name=None, runtime_version=None, storage_uri=None, node_selector=None, cpu=None, memory=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, runtime_version=None, storage_uri=None, node_selector=None, min_cpu=None, min_memory=None, max_cpu=None, max_memory=None, local_vars_configuration=None):  # noqa: E501
         """Predictor - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,8 +64,10 @@ class Predictor(object):
         self._runtime_version = None
         self._storage_uri = None
         self._node_selector = None
-        self._cpu = None
-        self._memory = None
+        self._min_cpu = None
+        self._min_memory = None
+        self._max_cpu = None
+        self._max_memory = None
         self.discriminator = None
 
         if name is not None:
@@ -72,10 +78,14 @@ class Predictor(object):
             self.storage_uri = storage_uri
         if node_selector is not None:
             self.node_selector = node_selector
-        if cpu is not None:
-            self.cpu = cpu
-        if memory is not None:
-            self.memory = memory
+        if min_cpu is not None:
+            self.min_cpu = min_cpu
+        if min_memory is not None:
+            self.min_memory = min_memory
+        if max_cpu is not None:
+            self.max_cpu = max_cpu
+        if max_memory is not None:
+            self.max_memory = max_memory
 
     @property
     def name(self):
@@ -162,46 +172,88 @@ class Predictor(object):
         self._node_selector = node_selector
 
     @property
-    def cpu(self):
-        """Gets the cpu of this Predictor.  # noqa: E501
+    def min_cpu(self):
+        """Gets the min_cpu of this Predictor.  # noqa: E501
 
 
-        :return: The cpu of this Predictor.  # noqa: E501
+        :return: The min_cpu of this Predictor.  # noqa: E501
         :rtype: str
         """
-        return self._cpu
+        return self._min_cpu
 
-    @cpu.setter
-    def cpu(self, cpu):
-        """Sets the cpu of this Predictor.
+    @min_cpu.setter
+    def min_cpu(self, min_cpu):
+        """Sets the min_cpu of this Predictor.
 
 
-        :param cpu: The cpu of this Predictor.  # noqa: E501
+        :param min_cpu: The min_cpu of this Predictor.  # noqa: E501
         :type: str
         """
 
-        self._cpu = cpu
+        self._min_cpu = min_cpu
 
     @property
-    def memory(self):
-        """Gets the memory of this Predictor.  # noqa: E501
+    def min_memory(self):
+        """Gets the min_memory of this Predictor.  # noqa: E501
 
 
-        :return: The memory of this Predictor.  # noqa: E501
+        :return: The min_memory of this Predictor.  # noqa: E501
         :rtype: str
         """
-        return self._memory
+        return self._min_memory
 
-    @memory.setter
-    def memory(self, memory):
-        """Sets the memory of this Predictor.
+    @min_memory.setter
+    def min_memory(self, min_memory):
+        """Sets the min_memory of this Predictor.
 
 
-        :param memory: The memory of this Predictor.  # noqa: E501
+        :param min_memory: The min_memory of this Predictor.  # noqa: E501
         :type: str
         """
 
-        self._memory = memory
+        self._min_memory = min_memory
+
+    @property
+    def max_cpu(self):
+        """Gets the max_cpu of this Predictor.  # noqa: E501
+
+
+        :return: The max_cpu of this Predictor.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_cpu
+
+    @max_cpu.setter
+    def max_cpu(self, max_cpu):
+        """Sets the max_cpu of this Predictor.
+
+
+        :param max_cpu: The max_cpu of this Predictor.  # noqa: E501
+        :type: str
+        """
+
+        self._max_cpu = max_cpu
+
+    @property
+    def max_memory(self):
+        """Gets the max_memory of this Predictor.  # noqa: E501
+
+
+        :return: The max_memory of this Predictor.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_memory
+
+    @max_memory.setter
+    def max_memory(self, max_memory):
+        """Sets the max_memory of this Predictor.
+
+
+        :param max_memory: The max_memory of this Predictor.  # noqa: E501
+        :type: str
+        """
+
+        self._max_memory = max_memory
 
     def to_dict(self):
         """Returns the model properties as a dict"""

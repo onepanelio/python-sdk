@@ -44,8 +44,10 @@ class TestCreateInferenceServiceRequest(unittest.TestCase):
                     runtime_version = '0', 
                     storage_uri = '0', 
                     node_selector = '0', 
-                    cpu = '0', 
-                    memory = '0', ), 
+                    min_cpu = '0', 
+                    min_memory = '0', 
+                    max_cpu = '0', 
+                    max_memory = '0', ), 
                 transformer = onepanel.core.api.models.transformer.Transformer(
                     containers = [
                         onepanel.core.api.models.container.Container(
@@ -56,7 +58,11 @@ class TestCreateInferenceServiceRequest(unittest.TestCase):
                                     name = '0', 
                                     value = '0', )
                                 ], )
-                        ], )
+                        ], 
+                    min_cpu = '0', 
+                    min_memory = '0', 
+                    max_cpu = '0', 
+                    max_memory = '0', )
             )
         else :
             return CreateInferenceServiceRequest(
