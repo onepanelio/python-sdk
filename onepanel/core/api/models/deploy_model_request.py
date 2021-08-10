@@ -35,6 +35,7 @@ class DeployModelRequest(object):
     openapi_types = {
         'namespace': 'str',
         'name': 'str',
+        'transformer_image': 'str',
         'predictor': 'Predictor',
         'transformer': 'Transformer'
     }
@@ -42,11 +43,12 @@ class DeployModelRequest(object):
     attribute_map = {
         'namespace': 'namespace',
         'name': 'name',
+        'transformer_image': 'transformerImage',
         'predictor': 'predictor',
         'transformer': 'transformer'
     }
 
-    def __init__(self, namespace=None, name=None, predictor=None, transformer=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, namespace=None, name=None, transformer_image=None, predictor=None, transformer=None, local_vars_configuration=None):  # noqa: E501
         """DeployModelRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +56,7 @@ class DeployModelRequest(object):
 
         self._namespace = None
         self._name = None
+        self._transformer_image = None
         self._predictor = None
         self._transformer = None
         self.discriminator = None
@@ -62,6 +65,8 @@ class DeployModelRequest(object):
             self.namespace = namespace
         if name is not None:
             self.name = name
+        if transformer_image is not None:
+            self.transformer_image = transformer_image
         if predictor is not None:
             self.predictor = predictor
         if transformer is not None:
@@ -108,6 +113,27 @@ class DeployModelRequest(object):
         """
 
         self._name = name
+
+    @property
+    def transformer_image(self):
+        """Gets the transformer_image of this DeployModelRequest.  # noqa: E501
+
+
+        :return: The transformer_image of this DeployModelRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._transformer_image
+
+    @transformer_image.setter
+    def transformer_image(self, transformer_image):
+        """Sets the transformer_image of this DeployModelRequest.
+
+
+        :param transformer_image: The transformer_image of this DeployModelRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._transformer_image = transformer_image
 
     @property
     def predictor(self):

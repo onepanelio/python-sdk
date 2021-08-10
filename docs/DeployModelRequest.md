@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **namespace** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
+**transformer_image** | **str** |  | [optional] 
 **predictor** | [**Predictor**](Predictor.md) |  | [optional] 
 **transformer** | [**Transformer**](Transformer.md) |  | [optional] 
 

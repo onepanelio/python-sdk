@@ -14,15 +14,15 @@
 
 from __future__ import absolute_import
 
-__version__ = "1.0.0b1"
+__version__ = "1.0.0b2"
 
 # import apis into sdk package
 from onepanel.core.api.api.auth_service_api import AuthServiceApi
 from onepanel.core.api.api.config_service_api import ConfigServiceApi
 from onepanel.core.api.api.cron_workflow_service_api import CronWorkflowServiceApi
 from onepanel.core.api.api.file_service_api import FileServiceApi
+from onepanel.core.api.api.inference_service_api import InferenceServiceApi
 from onepanel.core.api.api.label_service_api import LabelServiceApi
-from onepanel.core.api.api.model_service_api import ModelServiceApi
 from onepanel.core.api.api.namespace_service_api import NamespaceServiceApi
 from onepanel.core.api.api.secret_service_api import SecretServiceApi
 from onepanel.core.api.api.service_service_api import ServiceServiceApi
@@ -44,13 +44,13 @@ from onepanel.core.api.models.add_secret_key_value_response import AddSecretKeyV
 from onepanel.core.api.models.add_workflow_executions_metrics_request import AddWorkflowExecutionsMetricsRequest
 from onepanel.core.api.models.archive_workflow_template_response import ArchiveWorkflowTemplateResponse
 from onepanel.core.api.models.container import Container
+from onepanel.core.api.models.create_inference_service_request import CreateInferenceServiceRequest
 from onepanel.core.api.models.create_workflow_execution_body import CreateWorkflowExecutionBody
 from onepanel.core.api.models.create_workspace_body import CreateWorkspaceBody
 from onepanel.core.api.models.cron_workflow import CronWorkflow
 from onepanel.core.api.models.cron_workflow_statistics_report import CronWorkflowStatisticsReport
 from onepanel.core.api.models.delete_secret_key_response import DeleteSecretKeyResponse
 from onepanel.core.api.models.delete_secret_response import DeleteSecretResponse
-from onepanel.core.api.models.deploy_model_request import DeployModelRequest
 from onepanel.core.api.models.env import Env
 from onepanel.core.api.models.file import File
 from onepanel.core.api.models.get_access_token_request import GetAccessTokenRequest
@@ -65,6 +65,8 @@ from onepanel.core.api.models.get_workspace_statistics_for_namespace_response im
 from onepanel.core.api.models.google_protobuf_any import GoogleProtobufAny
 from onepanel.core.api.models.google_rpc_status import GoogleRpcStatus
 from onepanel.core.api.models.has_service_response import HasServiceResponse
+from onepanel.core.api.models.inference_service_condition import InferenceServiceCondition
+from onepanel.core.api.models.inference_service_status import InferenceServiceStatus
 from onepanel.core.api.models.is_authorized import IsAuthorized
 from onepanel.core.api.models.is_authorized_response import IsAuthorizedResponse
 from onepanel.core.api.models.is_valid_token_request import IsValidTokenRequest
@@ -90,16 +92,12 @@ from onepanel.core.api.models.log_entry import LogEntry
 from onepanel.core.api.models.log_stream_response import LogStreamResponse
 from onepanel.core.api.models.machine_type import MachineType
 from onepanel.core.api.models.metric import Metric
-from onepanel.core.api.models.model_condition import ModelCondition
-from onepanel.core.api.models.model_status import ModelStatus
 from onepanel.core.api.models.namespace import Namespace
 from onepanel.core.api.models.node_pool import NodePool
 from onepanel.core.api.models.node_pool_option import NodePoolOption
-from onepanel.core.api.models.node_selector import NodeSelector
 from onepanel.core.api.models.parameter import Parameter
 from onepanel.core.api.models.parameter_option import ParameterOption
 from onepanel.core.api.models.predictor import Predictor
-from onepanel.core.api.models.predictor_server import PredictorServer
 from onepanel.core.api.models.resource_limits import ResourceLimits
 from onepanel.core.api.models.secret import Secret
 from onepanel.core.api.models.secret_exists_response import SecretExistsResponse

@@ -1,4 +1,4 @@
-# onepanel.core.api.ModelServiceApi
+# onepanel.core.ModelServiceApi
 
 All URIs are relative to *http://localhost:8888*
 
@@ -20,12 +20,12 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import onepanel.core.api
-from onepanel.core.api.rest import ApiException
+import onepanel.core
+from onepanel.core.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:8888
 # See configuration.py for a list of all supported configuration parameters.
-configuration = onepanel.core.api.Configuration(
+configuration = onepanel.core.Configuration(
     host = "http://localhost:8888"
 )
 
@@ -35,7 +35,7 @@ configuration = onepanel.core.api.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = onepanel.core.api.Configuration(
+configuration = onepanel.core.Configuration(
     host = "http://localhost:8888",
     api_key = {
         'authorization': 'YOUR_ACCESS_TOKEN'
@@ -44,9 +44,9 @@ configuration = onepanel.core.api.Configuration(
 configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with onepanel.core.api.ApiClient(configuration) as api_client:
+with onepanel.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = onepanel.core.api.ModelServiceApi(api_client)
+    api_instance = onepanel.core.ModelServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 name = 'name_example' # str | 
 
@@ -96,12 +96,12 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import onepanel.core.api
-from onepanel.core.api.rest import ApiException
+import onepanel.core
+from onepanel.core.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:8888
 # See configuration.py for a list of all supported configuration parameters.
-configuration = onepanel.core.api.Configuration(
+configuration = onepanel.core.Configuration(
     host = "http://localhost:8888"
 )
 
@@ -111,7 +111,7 @@ configuration = onepanel.core.api.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = onepanel.core.api.Configuration(
+configuration = onepanel.core.Configuration(
     host = "http://localhost:8888",
     api_key = {
         'authorization': 'YOUR_ACCESS_TOKEN'
@@ -120,11 +120,11 @@ configuration = onepanel.core.api.Configuration(
 configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with onepanel.core.api.ApiClient(configuration) as api_client:
+with onepanel.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = onepanel.core.api.ModelServiceApi(api_client)
+    api_instance = onepanel.core.ModelServiceApi(api_client)
     namespace = 'namespace_example' # str | 
-body = onepanel.core.api.DeployModelRequest() # DeployModelRequest | 
+body = onepanel.core.DeployModelRequest() # DeployModelRequest | 
 
     try:
         api_response = api_instance.deploy_model(namespace, body)
@@ -172,12 +172,12 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import onepanel.core.api
-from onepanel.core.api.rest import ApiException
+import onepanel.core
+from onepanel.core.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:8888
 # See configuration.py for a list of all supported configuration parameters.
-configuration = onepanel.core.api.Configuration(
+configuration = onepanel.core.Configuration(
     host = "http://localhost:8888"
 )
 
@@ -187,7 +187,7 @@ configuration = onepanel.core.api.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: Bearer
-configuration = onepanel.core.api.Configuration(
+configuration = onepanel.core.Configuration(
     host = "http://localhost:8888",
     api_key = {
         'authorization': 'YOUR_ACCESS_TOKEN'
@@ -196,9 +196,9 @@ configuration = onepanel.core.api.Configuration(
 configuration.api_key_prefix['authorization'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with onepanel.core.api.ApiClient(configuration) as api_client:
+with onepanel.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = onepanel.core.api.ModelServiceApi(api_client)
+    api_instance = onepanel.core.ModelServiceApi(api_client)
     namespace = 'namespace_example' # str | 
 name = 'name_example' # str | 
 

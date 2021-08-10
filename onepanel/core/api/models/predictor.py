@@ -33,29 +33,107 @@ class Predictor(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'node_selector': 'NodeSelector',
-        'server': 'PredictorServer'
+        'name': 'str',
+        'runtime_version': 'str',
+        'storage_uri': 'str',
+        'node_selector': 'str',
+        'limits': 'ResourceLimits'
     }
 
     attribute_map = {
+        'name': 'name',
+        'runtime_version': 'runtimeVersion',
+        'storage_uri': 'storageUri',
         'node_selector': 'nodeSelector',
-        'server': 'server'
+        'limits': 'limits'
     }
 
-    def __init__(self, node_selector=None, server=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, runtime_version=None, storage_uri=None, node_selector=None, limits=None, local_vars_configuration=None):  # noqa: E501
         """Predictor - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._name = None
+        self._runtime_version = None
+        self._storage_uri = None
         self._node_selector = None
-        self._server = None
+        self._limits = None
         self.discriminator = None
 
+        if name is not None:
+            self.name = name
+        if runtime_version is not None:
+            self.runtime_version = runtime_version
+        if storage_uri is not None:
+            self.storage_uri = storage_uri
         if node_selector is not None:
             self.node_selector = node_selector
-        if server is not None:
-            self.server = server
+        if limits is not None:
+            self.limits = limits
+
+    @property
+    def name(self):
+        """Gets the name of this Predictor.  # noqa: E501
+
+
+        :return: The name of this Predictor.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this Predictor.
+
+
+        :param name: The name of this Predictor.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
+    def runtime_version(self):
+        """Gets the runtime_version of this Predictor.  # noqa: E501
+
+
+        :return: The runtime_version of this Predictor.  # noqa: E501
+        :rtype: str
+        """
+        return self._runtime_version
+
+    @runtime_version.setter
+    def runtime_version(self, runtime_version):
+        """Sets the runtime_version of this Predictor.
+
+
+        :param runtime_version: The runtime_version of this Predictor.  # noqa: E501
+        :type: str
+        """
+
+        self._runtime_version = runtime_version
+
+    @property
+    def storage_uri(self):
+        """Gets the storage_uri of this Predictor.  # noqa: E501
+
+
+        :return: The storage_uri of this Predictor.  # noqa: E501
+        :rtype: str
+        """
+        return self._storage_uri
+
+    @storage_uri.setter
+    def storage_uri(self, storage_uri):
+        """Sets the storage_uri of this Predictor.
+
+
+        :param storage_uri: The storage_uri of this Predictor.  # noqa: E501
+        :type: str
+        """
+
+        self._storage_uri = storage_uri
 
     @property
     def node_selector(self):
@@ -63,7 +141,7 @@ class Predictor(object):
 
 
         :return: The node_selector of this Predictor.  # noqa: E501
-        :rtype: NodeSelector
+        :rtype: str
         """
         return self._node_selector
 
@@ -73,31 +151,31 @@ class Predictor(object):
 
 
         :param node_selector: The node_selector of this Predictor.  # noqa: E501
-        :type: NodeSelector
+        :type: str
         """
 
         self._node_selector = node_selector
 
     @property
-    def server(self):
-        """Gets the server of this Predictor.  # noqa: E501
+    def limits(self):
+        """Gets the limits of this Predictor.  # noqa: E501
 
 
-        :return: The server of this Predictor.  # noqa: E501
-        :rtype: PredictorServer
+        :return: The limits of this Predictor.  # noqa: E501
+        :rtype: ResourceLimits
         """
-        return self._server
+        return self._limits
 
-    @server.setter
-    def server(self, server):
-        """Sets the server of this Predictor.
+    @limits.setter
+    def limits(self, limits):
+        """Sets the limits of this Predictor.
 
 
-        :param server: The server of this Predictor.  # noqa: E501
-        :type: PredictorServer
+        :param limits: The limits of this Predictor.  # noqa: E501
+        :type: ResourceLimits
         """
 
-        self._server = server
+        self._limits = limits
 
     def to_dict(self):
         """Returns the model properties as a dict"""
