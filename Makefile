@@ -9,6 +9,7 @@ ifndef path
 	err = $(error path is undefined)
 	$(err)
 endif
+	rm -rf .build
 	mkdir -p .build
 	cp $(path) .build/
 
