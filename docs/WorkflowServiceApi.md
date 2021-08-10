@@ -9,12 +9,10 @@ Method | HTTP request | Description
 [**clone_workflow_execution**](WorkflowServiceApi.md#clone_workflow_execution) | **POST** /apis/v1beta1/{namespace}/workflow_executions/{uid} | Clone a Workflow. This is the same as running it again.
 [**create_workflow_execution**](WorkflowServiceApi.md#create_workflow_execution) | **POST** /apis/v1beta1/{namespace}/workflow_executions | Creates a Workflow
 [**cron_start_workflow_execution_statistic**](WorkflowServiceApi.md#cron_start_workflow_execution_statistic) | **POST** /apis/v1beta1/{namespace}/workflow_executions/{uid}/cron_start_statistics | 
-[**get_artifact**](WorkflowServiceApi.md#get_artifact) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/artifacts/{key} | 
 [**get_workflow_execution**](WorkflowServiceApi.md#get_workflow_execution) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid} | 
 [**get_workflow_execution_logs**](WorkflowServiceApi.md#get_workflow_execution_logs) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/pods/{podName}/containers/{containerName}/logs | 
 [**get_workflow_execution_metrics**](WorkflowServiceApi.md#get_workflow_execution_metrics) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/pods/{podName}/metrics | 
 [**get_workflow_execution_statistics_for_namespace**](WorkflowServiceApi.md#get_workflow_execution_statistics_for_namespace) | **GET** /apis/v1beta1/{namespace}/workflow_execution/statistics | 
-[**list_files**](WorkflowServiceApi.md#list_files) | **GET** /apis/v1beta1/{namespace}/workflow_executions/{uid}/files/{path} | 
 [**list_workflow_executions**](WorkflowServiceApi.md#list_workflow_executions) | **GET** /apis/v1beta1/{namespace}/workflow_executions | 
 [**list_workflow_executions_field**](WorkflowServiceApi.md#list_workflow_executions_field) | **GET** /apis/v1beta/{namespace}/field/workflow_executions/{fieldName} | 
 [**resubmit_workflow_execution**](WorkflowServiceApi.md#resubmit_workflow_execution) | **PUT** /apis/v1beta1/{namespace}/workflow_executions/{uid}/resubmit | 
@@ -412,84 +410,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_artifact**
-> ArtifactResponse get_artifact(namespace, uid, key)
-
-
-
-### Example
-
-* Api Key Authentication (Bearer):
-```python
-from __future__ import print_function
-import time
-import onepanel.core.api
-from onepanel.core.api.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:8888
-# See configuration.py for a list of all supported configuration parameters.
-configuration = onepanel.core.api.Configuration(
-    host = "http://localhost:8888"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration = onepanel.core.api.Configuration(
-    host = "http://localhost:8888",
-    api_key = {
-        'authorization': 'YOUR_ACCESS_TOKEN'
-    }
-)
-configuration.api_key_prefix['authorization'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with onepanel.core.api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
-    namespace = 'namespace_example' # str | 
-uid = 'uid_example' # str | 
-key = 'key_example' # str | 
-
-    try:
-        api_response = api_instance.get_artifact(namespace, uid, key)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling WorkflowServiceApi->get_artifact: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **namespace** | **str**|  | 
- **uid** | **str**|  | 
- **key** | **str**|  | 
-
-### Return type
-
-[**ArtifactResponse**](ArtifactResponse.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/octet-stream
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A successful response. |  -  |
-**0** | An unexpected error response. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **get_workflow_execution**
 > WorkflowExecution get_workflow_execution(namespace, uid)
 
@@ -780,84 +700,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetWorkflowExecutionStatisticsForNamespaceResponse**](GetWorkflowExecutionStatisticsForNamespaceResponse.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/octet-stream
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A successful response. |  -  |
-**0** | An unexpected error response. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_files**
-> ListFilesResponse list_files(namespace, uid, path)
-
-
-
-### Example
-
-* Api Key Authentication (Bearer):
-```python
-from __future__ import print_function
-import time
-import onepanel.core.api
-from onepanel.core.api.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:8888
-# See configuration.py for a list of all supported configuration parameters.
-configuration = onepanel.core.api.Configuration(
-    host = "http://localhost:8888"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration = onepanel.core.api.Configuration(
-    host = "http://localhost:8888",
-    api_key = {
-        'authorization': 'YOUR_ACCESS_TOKEN'
-    }
-)
-configuration.api_key_prefix['authorization'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with onepanel.core.api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = onepanel.core.api.WorkflowServiceApi(api_client)
-    namespace = 'namespace_example' # str | 
-uid = 'uid_example' # str | 
-path = 'path_example' # str | 
-
-    try:
-        api_response = api_instance.list_files(namespace, uid, path)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling WorkflowServiceApi->list_files: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **namespace** | **str**|  | 
- **uid** | **str**|  | 
- **path** | **str**|  | 
-
-### Return type
-
-[**ListFilesResponse**](ListFilesResponse.md)
 
 ### Authorization
 
