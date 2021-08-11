@@ -40,6 +40,7 @@ from onepanel.core.api.models.google_protobuf_any import GoogleProtobufAny
 from onepanel.core.api.models.google_rpc_status import GoogleRpcStatus
 from onepanel.core.api.models.has_service_response import HasServiceResponse
 from onepanel.core.api.models.inference_service_condition import InferenceServiceCondition
+from onepanel.core.api.models.inference_service_predictor import InferenceServicePredictor
 from onepanel.core.api.models.inference_service_status import InferenceServiceStatus
 from onepanel.core.api.models.is_authorized import IsAuthorized
 from onepanel.core.api.models.is_authorized_response import IsAuthorizedResponse
@@ -71,7 +72,6 @@ from onepanel.core.api.models.node_pool import NodePool
 from onepanel.core.api.models.node_pool_option import NodePoolOption
 from onepanel.core.api.models.parameter import Parameter
 from onepanel.core.api.models.parameter_option import ParameterOption
-from onepanel.core.api.models.predictor import Predictor
 from onepanel.core.api.models.secret import Secret
 from onepanel.core.api.models.secret_exists_response import SecretExistsResponse
 from onepanel.core.api.models.service import Service

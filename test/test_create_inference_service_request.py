@@ -39,7 +39,7 @@ class TestCreateInferenceServiceRequest(unittest.TestCase):
                 namespace = '0', 
                 name = '0', 
                 transformer_image = '0', 
-                predictor = onepanel.core.api.models.predictor.Predictor(
+                predictor = onepanel.core.api.models.inference_service_predictor.InferenceServicePredictor(
                     name = '0', 
                     runtime_version = '0', 
                     storage_uri = '0', 

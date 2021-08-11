@@ -1,4 +1,4 @@
-# Predictor
+# InferenceServicePredictor
 
 ## Properties
 Name | Type | Description | Notes

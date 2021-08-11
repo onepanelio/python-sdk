@@ -16,11 +16,11 @@ import unittest
 import datetime
 
 import onepanel.core.api
-from onepanel.core.api.models.predictor import Predictor  # noqa: E501
+from onepanel.core.api.models.inference_service_predictor import InferenceServicePredictor  # noqa: E501
 from onepanel.core.api.rest import ApiException
 
-class TestPredictor(unittest.TestCase):
-    """Predictor unit test stubs"""
+class TestInferenceServicePredictor(unittest.TestCase):
+    """InferenceServicePredictor unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,13 +29,13 @@ class TestPredictor(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test Predictor
+        """Test InferenceServicePredictor
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = onepanel.core.api.models.predictor.Predictor()  # noqa: E501
+        # model = onepanel.core.api.models.inference_service_predictor.InferenceServicePredictor()  # noqa: E501
         if include_optional :
-            return Predictor(
+            return InferenceServicePredictor(
                 name = '0', 
                 runtime_version = '0', 
                 storage_uri = '0', 
@@ -46,11 +46,11 @@ class TestPredictor(unittest.TestCase):
                 max_memory = '0'
             )
         else :
-            return Predictor(
+            return InferenceServicePredictor(
         )
 
-    def testPredictor(self):
-        """Test Predictor"""
+    def testInferenceServicePredictor(self):
+        """Test InferenceServicePredictor"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

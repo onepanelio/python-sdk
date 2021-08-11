@@ -36,7 +36,7 @@ class CreateInferenceServiceRequest(object):
         'namespace': 'str',
         'name': 'str',
         'transformer_image': 'str',
-        'predictor': 'Predictor',
+        'predictor': 'InferenceServicePredictor',
         'transformer': 'Transformer'
     }
 
@@ -141,7 +141,7 @@ class CreateInferenceServiceRequest(object):
 
 
         :return: The predictor of this CreateInferenceServiceRequest.  # noqa: E501
-        :rtype: Predictor
+        :rtype: InferenceServicePredictor
         """
         return self._predictor
 
@@ -151,7 +151,7 @@ class CreateInferenceServiceRequest(object):
 
 
         :param predictor: The predictor of this CreateInferenceServiceRequest.  # noqa: E501
-        :type: Predictor
+        :type: InferenceServicePredictor
         """
 
         self._predictor = predictor
