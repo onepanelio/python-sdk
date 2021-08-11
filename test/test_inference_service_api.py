@@ -40,8 +40,8 @@ class TestInferenceServiceApi(unittest.TestCase):
         """
         pass
 
-    def test_get_inference_service_status(self):
-        """Test case for get_inference_service_status
+    def test_get_inference_service(self):
+        """Test case for get_inference_service
 
         """
         pass

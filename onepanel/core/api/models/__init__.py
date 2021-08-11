@@ -30,6 +30,7 @@ from onepanel.core.api.models.file import File
 from onepanel.core.api.models.get_access_token_request import GetAccessTokenRequest
 from onepanel.core.api.models.get_access_token_response import GetAccessTokenResponse
 from onepanel.core.api.models.get_config_response import GetConfigResponse
+from onepanel.core.api.models.get_inference_service_response import GetInferenceServiceResponse
 from onepanel.core.api.models.get_labels_response import GetLabelsResponse
 from onepanel.core.api.models.get_namespace_config_response import GetNamespaceConfigResponse
 from onepanel.core.api.models.get_presigned_url_response import GetPresignedUrlResponse
@@ -41,7 +42,6 @@ from onepanel.core.api.models.google_rpc_status import GoogleRpcStatus
 from onepanel.core.api.models.has_service_response import HasServiceResponse
 from onepanel.core.api.models.inference_service_condition import InferenceServiceCondition
 from onepanel.core.api.models.inference_service_predictor import InferenceServicePredictor
-from onepanel.core.api.models.inference_service_status import InferenceServiceStatus
 from onepanel.core.api.models.is_authorized import IsAuthorized
 from onepanel.core.api.models.is_authorized_response import IsAuthorizedResponse
 from onepanel.core.api.models.is_valid_token_request import IsValidTokenRequest

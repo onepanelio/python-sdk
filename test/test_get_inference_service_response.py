@@ -16,11 +16,11 @@ import unittest
 import datetime
 
 import onepanel.core.api
-from onepanel.core.api.models.inference_service_status import InferenceServiceStatus  # noqa: E501
+from onepanel.core.api.models.get_inference_service_response import GetInferenceServiceResponse  # noqa: E501
 from onepanel.core.api.rest import ApiException
 
-class TestInferenceServiceStatus(unittest.TestCase):
-    """InferenceServiceStatus unit test stubs"""
+class TestGetInferenceServiceResponse(unittest.TestCase):
+    """GetInferenceServiceResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,27 +29,28 @@ class TestInferenceServiceStatus(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test InferenceServiceStatus
+        """Test GetInferenceServiceResponse
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = onepanel.core.api.models.inference_service_status.InferenceServiceStatus()  # noqa: E501
+        # model = onepanel.core.api.models.get_inference_service_response.GetInferenceServiceResponse()  # noqa: E501
         if include_optional :
-            return InferenceServiceStatus(
+            return GetInferenceServiceResponse(
                 ready = True, 
                 conditions = [
                     onepanel.core.api.models.inference_service_condition.InferenceServiceCondition(
                         last_transition_time = '0', 
                         status = '0', 
                         type = '0', )
-                    ]
+                    ], 
+                predict_url = '0'
             )
         else :
-            return InferenceServiceStatus(
+            return GetInferenceServiceResponse(
         )
 
-    def testInferenceServiceStatus(self):
-        """Test InferenceServiceStatus"""
+    def testGetInferenceServiceResponse(self):
+        """Test GetInferenceServiceResponse"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

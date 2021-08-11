@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_inference_service**](InferenceServiceApi.md#create_inference_service) | **POST** /apis/v1beta1/{namespace}/inferenceservice | 
 [**delete_inference_service**](InferenceServiceApi.md#delete_inference_service) | **DELETE** /apis/v1beta1/{namespace}/inferenceservice/{name} | 
-[**get_inference_service_status**](InferenceServiceApi.md#get_inference_service_status) | **GET** /apis/v1beta1/{namespace}/inferenceservice/{name} | 
+[**get_inference_service**](InferenceServiceApi.md#get_inference_service) | **GET** /apis/v1beta1/{namespace}/inferenceservice/{name} | 
 
 
 # **create_inference_service**
@@ -161,8 +161,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_inference_service_status**
-> InferenceServiceStatus get_inference_service_status(namespace, name)
+# **get_inference_service**
+> GetInferenceServiceResponse get_inference_service(namespace, name)
 
 
 
@@ -203,10 +203,10 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
 name = 'name_example' # str | 
 
     try:
-        api_response = api_instance.get_inference_service_status(namespace, name)
+        api_response = api_instance.get_inference_service(namespace, name)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling InferenceServiceApi->get_inference_service_status: %s\n" % e)
+        print("Exception when calling InferenceServiceApi->get_inference_service: %s\n" % e)
 ```
 
 ### Parameters
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InferenceServiceStatus**](InferenceServiceStatus.md)
+[**GetInferenceServiceResponse**](GetInferenceServiceResponse.md)
 
 ### Authorization
 

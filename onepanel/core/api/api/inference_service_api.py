@@ -282,12 +282,12 @@ class InferenceServiceApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_inference_service_status(self, namespace, name, **kwargs):  # noqa: E501
-        """get_inference_service_status  # noqa: E501
+    def get_inference_service(self, namespace, name, **kwargs):  # noqa: E501
+        """get_inference_service  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_inference_service_status(namespace, name, async_req=True)
+        >>> thread = api.get_inference_service(namespace, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -300,19 +300,19 @@ class InferenceServiceApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: InferenceServiceStatus
+        :return: GetInferenceServiceResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.get_inference_service_status_with_http_info(namespace, name, **kwargs)  # noqa: E501
+        return self.get_inference_service_with_http_info(namespace, name, **kwargs)  # noqa: E501
 
-    def get_inference_service_status_with_http_info(self, namespace, name, **kwargs):  # noqa: E501
-        """get_inference_service_status  # noqa: E501
+    def get_inference_service_with_http_info(self, namespace, name, **kwargs):  # noqa: E501
+        """get_inference_service  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_inference_service_status_with_http_info(namespace, name, async_req=True)
+        >>> thread = api.get_inference_service_with_http_info(namespace, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -327,7 +327,7 @@ class InferenceServiceApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(InferenceServiceStatus, status_code(int), headers(HTTPHeaderDict))
+        :return: tuple(GetInferenceServiceResponse, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -351,18 +351,18 @@ class InferenceServiceApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_inference_service_status" % key
+                    " to method get_inference_service" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'namespace' is set
         if self.api_client.client_side_validation and ('namespace' not in local_var_params or  # noqa: E501
                                                         local_var_params['namespace'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `namespace` when calling `get_inference_service_status`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `namespace` when calling `get_inference_service`")  # noqa: E501
         # verify the required parameter 'name' is set
         if self.api_client.client_side_validation and ('name' not in local_var_params or  # noqa: E501
                                                         local_var_params['name'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `name` when calling `get_inference_service_status`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `name` when calling `get_inference_service`")  # noqa: E501
 
         collection_formats = {}
 
@@ -395,7 +395,7 @@ class InferenceServiceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InferenceServiceStatus',  # noqa: E501
+            response_type='GetInferenceServiceResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
