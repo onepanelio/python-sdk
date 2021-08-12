@@ -6,34 +6,8 @@ import zlib
 from couler.argo_submitter import ArgoSubmitter
 import onepanel.core.api
 from onepanel.core.api.rest import ApiException
-
-
-class OnepanelException(Exception):
-    """Base-class for all exceptions raised by the OnepanelSubmitter"""
-
-
-class MissingTokenException(OnepanelException):
-    """
-    Happens when there is no provided token and one can't be found on the system.
-    """
-
-
-class MissingHostException(OnepanelException):
-    """
-    Happens when there is no provided host and can't be found on the system
-    """
-
-
-class InvalidCredentialsException(OnepanelException):
-    """
-    Happens when the credentials to get the authentication token are incorrect.
-    """
-
-
-class LongWorkflowNameException(OnepanelException):
-    """
-    Happens when the workflow name is too long - which is >= 20 characters.
-    """
+from onepanel.core.error import LongWorkflowNameException
+from onepanel.core.auth import get_access_token
 
 
 class Submitter(ArgoSubmitter):
@@ -46,29 +20,10 @@ class Submitter(ArgoSubmitter):
         self.namespace = os.getenv('ONEPANEL_RESOURCE_NAMESPACE')
         self.workflow_name = workflow_name
 
-        if host is None:
-            host = os.getenv('ONEPANEL_API_URL')
-            if host is None:
-                raise MissingHostException()
-
         self.configuration = onepanel.core.api.Configuration(host)
         logging.basicConfig(level=logging.INFO)
 
-        if token is None:
-            try:
-                with open('/var/run/secrets/kubernetes.io/serviceaccount/token') as f:
-                    self.token = f.read()
-            except FileNotFoundError:
-                raise MissingTokenException('Token not set and no token found on system')
-            logging.info('Onepanel configuration detected')
-        else:
-            try:
-                self.token = self._get_token(host, username, token)
-            except ApiException as e:
-                if e.status == 400:
-                    raise InvalidCredentialsException('The provided credentials are invalid')
-
-        self.configuration.api_key['authorization'] = self.token
+        self.configuration.api_key['authorization'] = get_access_token(username, token, host=host)
         self.configuration.api_key_prefix['authorization'] = 'Bearer'
         logging.info('Initialized')
 
