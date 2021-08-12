@@ -1,7 +1,8 @@
 import os.path
 import onepanel.core.api
 
-from onepanel.core.error import MissingHostException, MissingTokenException
+from onepanel.core.api.rest import ApiException
+from onepanel.core.error import InvalidCredentialsException, MissingHostException, MissingTokenException
 
 LOCAL_TOKEN_PATH = '/var/run/secrets/kubernetes.io/serviceaccount/token'
 
