@@ -16,11 +16,11 @@ import unittest
 import datetime
 
 import onepanel.core.api
-from onepanel.core.api.models.transformer import Transformer  # noqa: E501
+from onepanel.core.api.models.inference_service_transformer import InferenceServiceTransformer  # noqa: E501
 from onepanel.core.api.rest import ApiException
 
-class TestTransformer(unittest.TestCase):
-    """Transformer unit test stubs"""
+class TestInferenceServiceTransformer(unittest.TestCase):
+    """InferenceServiceTransformer unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,13 +29,13 @@ class TestTransformer(unittest.TestCase):
         pass
 
     def make_instance(self, include_optional):
-        """Test Transformer
+        """Test InferenceServiceTransformer
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = onepanel.core.api.models.transformer.Transformer()  # noqa: E501
+        # model = onepanel.core.api.models.inference_service_transformer.InferenceServiceTransformer()  # noqa: E501
         if include_optional :
-            return Transformer(
+            return InferenceServiceTransformer(
                 containers = [
                     onepanel.core.api.models.container.Container(
                         image = '0', 
@@ -52,11 +52,11 @@ class TestTransformer(unittest.TestCase):
                 max_memory = '0'
             )
         else :
-            return Transformer(
+            return InferenceServiceTransformer(
         )
 
-    def testTransformer(self):
-        """Test Transformer"""
+    def testInferenceServiceTransformer(self):
+        """Test InferenceServiceTransformer"""
         inst_req_only = self.make_instance(include_optional=False)
         inst_req_and_optional = self.make_instance(include_optional=True)
 

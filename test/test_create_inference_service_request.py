@@ -38,7 +38,7 @@ class TestCreateInferenceServiceRequest(unittest.TestCase):
             return CreateInferenceServiceRequest(
                 namespace = '0', 
                 name = '0', 
-                transformer_image = '0', 
+                default_transformer_image = '0', 
                 predictor = onepanel.core.api.models.inference_service_predictor.InferenceServicePredictor(
                     name = '0', 
                     runtime_version = '0', 
@@ -48,7 +48,7 @@ class TestCreateInferenceServiceRequest(unittest.TestCase):
                     min_memory = '0', 
                     max_cpu = '0', 
                     max_memory = '0', ), 
-                transformer = onepanel.core.api.models.transformer.Transformer(
+                transformer = onepanel.core.api.models.inference_service_transformer.InferenceServiceTransformer(
                     containers = [
                         onepanel.core.api.models.container.Container(
                             image = '0', 

@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "1.0.0b10"
+__version__ = "1.0.0b12"
 
 # import apis into sdk package
 from onepanel.core.api.api.auth_service_api import AuthServiceApi
@@ -68,6 +68,7 @@ from onepanel.core.api.models.google_rpc_status import GoogleRpcStatus
 from onepanel.core.api.models.has_service_response import HasServiceResponse
 from onepanel.core.api.models.inference_service_condition import InferenceServiceCondition
 from onepanel.core.api.models.inference_service_predictor import InferenceServicePredictor
+from onepanel.core.api.models.inference_service_transformer import InferenceServiceTransformer
 from onepanel.core.api.models.is_authorized import IsAuthorized
 from onepanel.core.api.models.is_authorized_response import IsAuthorizedResponse
 from onepanel.core.api.models.is_valid_token_request import IsValidTokenRequest
@@ -104,7 +105,6 @@ from onepanel.core.api.models.service import Service
 from onepanel.core.api.models.statistics import Statistics
 from onepanel.core.api.models.stream_result_of_log_stream_response import StreamResultOfLogStreamResponse
 from onepanel.core.api.models.stream_result_of_workflow_execution import StreamResultOfWorkflowExecution
-from onepanel.core.api.models.transformer import Transformer
 from onepanel.core.api.models.update_secret_key_value_response import UpdateSecretKeyValueResponse
 from onepanel.core.api.models.update_workflow_executions_metrics_request import UpdateWorkflowExecutionsMetricsRequest
 from onepanel.core.api.models.update_workspace_body import UpdateWorkspaceBody

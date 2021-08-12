@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **create_inference_service**
-> object create_inference_service(namespace, body)
+> GetInferenceServiceResponse create_inference_service(namespace, body)
 
 
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**GetInferenceServiceResponse**](GetInferenceServiceResponse.md)
 
 ### Authorization
 

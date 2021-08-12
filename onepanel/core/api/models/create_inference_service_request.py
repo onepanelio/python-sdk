@@ -35,20 +35,20 @@ class CreateInferenceServiceRequest(object):
     openapi_types = {
         'namespace': 'str',
         'name': 'str',
-        'transformer_image': 'str',
+        'default_transformer_image': 'str',
         'predictor': 'InferenceServicePredictor',
-        'transformer': 'Transformer'
+        'transformer': 'InferenceServiceTransformer'
     }
 
     attribute_map = {
         'namespace': 'namespace',
         'name': 'name',
-        'transformer_image': 'transformerImage',
+        'default_transformer_image': 'defaultTransformerImage',
         'predictor': 'predictor',
         'transformer': 'transformer'
     }
 
-    def __init__(self, namespace=None, name=None, transformer_image=None, predictor=None, transformer=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, namespace=None, name=None, default_transformer_image=None, predictor=None, transformer=None, local_vars_configuration=None):  # noqa: E501
         """CreateInferenceServiceRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,7 +56,7 @@ class CreateInferenceServiceRequest(object):
 
         self._namespace = None
         self._name = None
-        self._transformer_image = None
+        self._default_transformer_image = None
         self._predictor = None
         self._transformer = None
         self.discriminator = None
@@ -65,8 +65,8 @@ class CreateInferenceServiceRequest(object):
             self.namespace = namespace
         if name is not None:
             self.name = name
-        if transformer_image is not None:
-            self.transformer_image = transformer_image
+        if default_transformer_image is not None:
+            self.default_transformer_image = default_transformer_image
         if predictor is not None:
             self.predictor = predictor
         if transformer is not None:
@@ -115,25 +115,25 @@ class CreateInferenceServiceRequest(object):
         self._name = name
 
     @property
-    def transformer_image(self):
-        """Gets the transformer_image of this CreateInferenceServiceRequest.  # noqa: E501
+    def default_transformer_image(self):
+        """Gets the default_transformer_image of this CreateInferenceServiceRequest.  # noqa: E501
 
 
-        :return: The transformer_image of this CreateInferenceServiceRequest.  # noqa: E501
+        :return: The default_transformer_image of this CreateInferenceServiceRequest.  # noqa: E501
         :rtype: str
         """
-        return self._transformer_image
+        return self._default_transformer_image
 
-    @transformer_image.setter
-    def transformer_image(self, transformer_image):
-        """Sets the transformer_image of this CreateInferenceServiceRequest.
+    @default_transformer_image.setter
+    def default_transformer_image(self, default_transformer_image):
+        """Sets the default_transformer_image of this CreateInferenceServiceRequest.
 
 
-        :param transformer_image: The transformer_image of this CreateInferenceServiceRequest.  # noqa: E501
+        :param default_transformer_image: The default_transformer_image of this CreateInferenceServiceRequest.  # noqa: E501
         :type: str
         """
 
-        self._transformer_image = transformer_image
+        self._default_transformer_image = default_transformer_image
 
     @property
     def predictor(self):
@@ -162,7 +162,7 @@ class CreateInferenceServiceRequest(object):
 
 
         :return: The transformer of this CreateInferenceServiceRequest.  # noqa: E501
-        :rtype: Transformer
+        :rtype: InferenceServiceTransformer
         """
         return self._transformer
 
@@ -172,7 +172,7 @@ class CreateInferenceServiceRequest(object):
 
 
         :param transformer: The transformer of this CreateInferenceServiceRequest.  # noqa: E501
-        :type: Transformer
+        :type: InferenceServiceTransformer
         """
 
         self._transformer = transformer
