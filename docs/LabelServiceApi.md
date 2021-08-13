@@ -36,11 +36,14 @@ configuration = onepanel.core.api.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# If inside Onepanel you do not need to pass any parameters to `get_access_token`
+access_token = onepanel.core.auth.get_access_token(username='<username>', token='<token>', host='<host>')
+
 # Configure API key authorization: Bearer
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'authorization': 'YOUR_ACCESS_TOKEN'
+        'authorization': access_token
     }
 )
 configuration.api_key_prefix['authorization'] = 'Bearer'
@@ -116,11 +119,14 @@ configuration = onepanel.core.api.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# If inside Onepanel you do not need to pass any parameters to `get_access_token`
+access_token = onepanel.core.auth.get_access_token(username='<username>', token='<token>', host='<host>')
+
 # Configure API key authorization: Bearer
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'authorization': 'YOUR_ACCESS_TOKEN'
+        'authorization': access_token
     }
 )
 configuration.api_key_prefix['authorization'] = 'Bearer'
@@ -196,11 +202,14 @@ configuration = onepanel.core.api.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# If inside Onepanel you do not need to pass any parameters to `get_access_token`
+access_token = onepanel.core.auth.get_access_token(username='<username>', token='<token>', host='<host>')
+
 # Configure API key authorization: Bearer
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'authorization': 'YOUR_ACCESS_TOKEN'
+        'authorization': access_token
     }
 )
 configuration.api_key_prefix['authorization'] = 'Bearer'
@@ -276,11 +285,14 @@ configuration = onepanel.core.api.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# If inside Onepanel you do not need to pass any parameters to `get_access_token`
+access_token = onepanel.core.auth.get_access_token(username='<username>', token='<token>', host='<host>')
+
 # Configure API key authorization: Bearer
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'authorization': 'YOUR_ACCESS_TOKEN'
+        'authorization': access_token
     }
 )
 configuration.api_key_prefix['authorization'] = 'Bearer'
@@ -354,11 +366,14 @@ configuration = onepanel.core.api.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# If inside Onepanel you do not need to pass any parameters to `get_access_token`
+access_token = onepanel.core.auth.get_access_token(username='<username>', token='<token>', host='<host>')
+
 # Configure API key authorization: Bearer
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'authorization': 'YOUR_ACCESS_TOKEN'
+        'authorization': access_token
     }
 )
 configuration.api_key_prefix['authorization'] = 'Bearer'

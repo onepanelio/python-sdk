@@ -64,11 +64,14 @@ configuration = onepanel.core.api.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# If inside Onepanel you do not need to pass any parameters to `get_access_token` method below
+access_token = onepanel.core.auth.get_access_token(username='<username>', token='<token>', host='<host>')
+
 # Configure API key authorization: Bearer
 configuration = onepanel.core.api.Configuration(
     host = "http://localhost:8888",
     api_key = {
-        'authorization': 'YOUR_ACCESS_TOKEN'
+        'authorization': access_token
     }
 )
 configuration.api_key_prefix['authorization'] = 'Bearer'
@@ -77,14 +80,13 @@ configuration.api_key_prefix['authorization'] = 'Bearer'
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = onepanel.core.api.AuthServiceApi(api_client)
-    body = onepanel.core.api.GetAccessTokenRequest() # GetAccessTokenRequest | 
+    api_instance = onepanel.core.api.InferenceServiceApi(api_client)
 
     try:
-        api_response = api_instance.get_access_token(body)
+        api_response = api_instance.get_inference_service(body)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AuthServiceApi->get_access_token: %s\n" % e)
+        print("Exception when calling InferenceServiceApi->get_inference_service: %s\n" % e)
     
 ```
 

@@ -91,11 +91,14 @@ configuration = {{{packageName}}}.Configuration(
 {{/isBasic}}
 {{#isApiKey}}
 
+# If inside Onepanel you do not need to pass any parameters to `get_access_token`
+access_token = onepanel.core.auth.get_access_token(username='<username>', token='<token>', host='<host>')
+
 # Configure API key authorization: {{{name}}}
 configuration = {{{packageName}}}.Configuration(
     host = "{{{basePath}}}",
     api_key = {
-        '{{{keyParamName}}}': 'YOUR_ACCESS_TOKEN'
+        '{{{keyParamName}}}': access_token
     }
 )
 configuration.api_key_prefix['{{{keyParamName}}}'] = 'Bearer'
