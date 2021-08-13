@@ -83,7 +83,7 @@ with onepanel.core.api.ApiClient(configuration) as api_client:
     api_instance = onepanel.core.api.InferenceServiceApi(api_client)
 
     try:
-        api_response = api_instance.get_inference_service(body)
+        api_response = api_instance.get_inference_service(namespace='<namespace>')
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling InferenceServiceApi->get_inference_service: %s\n" % e)
