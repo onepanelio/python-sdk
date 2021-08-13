@@ -49,6 +49,7 @@ Please follow the [installation procedure](#installation--usage) and then run th
 from __future__ import print_function
 
 import time
+import onepanel.core.auth
 import onepanel.core.api
 from onepanel.core.api.rest import ApiException
 from pprint import pprint
@@ -80,14 +81,13 @@ configuration.api_key_prefix['authorization'] = 'Bearer'
 # Enter a context with an instance of the API client
 with onepanel.core.api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = onepanel.core.api.AuthServiceApi(api_client)
-    body = onepanel.core.api.GetAccessTokenRequest() # GetAccessTokenRequest | 
+    api_instance = onepanel.core.api.InferenceServiceApi(api_client)
 
     try:
-        api_response = api_instance.get_access_token(body)
+        api_response = api_instance.get_inference_service(namespace='<namespace>')
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AuthServiceApi->get_access_token: %s\n" % e)
+        print("Exception when calling InferenceServiceApi->get_inference_service: %s\n" % e)
     
 ```
 
