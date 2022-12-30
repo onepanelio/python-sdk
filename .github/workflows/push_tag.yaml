@@ -13,7 +13,7 @@ jobs:
         with:
           tagRegex: "v(.*)"
       - name: Publish to Registry
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: onepanel/python-sdk
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
